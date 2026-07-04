@@ -12,9 +12,7 @@
   - ...
 
 ### Exact solutions (solvers):
-  - BIP formulation + gurobi (or MIP)
-  - ...
+  - BIP formulation solvers
 
 ### Memetics:
   - Approximation + Metaheuristics
-  - ...
