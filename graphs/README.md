@@ -34,13 +34,13 @@ Example:
 ```
 Which corresponds to:
 
-![](example.png)
+![](smallGraph.png)
 
 To which optimal solution is:
 
 ```
 ==================================================
-LOADING & SOLVING: ../../exampleGraphs/graphs/N5.graph
+LOADING & SOLVING: ../../exampleGraphs/graphs/N5E6.graph
 ==================================================
 
 --- Optimization Results ---
