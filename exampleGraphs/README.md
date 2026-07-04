@@ -36,7 +36,7 @@ Which corresponds to:
 
 ![](example.png)
 
-Of which optimal solution is:
+To which optimal solution is:
 
 ```
 ==================================================
