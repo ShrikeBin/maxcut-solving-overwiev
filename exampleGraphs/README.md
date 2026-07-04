@@ -36,3 +36,18 @@ Which corresponds to:
 
 ![](example.png)
 
+Of which optimal solution is:
+
+```
+==================================================
+LOADING & SOLVING: ../../exampleGraphs/graphs/N5.graph
+==================================================
+
+--- Optimization Results ---
+Status: Optimal Solution Found
+Maximum Cut Weight: 5.0
+Partition A (v=1): [1, 3, 5]
+Partition B (v=0): [2, 4]
+```
+(solved using MIP and Binary Ineger Programming [look for `methodologies/solvers/main.py`])
+

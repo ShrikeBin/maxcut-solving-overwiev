@@ -12,7 +12,7 @@
   - ...
 
 ### Exact solutions (solvers):
-  - Integer Programming (gurobi?)
+  - BIP formulation + gurobi (or MIP)
   - ...
 
 ### Memetics:
