@@ -12,4 +12,4 @@ $e_{ij} \le 2 - (v_i + v_j), \quad \forall (i,j) \in E$
 
 $e_{ij}, v_i, v_j \in \{0, 1\}, \quad \forall (i,j) \in E$
 
-It is solved in python used `python-MIP` [CBC solver](https://github.com/coin-or/Cbc) interface
+It is solved in python by `python-MIP` [CBC solver](https://github.com/coin-or/Cbc) interface
