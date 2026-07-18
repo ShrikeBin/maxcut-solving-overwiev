@@ -61,8 +61,8 @@ def generate_random_graph(
 
 
 # --- Configuration ---
-VERTICES = 30
-EDGES = (30**2)/3.5
+VERTICES = 1000
+EDGES = (VERTICES)*15
 MIN_WEIGHT = 1.0
 MAX_WEIGHT = 3.0
 DIRECTED = False
@@ -70,7 +70,7 @@ WEIGHTED = False
 
 
 g_string = generate_random_graph(VERTICES, EDGES, MIN_WEIGHT, MAX_WEIGHT, DIRECTED, WEIGHTED)
-filename = f"N{VERTICES}E{int(EDGES)}.graph"
+filename = f"exampleGraphs/N{VERTICES}E{int(EDGES)}.graph"
 with open(filename, "w", encoding="utf-8") as file:
     file.write(g_string)
 

@@ -1,12 +1,13 @@
 import sys
 import glob
 import os
-from src.Graph import Graph
-from src.Solve import solve_mip
+from implementation.graphs.python.Graph import Graph
+from implementation.solvers.src.Solve import solve_mip
+from implementation.approximations.src.Approximate import *
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python solve.py <path>")
+        print("Usage: python run_all.py <path>")
         sys.exit(1)
 
     args = sys.argv[1:]
@@ -38,11 +39,18 @@ if __name__ == "__main__":
     for file_path in graph_files:
         print("==================================================")
         print(f"LOADING & SOLVING: {file_path}")
-        print("==================================================")
+        print("==================================================\n")
         
         try:
             graph = Graph(file_path, useAdjList=True)
-            solve_mip(graph, PRINT_RESULTS=True, PRINT_EDGES=False, SOLVE_VERBOSE=True)
+            #graph.draw()
+
+            print(randomized_half(graph, TRIALS=100).clear_partition())
+            print(randomized_greedy_edges(graph, TRIALS=100).clear_partition())
+            print(randomized_greedy_vertices(graph, TRIALS=100).clear_partition())
+            #print(goemans_williamson(graph, RANDOM_SLICE_TRIALS=100, SOLVE_VERBOSE=False).clear_partition())
+            print(solve_mip(graph, SOLVE_VERBOSE=True).clear_partition())
+            
         except Exception as e:
             print(f"Error processing {file_path}: {e}")
         print("\n")
