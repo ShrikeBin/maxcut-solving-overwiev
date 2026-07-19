@@ -42,13 +42,14 @@ if __name__ == "__main__":
         print("==================================================\n")
         
         try:
-            graph = Graph(file_path, useAdjList=True)
+            graph = Graph(file_path)
+            print(graph)
             #graph.draw()
 
-            print(randomized_half(graph, TRIALS=100).clear_partition())
+            print(randomized_half(graph, TRIALS=200).clear_partition())
             print(randomized_greedy_edges(graph, TRIALS=100).clear_partition())
             print(randomized_greedy_vertices(graph, TRIALS=100).clear_partition())
-            #print(goemans_williamson(graph, RANDOM_SLICE_TRIALS=100, SOLVE_VERBOSE=False).clear_partition())
+            print(goemans_williamson(graph, RANDOM_SLICE_TRIALS=200, SOLVE_VERBOSE=True).clear_partition())
             print(solve_mip(graph, SOLVE_VERBOSE=True).clear_partition())
             
         except Exception as e:

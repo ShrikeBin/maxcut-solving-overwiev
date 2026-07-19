@@ -23,7 +23,7 @@ namespace {
     }
 }
 
-Graph::Graph(const std::string& filename, bool useAdjList) : useAdjList(useAdjList) {
+Graph::Graph(const std::string& filename){
     std::ifstream file(filename);
     if (!file.is_open()) {
         std::cerr << "Error: Could not open file " << filename << std::endl;
@@ -37,13 +37,9 @@ Graph::Graph(const std::string& filename, bool useAdjList) : useAdjList(useAdjLi
     if (std::getline(file, line)) V_count = parseHeaderValue(line);
     if (std::getline(file, line)) E_count = parseHeaderValue(line);
 
-    if (useAdjList) {
-        for (int i = 1; i <= V_count; ++i) {
-            adj_list[i] = std::vector<std::pair<int, double>>();
-        }
-    } else {
-        matrix.assign(V_count + 1, std::vector<double>(V_count + 1, 0.0));
-    }
+
+    matrix.assign(V_count + 1, std::vector<double>(V_count + 1, 0.0));
+    
 
     // Parse data rows
     while (std::getline(file, line)) {
@@ -65,69 +61,49 @@ Graph::Graph(const std::string& filename, bool useAdjList) : useAdjList(useAdjLi
             int v = std::stoi(parts[1]);
             double weight = (isWeighted && parts.size() >= 3) ? std::stod(parts[2]) : 1.0;
 
-            if (useAdjList) {
-                adj_list[u].push_back({v, weight});
-                if (!isDirected) {
-                    adj_list[v].push_back({u, weight});
-                }
-            } else {
-                matrix[u][v] = weight;
-                if (!isDirected) {
-                    matrix[v][u] = weight;
-                }
+  
+            matrix[u][v] = weight;
+            if (!isDirected) {
+                matrix[v][u] = weight;
             }
+            
         }
     }
 }
 
 void Graph::print() const {
-    std::string storage_type = useAdjList ? "List" : "Matrix";
     
     std::cout << "--- Graph Properties ---\n";
     std::cout << "Directed  = " << isDirected << "\n";
     std::cout << "Weighted  = " << isWeighted << "\n";
     std::cout << "     |V|  = " << V_count << "\n";
     std::cout << "     |E|  = " << E_count << "\n";
-    std::cout << "Stored as = " << storage_type << "\n";
     std::cout << "------------------------\n";
 
-    if (useAdjList) {
-        for (const auto& [vertex, neighbors] : adj_list) {
-            std::cout << "[" << vertex << "] -> ";
-            for (size_t i = 0; i < neighbors.size(); ++i) {
-                if (isWeighted) {
-                    std::cout << neighbors[i].first << "(w:" << neighbors[i].second << ")";
+
+    std::cout << "    ";
+    for (int i = 1; i <= V_count; ++i) {
+        std::cout << std::setw(2) << i << "  ";
+    }
+    std::cout << "\n";
+
+    for (int i = 1; i <= V_count; ++i) {
+        std::cout << std::setw(2) << i << ": ";
+        for (int j = 1; j <= V_count; ++j) {
+            double val = matrix[i][j];
+            if (val == 0.0) {
+                std::cout << " 0";
+            } else {
+                if (val == static_cast<int>(val)) {
+                    std::cout << std::setw(2) << static_cast<int>(val);
                 } else {
-                    std::cout << neighbors[i].first;
+                    std::cout << std::fixed << std::setprecision(1) << val;
                 }
-                if (i < neighbors.size() - 1) std::cout << ", ";
             }
-            std::cout << "\n";
-        }
-    } else {
-        std::cout << "    ";
-        for (int i = 1; i <= V_count; ++i) {
-            std::cout << std::setw(2) << i << "  ";
+            if (j < V_count) std::cout << "  ";
         }
         std::cout << "\n";
-
-        for (int i = 1; i <= V_count; ++i) {
-            std::cout << std::setw(2) << i << ": ";
-            for (int j = 1; j <= V_count; ++j) {
-                double val = matrix[i][j];
-                if (val == 0.0) {
-                    std::cout << " 0";
-                } else {
-                    if (val == static_cast<int>(val)) {
-                        std::cout << std::setw(2) << static_cast<int>(val);
-                    } else {
-                        std::cout << std::fixed << std::setprecision(1) << val;
-                    }
-                }
-                if (j < V_count) std::cout << "  ";
-            }
-            std::cout << "\n";
-        }
     }
+    
     std::cout << "------------------------\n";
 }

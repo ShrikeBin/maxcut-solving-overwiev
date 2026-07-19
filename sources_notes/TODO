@@ -1,8 +1,5 @@
-- Make all graphs unidirectional - it makes no sense to treat them as directed graphs in this context and it simplifies a lot of calculation and stroage
-
-- Remove bloated comments
-
 - Describe the Goemans algorimt better (SDP relaxation of MIP problem - but needs some talk)
+    - Remove bloated comments
 
 - Check if 0.5 random makes sense (seems so?)
 

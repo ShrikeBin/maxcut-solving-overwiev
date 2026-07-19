@@ -3,3 +3,4 @@
 */*/*/__pycache__
 .gurobi_key
 gurobi.lic
+mosek.lic

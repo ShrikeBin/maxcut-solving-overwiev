@@ -1,7 +1,8 @@
 class Graph:
-    def __init__(self, filename, useAdjList=True):
-        self.useAdjList = useAdjList
-        
+    def __init__(self, filename):
+        """
+         Graph internally held as undirected with summed weights as upper triangular matrix
+        """
         with open(filename, "r") as file:
             lines = file.readlines()
         
@@ -10,11 +11,7 @@ class Graph:
         self.V_count = int(lines[2].split("=")[1].strip())
         self.E_count = int(lines[3].split("=")[1].strip())
         
-        # Use either adjacency list OR an adjacency matrix
-        if self.useAdjList:
-            self.adj_list = {i: [] for i in range(1, self.V_count + 1)}
-        else:
-            self.matrix = [[0.0] * (self.V_count + 1) for _ in range(self.V_count + 1)]
+        self.matrix = [[0.0] * (self.V_count + 1) for _ in range(self.V_count + 1)]
             
         for line in lines[4:]:
             clean_line = line.strip()
@@ -27,15 +24,11 @@ class Graph:
                 v = int(parts[1].strip())
                 
                 weight = float(parts[2].strip()) if self.isWeighted else 1.0
+               
+                row = min(u, v)
+                col = max(u, v)
                 
-                if self.useAdjList:
-                    self.adj_list[u].append((v, weight))
-                    if not self.isDirected:
-                        self.adj_list[v].append((u, weight))
-                else:
-                    self.matrix[u][v] = weight
-                    if not self.isDirected:
-                        self.matrix[v][u] = weight
+                self.matrix[row][col] += weight
                         
     def get_cut_info(self, partition: dict[int, int]) -> tuple[float, int]:
         """
@@ -44,90 +37,71 @@ class Graph:
         cut_weight = 0.0
         edge_count = 0
 
-        if self.useAdjList:
-            for u, neighbors in self.adj_list.items():
-                for v, weight in neighbors:
-                    # Prevent double counting undirected edges
-                    if not self.isDirected and u > v:
-                        continue
-                    if partition[u] != partition[v]:
-                        cut_weight += weight
-                        edge_count += 1
-        else:
-            for u in range(1, self.V_count + 1):
-                start_v = 1 if self.isDirected else u + 1
-                for v in range(start_v, self.V_count + 1):
-                    val = self.matrix[u][v]
-                    if val != 0.0 and partition[u] != partition[v]:
-                        cut_weight += val
-                        edge_count += 1
+        for u in range(1, self.V_count + 1):
+            for v in range(u + 1, self.V_count + 1):
+                val = self.matrix[u][v]
+                if val != 0.0 and partition[u] != partition[v]:
+                    cut_weight += val
+                    edge_count += 1
                         
         return cut_weight, edge_count
     
     def __str__(self):
-        storage_type = "List" if self.useAdjList else "Matrix"
+        BOLD = "\033[1m"
+        DIM = "\033[2m"
+        CYAN = "\033[96m"
+        GREEN = "\033[92m"
+        YELLOW = "\033[93m"
+        RESET = "\033[0m"
         
         output = [
-            f"--- Graph Properties ---",
-            f"Directed  = {self.isDirected}\n"
-            f"Weighted  = {self.isWeighted}",
-            f"     |V|  = {self.V_count}", 
-            f"     |E|  = {self.E_count}",
-            f"Stored as = {storage_type}",
-            f"------------------------"
+            f"{BOLD}{CYAN}┌── Graph Properties ────────────────────┐{RESET}",
+            f"  {BOLD}Directed:{RESET}  0 {DIM}(Collapsed from original: {self.isDirected}){RESET}",
+            f"  {BOLD}Weighted:{RESET}  {GREEN if self.isWeighted else DIM}{self.isWeighted}{RESET}",
+            f"  {BOLD}Nodes |V|:{RESET} {YELLOW}{self.V_count:<6}{RESET}", 
+            f"  {BOLD}Edges |E|:{RESET} {YELLOW}{self.E_count:<6}{RESET}",
+            f"{BOLD}{CYAN}├── Adjacency Matrix ────────────────────┤{RESET}"
         ]
         
-        if self.useAdjList:
-            for vertex, neighbors in sorted(self.adj_list.items()):
-                neighbor_strs = []
-                for neighbor, weight in neighbors:
-                    if self.isWeighted:
-                        neighbor_strs.append(f"{neighbor}(w:{weight})")
-                    else:
-                        neighbor_strs.append(str(neighbor))
-                output.append(f"[{vertex}] -> " + ", ".join(neighbor_strs))
-        else:
-            headers = "    " + "  ".join(f"{i:2}" for i in range(1, self.V_count + 1))
+        if(self.V_count <= 20):
+            headers = f"     {BOLD}{CYAN}" + "  ".join(f"{i:2}" for i in range(1, self.V_count + 1)) + f"{RESET}"
             output.append(headers)
             
             for i in range(1, self.V_count + 1):
-                row_str = f"{i:2}: "
+                row_str = f"  {BOLD}{CYAN}{i:2}:{RESET} "
                 row_values = []
+                
                 for j in range(1, self.V_count + 1):
-                    val = self.matrix[i][j]
+                    row = min(i, j)
+                    col = max(i, j)
+                    val = self.matrix[row][col] if i != j else 0.0
+                    
                     if val == 0.0:
-                        row_values.append(" 0")
+                        row_values.append(f"{DIM} 0{RESET}")
                     else:
-                        row_values.append(f"{int(val):2}" if val.is_integer() else f"{val:.1f}")
+                        formatted_val = f"{int(val):2}" if val.is_integer() else f"{val:.1f}"
+                        row_values.append(f"{GREEN}{formatted_val}{RESET}")
+                        
                 row_str += "  ".join(row_values)
                 output.append(row_str)
+        else:
+            output.append(f"{DIM}{CYAN}   [Too big for display]{RESET}")
             
-        return "\n".join(output) + "\n------------------------"
+        output.append(f"{BOLD}{CYAN}└────────────────────────────────────────┘{RESET}")
+        return "\n".join(output)
     
-    def draw(
-        self,
-        partition: dict[int, int] = None,
-        node_size=200,
-    ):
+    def draw(self, partition: dict[int, int] = None, node_size=200):
         import matplotlib.pyplot as plt
         import networkx as nx
 
-        G = nx.DiGraph() if self.isDirected else nx.Graph()
+        G = nx.Graph()
         G.add_nodes_from(range(1, self.V_count + 1))
 
-        if self.useAdjList:
-            for u, neighbors in self.adj_list.items():
-                for v, weight in neighbors:
-                    if not self.isDirected and u > v:
-                        continue
+        for u in range(1, self.V_count + 1):
+            for v in range(u + 1, self.V_count + 1):
+                weight = self.matrix[u][v]
+                if weight != 0.0:
                     G.add_edge(u, v, weight=weight)
-        else:
-            for u in range(1, self.V_count + 1):
-                start_v = 1 if self.isDirected else u + 1
-                for v in range(start_v, self.V_count + 1):
-                    weight = self.matrix[u][v]
-                    if weight != 0.0:
-                        G.add_edge(u, v, weight=weight)
 
         pos = nx.spring_layout(G, seed=42)
 
@@ -156,8 +130,7 @@ class Graph:
                 edgelist=internal_edges, 
                 edge_color="black", 
                 width=0.75, 
-                alpha=0.2,
-                arrows=False
+                alpha=0.2
             )
             
             nx.draw_networkx_edges(
@@ -166,24 +139,14 @@ class Graph:
                 edge_color="red", 
                 style="dashed", 
                 width=0.95, 
-                alpha=0.7,
-                arrows=False
+                alpha=0.7
             )
             
             nx.draw_networkx_labels(G, pos, font_weight="bold", font_size=8)
         else:
             nx.draw_networkx_nodes(G, pos, node_color="lightblue", node_size=node_size)
-            
-            nx.draw_networkx_edges(
-                G, pos, 
-                edge_color="black", 
-                width=0.75, 
-                alpha=0.3,
-                arrows=False
-            )
-            
+            nx.draw_networkx_edges(G, pos, edge_color="black", width=0.75, alpha=0.3)
             nx.draw_networkx_labels(G, pos, font_weight="bold", font_size=8)
 
-        # Removed the old text-based edge labels completely to save screen space
         plt.tight_layout()
         plt.show()
