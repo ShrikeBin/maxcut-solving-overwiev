@@ -1,109 +1,113 @@
 #include "Graph.hpp"
-#include <iostream>
+
 #include <fstream>
 #include <sstream>
+#include <stdexcept>
 #include <algorithm>
-#include <iomanip>
 
-// private for file namespace
-namespace {
-    std::string trim(const std::string& str) {
-        size_t first = str.find_first_not_of(" \t\r\n");
-        if (first == std::string::npos) return "";
-        size_t last = str.find_last_not_of(" \t\r\n");
-        return str.substr(first, (last - first + 1));
-    }
-
-    int parseHeaderValue(const std::string& line) {
-        size_t pos = line.find('=');
-        if (pos != std::string::npos) {
-            return std::stoi(trim(line.substr(pos + 1)));
-        }
-        return 0;
-    }
+Graph::Graph(const std::string& filename) {
+    load(filename);
 }
 
-Graph::Graph(const std::string& filename){
+void Graph::load(const std::string& filename) {
+
     std::ifstream file(filename);
+
     if (!file.is_open()) {
-        std::cerr << "Error: Could not open file " << filename << std::endl;
-        return;
+        throw std::runtime_error(
+            "Could not open graph file: " + filename
+        );
     }
 
     std::string line;
-    
-    if (std::getline(file, line)) isDirected = parseHeaderValue(line);
-    if (std::getline(file, line)) isWeighted = parseHeaderValue(line);
-    if (std::getline(file, line)) V_count = parseHeaderValue(line);
-    if (std::getline(file, line)) E_count = parseHeaderValue(line);
 
+    // Directed
+    std::getline(file, line);
+    isDirected = std::stoi(line.substr(line.find('=') + 1)) != 0;
 
-    matrix.assign(V_count + 1, std::vector<double>(V_count + 1, 0.0));
-    
+    // Weighted
+    std::getline(file, line);
+    isWeighted = std::stoi(line.substr(line.find('=') + 1)) != 0;
 
-    // Parse data rows
+    // Vertex count
+    std::getline(file, line);
+    V_count = std::stoi(line.substr(line.find('=') + 1));
+
+    // Edge count
+    std::getline(file, line);
+    E_count = std::stoi(line.substr(line.find('=') + 1));
+
+    adj.resize(V_count);
+
     while (std::getline(file, line)) {
-        std::string clean_line = trim(line);
-        if (clean_line.empty() || clean_line.rfind("/*", 0) == 0 || clean_line.rfind("*/", 0) == 0) {
+
+        // Trim whitespace
+        if (line.empty())
             continue;
+
+        // Comments
+        if (line.starts_with("/*") ||
+            line.starts_with("*/"))
+            continue;
+
+        std::stringstream ss(line);
+
+        std::string u_string;
+        std::string v_string;
+        std::string weight_string;
+
+        std::getline(ss, u_string, ';');
+        std::getline(ss, v_string, ';');
+
+        if (u_string.empty() || v_string.empty())
+            continue;
+
+        int u = std::stoi(u_string);
+        int v = std::stoi(v_string);
+
+        double weight = 1.0;
+
+        if (isWeighted) {
+            std::getline(ss, weight_string, ';');
+            weight = std::stod(weight_string);
         }
 
-        std::stringstream ss(clean_line);
-        std::string part;
-        std::vector<std::string> parts;
-        
-        while (std::getline(ss, part, ';')) {
-            parts.push_back(trim(part));
-        }
+        // Your files appear to use 1-based vertices.
+        // C++ internally uses 0-based.
+        --u;
+        --v;
 
-        if (parts.size() >= 2) {
-            int u = std::stoi(parts[0]);
-            int v = std::stoi(parts[1]);
-            double weight = (isWeighted && parts.size() >= 3) ? std::stod(parts[2]) : 1.0;
+        // Keep graph undirected.
+        edge_list.push_back({u, v, weight});
 
-  
-            matrix[u][v] = weight;
-            if (!isDirected) {
-                matrix[v][u] = weight;
-            }
-            
-        }
+        adj[u].push_back({v, weight});
+        adj[v].push_back({u, weight});
     }
 }
 
-void Graph::print() const {
-    
-    std::cout << "--- Graph Properties ---\n";
-    std::cout << "Directed  = " << isDirected << "\n";
-    std::cout << "Weighted  = " << isWeighted << "\n";
-    std::cout << "     |V|  = " << V_count << "\n";
-    std::cout << "     |E|  = " << E_count << "\n";
-    std::cout << "------------------------\n";
+int Graph::vertex_count() const {
+    return V_count;
+}
 
+int Graph::edge_count() const {
+    return E_count;
+}
 
-    std::cout << "    ";
-    for (int i = 1; i <= V_count; ++i) {
-        std::cout << std::setw(2) << i << "  ";
+const std::vector<Edge>& Graph::edges() const {
+    return edge_list;
+}
+
+const std::vector<std::vector<std::pair<int, double>>>&
+Graph::adjacency() const {
+    return adj;
+}
+
+double Graph::edge_weight(int u, int v) const {
+
+    for (const auto& [neighbor, weight] : adj[u]) {
+        if (neighbor == v)
+            return weight;
     }
-    std::cout << "\n";
 
-    for (int i = 1; i <= V_count; ++i) {
-        std::cout << std::setw(2) << i << ": ";
-        for (int j = 1; j <= V_count; ++j) {
-            double val = matrix[i][j];
-            if (val == 0.0) {
-                std::cout << " 0";
-            } else {
-                if (val == static_cast<int>(val)) {
-                    std::cout << std::setw(2) << static_cast<int>(val);
-                } else {
-                    std::cout << std::fixed << std::setprecision(1) << val;
-                }
-            }
-            if (j < V_count) std::cout << "  ";
-        }
-        std::cout << "\n";
-    }
-    
-    std::cout << "------------------------\n";
+    return 0.0;
 }

@@ -2,8 +2,8 @@ import sys
 import glob
 import os
 from implementation.graphs.python.Graph import Graph
-from implementation.solvers.src.Solve import solve_mip
-from implementation.approximations.src.Approximate import *
+from implementation.methodologies.solvers.python.Solve import solve_mip
+from implementation.methodologies.approximations.python.Approximate import *
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
