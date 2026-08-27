@@ -34,17 +34,20 @@ static CResult make_c_result(int n, double weight, int edge_count, const std::ve
 CResult run_local_search(
     const char* filename,
     uint64_t seed,
-    const int8_t* initial_partition
+    const int8_t* initial_partition,
+    int mode_int,
+    int k
 ) {
     Graph graph(filename);
     int n = graph.vertex_count();
+    LocalSearchMode mode = static_cast<LocalSearchMode>(mode_int);
 
     if (initial_partition != nullptr) {
         std::vector<int8_t> init_part(initial_partition, initial_partition + n);
-        auto res = local_search(graph, seed, &init_part);
+        auto res = local_search(graph, seed, &init_part, mode, k);
         return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
     } else {
-        auto res = local_search(graph, seed, nullptr);
+        auto res = local_search(graph, seed, nullptr, mode, k);
         return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
     }
 }

@@ -1,9 +1,11 @@
 import ctypes
 import os
 import time
+from enum import IntEnum
 from typing import Optional
 from implementation.graphs.python.Graph import Graph
 from implementation.graphs.python.Result import Result
+
 
 # 1. Resolve path to shared library compiled by the Makefile
 _lib_path = os.path.abspath(
@@ -38,19 +40,21 @@ _lib.free_c_result.argtypes = [_CResult]
 
 # Heuristics
 _lib.run_local_search.argtypes = [
-    ctypes.c_char_p,              # Graph filename
-    ctypes.c_uint64,              # Seed
-    ctypes.POINTER(ctypes.c_int8) # Initial partition pointer (or NULL)
+    ctypes.c_char_p,               # Graph filename
+    ctypes.c_uint64,               # Seed
+    ctypes.POINTER(ctypes.c_int8), # Initial partition pointer (or NULL)
+    ctypes.c_int,                  # Mode enum integer
+    ctypes.c_int                   # k parameter
 ]
 _lib.run_local_search.restype = _CResult
 
 _lib.run_simulated_annealing.argtypes = [
-    ctypes.c_char_p,              # Graph filename
-    ctypes.c_uint64,              # Seed
-    ctypes.POINTER(ctypes.c_int8),# Initial partition pointer (or NULL)
-    ctypes.c_double,              # Initial temperature
-    ctypes.c_double,              # Cooling rate
-    ctypes.c_int                  # Max iterations
+    ctypes.c_char_p,               # Graph filename
+    ctypes.c_uint64,               # Seed
+    ctypes.POINTER(ctypes.c_int8), # Initial partition pointer (or NULL)
+    ctypes.c_double,               # Initial temperature
+    ctypes.c_double,               # Cooling rate
+    ctypes.c_int                   # Max iterations
 ]
 _lib.run_simulated_annealing.restype = _CResult
 
@@ -115,19 +119,37 @@ def _unpack_c_result(c_res: _CResult, n: int, tag: str, elapsed_time: float) -> 
 
 # ============ HEURISTICS ==============
 
+class LocalSearchMode(IntEnum):
+    NAIVE_ONE_FLIP = 0
+    K_FLIP = 1
+    KERNIGHAN_LIN = 2
+
 def local_search(
     graph: Graph, 
     seed: int = 42, 
-    initial_result: Optional[Result] = None
+    initial_result: Optional[Result] = None,
+    mode: LocalSearchMode = LocalSearchMode.NAIVE_ONE_FLIP,
+    k: int = 2
 ) -> Result:
     start_time = time.perf_counter()
     n = graph.V_count
     c_filename = _get_c_filename(graph)
     c_init_partition = _convert_partition_to_c(initial_result, n)
 
-    c_res = _lib.run_local_search(c_filename, seed, c_init_partition)
+    c_res = _lib.run_local_search(
+        c_filename, 
+        seed, 
+        c_init_partition, 
+        int(mode), 
+        k
+    )
     elapsed_time = time.perf_counter() - start_time
-    tag = "Local Search (Warm-Started)" if initial_result else "Local Search (C++)"
+    mode_name = mode.name if isinstance(mode, LocalSearchMode) else str(mode)
+    if isinstance(mode, LocalSearchMode) and (mode is LocalSearchMode.K_FLIP):
+        mode_name = f"{mode.name} ({k})" 
+    mode_str = mode_name
+    base_tag = f"Local Search [{mode_str}] (C++)"
+    tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
 
     return _unpack_c_result(c_res, n, tag, elapsed_time)
 
@@ -150,7 +172,7 @@ def simulated_annealing(
         initial_temp, cooling_rate, max_iterations
     )
     elapsed_time = time.perf_counter() - start_time
-    tag = "Simulated Annealing (Warm-Started)" if initial_result else "Simulated Annealing (C++)"
+    tag = f"Simulated Annealing : ({initial_result.type}) (C++)" if initial_result else "Simulated Annealing (C++)"
 
     return _unpack_c_result(c_res, n, tag, elapsed_time)
 

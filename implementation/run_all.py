@@ -9,9 +9,10 @@ import subprocess
 
 # Graph class & Base Solvers
 from implementation.graphs.python.Graph import Graph
+from implementation.graphs.python.Result import Result
 import implementation.methodologies.solvers.python.Solve as mip
 import implementation.methodologies.approximations.python.Approximate as aprx
-import implementation.methodologies.heuristics_memetics.python.HeuristicsMemetics as hm
+import implementation.methodologies.heuristics_memetics.python.CPPLIB as cpplib
 
 
 
@@ -77,17 +78,28 @@ if __name__ == "__main__":
             print(graph)
 
             # --- Simple Randoms (C++) ---
-            print(hm.randomized_half(graph, TRIALS=2000).clear_partition())
-            print(hm.randomized_greedy_edges(graph, TRIALS=1000).clear_partition())
-            print(hm.randomized_greedy_vertices(graph, TRIALS=1000).clear_partition())
+            print(cpplib.randomized_half(graph, TRIALS=2000).clear_partition())
+            print(cpplib.randomized_greedy_edges(graph, TRIALS=1000).clear_partition())
+            print(cpplib.randomized_greedy_vertices(graph, TRIALS=1000).clear_partition())
 
             # --- Heuristics (C++) ---
-            print(hm.local_search(graph, seed=42).clear_partition())
-            print(hm.simulated_annealing(graph, seed=42, max_iterations=100000).clear_partition())
+            print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.NAIVE_ONE_FLIP).clear_partition())
+            print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.K_FLIP, k=2).clear_partition())
+            print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.KERNIGHAN_LIN).clear_partition())
+            print(cpplib.simulated_annealing(graph, seed=42, max_iterations=100000, cooling_rate=0.9999, initial_temp=1000).clear_partition())
+
+            # --- Approximation (SDP) ---
+            memeResult = aprx.goemans_williamson(graph, RANDOM_SLICE_TRIALS=200, SOLVE_VERBOSE=False)
+            print(memeResult.clear_partition())
+
+            # --- Meme Heuristics (C++) --- 
+            print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.NAIVE_ONE_FLIP, initial_result=memeResult).clear_partition())
+            print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.K_FLIP, k=2, initial_result=memeResult).clear_partition())
+            print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.KERNIGHAN_LIN, initial_result=memeResult).clear_partition())
+            print(cpplib.simulated_annealing(graph, seed=42, max_iterations=100000, initial_result = memeResult, cooling_rate=0.9999, initial_temp=1000).clear_partition())
 
             # --- These take some time ---
-            print(aprx.goemans_williamson(graph, RANDOM_SLICE_TRIALS=200, SOLVE_VERBOSE=True).clear_partition())
-            print(mip.solve(graph, SOLVE_VERBOSE=True).clear_partition())
+            # print(mip.solve(graph, SOLVE_VERBOSE=True).clear_partition())
             
         except Exception as e:
             print(f"Error processing {file_path}: {e}")

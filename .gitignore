@@ -1,5 +1,7 @@
 /venv/
 **/__pycache__
+implementation/methodologies/heuristics_memetics/cpp/build
+implementation/methodologies/heuristics_memetics/cpp/lib
 .gurobi_key
 gurobi.lic
 mosek.lic

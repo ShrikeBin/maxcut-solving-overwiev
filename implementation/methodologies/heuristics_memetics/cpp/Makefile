@@ -1,5 +1,5 @@
 CXX      := g++
-CXXFLAGS := -O3 -std=c++17 -fPIC -Wall -Wextra
+CXXFLAGS := -O3 -std=c++17 -fPIC -Wall -Wextra -fopenmp
 INCLUDES := -Iinclude -I../../../graphs/cpp
 
 LIB_DIR   := lib
@@ -24,7 +24,7 @@ OBJS       := $(addprefix $(BUILD_DIR)/, $(notdir $(ALL_SRCS:.cpp=.o)))
 all: $(TARGET)
 
 $(TARGET): $(OBJS) | $(LIB_DIR)
-	$(CXX) $(CXXFLAGS) -shared -o $@ $^
+	$(CXX) $(CXXFLAGS) -shared -fopenmp -o $@ $^
 
 # Object compilation rules
 $(BUILD_DIR)/Graph.o: ../../../graphs/cpp/Graph.cpp | $(BUILD_DIR)

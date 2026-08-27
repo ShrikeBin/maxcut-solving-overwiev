@@ -1,6 +1,7 @@
 #include "SimulatedAnnealing.hpp"
 #include <random>
 #include <cmath>
+#include <vector>
 
 SAResult simulated_annealing(
     const Graph& graph,
@@ -18,31 +19,48 @@ SAResult simulated_annealing(
         state.randomize(seed);
     }
 
-    double best_weight = state.cut_weight();
-    int best_edge_count = state.cut_edge_count();
+    const int n = graph.vertex_count();
+    
+    // Track best cut stats (avoid vector copies inside the loop)
+    double current_weight = state.cut_weight();
+    double best_weight = current_weight;
     std::vector<int8_t> best_partition = state.partition();
 
     std::mt19937_64 rng(seed);
     std::uniform_real_distribution<double> dist_real(0.0, 1.0);
-    std::uniform_int_distribution<int> dist_node(0, graph.vertex_count() - 1);
+    std::uniform_int_distribution<int> dist_node(0, n - 1);
 
     double temp = initial_temp;
 
-    for (int iter = 0; iter < max_iterations; ++iter) {
-        int v = dist_node(rng);
-        double delta = state.flip_delta(v);
+    // Perform an inner sweep of moves (e.g., n steps) per temperature level
+    int moves_per_temp = n; 
+    int outer_steps = max_iterations / moves_per_temp;
+    if (outer_steps < 1) outer_steps = 1;
 
-        if (delta > 0 || dist_real(rng) < std::exp(delta / temp)) {
-            state.flip(v);
-            if (state.cut_weight() > best_weight) {
-                best_weight = state.cut_weight();
-                best_edge_count = state.cut_edge_count();
-                best_partition = state.partition();
+    for (int iter = 0; iter < outer_steps; ++iter) {
+        for (int step = 0; step < moves_per_temp; ++step) {
+            int v = dist_node(rng);
+            double delta = state.flip_delta(v);
+
+            // Metropolis Criterion for MaxCut
+            if (delta > 0.0 || dist_real(rng) < std::exp(delta / temp)) {
+                state.flip(v);
+                current_weight += delta;
+
+                if (current_weight > best_weight) {
+                    best_weight = current_weight;
+                    // Copy partition ONLY when a new global best is found
+                    best_partition = state.partition(); 
+                }
             }
         }
+
         temp *= cooling_rate;
-        if (temp < 1e-6) break;
+        if (temp < 1e-12) break; // Lower threshold to allow deep cooling
     }
 
-    return { best_partition, best_weight, best_edge_count };
+    // Reconstruct final best edge count from saved state
+    state.set_partition(best_partition);
+
+    return { best_partition, best_weight, state.cut_edge_count() };
 }
