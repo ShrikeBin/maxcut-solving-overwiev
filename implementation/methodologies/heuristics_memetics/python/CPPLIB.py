@@ -38,7 +38,7 @@ class _CResult(ctypes.Structure):
 # Memory cleanup
 _lib.free_c_result.argtypes = [_CResult]
 
-# Heuristics
+# Heuristics: Local Search
 _lib.run_local_search.argtypes = [
     ctypes.c_char_p,               # Graph filename
     ctypes.c_uint64,               # Seed
@@ -48,6 +48,7 @@ _lib.run_local_search.argtypes = [
 ]
 _lib.run_local_search.restype = _CResult
 
+# Heuristics: Simulated Annealing
 _lib.run_simulated_annealing.argtypes = [
     ctypes.c_char_p,               # Graph filename
     ctypes.c_uint64,               # Seed
@@ -58,25 +59,73 @@ _lib.run_simulated_annealing.argtypes = [
 ]
 _lib.run_simulated_annealing.restype = _CResult
 
+# Heuristics: Tabu Search
+_lib.run_tabu_search.argtypes = [
+    ctypes.c_char_p,               # Graph filename
+    ctypes.c_uint64,               # Seed
+    ctypes.POINTER(ctypes.c_int8), # Initial partition pointer (or NULL)
+    ctypes.c_int,                  # Tabu tenure
+    ctypes.c_int,                  # Max iterations
+    ctypes.c_int                   # TabuMode enum integer
+]
+_lib.run_tabu_search.restype = _CResult
+
+# Heuristics: Evolutionary / Memetic Algorithms
+_lib.run_genetic_algorithm.argtypes = [
+    ctypes.c_char_p,               # Graph filename
+    ctypes.c_uint64,               # Seed
+    ctypes.c_int,                  # Population size
+    ctypes.c_int,                  # Generations
+    ctypes.c_double,               # Mutation rate
+    ctypes.POINTER(ctypes.c_int8)  # Initial partition pointer (or NULL)
+]
+_lib.run_genetic_algorithm.restype = _CResult
+
+_lib.run_genetic_kl_algorithm.argtypes = [
+    ctypes.c_char_p,               # Graph filename
+    ctypes.c_uint64,               # Seed
+    ctypes.c_int,                  # Population size
+    ctypes.c_int,                  # Generations
+    ctypes.c_double,               # Mutation rate
+    ctypes.POINTER(ctypes.c_int8)  # Initial partition pointer (or NULL)
+]
+_lib.run_genetic_kl_algorithm.restype = _CResult
+
+_lib.run_island_kl_algorithm.argtypes = [
+    ctypes.c_char_p,               # Graph filename
+    ctypes.c_uint64,               # Seed
+    ctypes.c_int,                  # Population size
+    ctypes.c_int,                  # Generations
+    ctypes.c_int,                  # Migration interval
+    ctypes.c_double,               # Mutation rate
+    ctypes.POINTER(ctypes.c_int8)  # Initial partition pointer (or NULL)
+]
+_lib.run_island_kl_algorithm.restype = _CResult
+
+# Heuristics: VNS & GRASP
+_lib.run_vns.argtypes = [
+    ctypes.c_char_p, ctypes.c_uint64, ctypes.POINTER(ctypes.c_int8), ctypes.c_int, ctypes.c_int
+]
+_lib.run_vns.restype = _CResult
+
+_lib.run_grasp.argtypes = [
+    ctypes.c_char_p, ctypes.c_uint64, ctypes.c_int, ctypes.c_double
+]
+_lib.run_grasp.restype = _CResult
+
 # Approximations
 _lib.run_randomized_half.argtypes = [
-    ctypes.c_char_p,              # Graph filename
-    ctypes.c_int,                 # Trials
-    ctypes.c_uint64               # Seed
+    ctypes.c_char_p, ctypes.c_int, ctypes.c_uint64
 ]
 _lib.run_randomized_half.restype = _CResult
 
 _lib.run_randomized_greedy_edges.argtypes = [
-    ctypes.c_char_p,              # Graph filename
-    ctypes.c_int,                 # Trials
-    ctypes.c_uint64               # Seed
+    ctypes.c_char_p, ctypes.c_int, ctypes.c_uint64
 ]
 _lib.run_randomized_greedy_edges.restype = _CResult
 
 _lib.run_randomized_greedy_vertices.argtypes = [
-    ctypes.c_char_p,              # Graph filename
-    ctypes.c_int,                 # Trials
-    ctypes.c_uint64               # Seed
+    ctypes.c_char_p, ctypes.c_int, ctypes.c_uint64
 ]
 _lib.run_randomized_greedy_vertices.restype = _CResult
 
@@ -117,12 +166,20 @@ def _unpack_c_result(c_res: _CResult, n: int, tag: str, elapsed_time: float) -> 
     )
 
 
-# ============ HEURISTICS ==============
+# ============ ENUMS ==============
 
 class LocalSearchMode(IntEnum):
     NAIVE_ONE_FLIP = 0
     K_FLIP = 1
     KERNIGHAN_LIN = 2
+
+
+class TabuMode(IntEnum):
+    SHORT_TERM_ONLY = 0
+    SHORT_AND_LONG_TERM = 1
+
+
+# ============ HEURISTICS & METAHEURISTICS ==============
 
 def local_search(
     graph: Graph, 
@@ -147,8 +204,7 @@ def local_search(
     mode_name = mode.name if isinstance(mode, LocalSearchMode) else str(mode)
     if isinstance(mode, LocalSearchMode) and (mode is LocalSearchMode.K_FLIP):
         mode_name = f"{mode.name} ({k})" 
-    mode_str = mode_name
-    base_tag = f"Local Search [{mode_str}] (C++)"
+    base_tag = f"Local Search [{mode_name}] (C++)"
     tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
 
     return _unpack_c_result(c_res, n, tag, elapsed_time)
@@ -175,6 +231,139 @@ def simulated_annealing(
     tag = f"Simulated Annealing : ({initial_result.type}) (C++)" if initial_result else "Simulated Annealing (C++)"
 
     return _unpack_c_result(c_res, n, tag, elapsed_time)
+
+
+def tabu_search(
+    graph: Graph,
+    seed: int = 42,
+    initial_result: Optional[Result] = None,
+    tabu_tenure: int = 10,
+    max_iterations: int = 10000,
+    mode: TabuMode = TabuMode.SHORT_TERM_ONLY
+) -> Result:
+    start_time = time.perf_counter()
+    n = graph.V_count
+    c_filename = _get_c_filename(graph)
+    c_init_partition = _convert_partition_to_c(initial_result, n)
+
+    c_res = _lib.run_tabu_search(
+        c_filename, seed, c_init_partition,
+        tabu_tenure, max_iterations, int(mode)
+    )
+    elapsed_time = time.perf_counter() - start_time
+    base_tag = f"Tabu Search [{mode.name}] (C++)"
+    tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
+
+    return _unpack_c_result(c_res, n, tag, elapsed_time)
+
+
+def genetic_algorithm(
+    graph: Graph,
+    seed: int = 42,
+    initial_result: Optional[Result] = None,
+    population_size: int = 30,
+    generations: int = 100,
+    mutation_rate: float = 0.05
+) -> Result:
+    start_time = time.perf_counter()
+    n = graph.V_count
+    c_filename = _get_c_filename(graph)
+    c_init_partition = _convert_partition_to_c(initial_result, n)
+
+    c_res = _lib.run_genetic_algorithm(
+        c_filename, seed, population_size, generations, mutation_rate, c_init_partition
+    )
+    elapsed_time = time.perf_counter() - start_time
+    base_tag = "Genetic Algorithm (C++)"
+    tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
+
+    return _unpack_c_result(c_res, n, tag, elapsed_time)
+
+
+def genetic_KL_algorithm(
+    graph: Graph,
+    seed: int = 42,
+    initial_result: Optional[Result] = None,
+    population_size: int = 30,
+    generations: int = 100,
+    mutation_rate: float = 0.05
+) -> Result:
+    start_time = time.perf_counter()
+    n = graph.V_count
+    c_filename = _get_c_filename(graph)
+    c_init_partition = _convert_partition_to_c(initial_result, n)
+
+    c_res = _lib.run_genetic_kl_algorithm(
+        c_filename, seed, population_size, generations, mutation_rate, c_init_partition
+    )
+    elapsed_time = time.perf_counter() - start_time
+    base_tag = "Memetic Algorithm + KL (C++)"
+    tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
+
+    return _unpack_c_result(c_res, n, tag, elapsed_time)
+
+
+def island_kl_algorithm(
+    graph: Graph,
+    seed: int = 42,
+    initial_result: Optional[Result] = None,
+    population_size: int = 30,
+    generations: int = 100,
+    migration_interval: int = 10,
+    mutation_rate: float = 0.05
+) -> Result:
+    start_time = time.perf_counter()
+    n = graph.V_count
+    c_filename = _get_c_filename(graph)
+    c_init_partition = _convert_partition_to_c(initial_result, n)
+
+    c_res = _lib.run_island_kl_algorithm(
+        c_filename, seed, population_size, generations, migration_interval, mutation_rate, c_init_partition
+    )
+    elapsed_time = time.perf_counter() - start_time
+    base_tag = "Island Memetic Algorithm + KL (C++)"
+    tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
+
+    return _unpack_c_result(c_res, n, tag, elapsed_time)
+
+
+def variable_neighborhood_search(
+    graph: Graph,
+    seed: int = 42,
+    initial_result: Optional[Result] = None,
+    k_max: int = 4,
+    max_iterations: int = 1000
+) -> Result:
+    start_time = time.perf_counter()
+    n = graph.V_count
+    c_filename = _get_c_filename(graph)
+    c_init_partition = _convert_partition_to_c(initial_result, n)
+
+    c_res = _lib.run_vns(
+        c_filename, seed, c_init_partition, k_max, max_iterations
+    )
+    elapsed_time = time.perf_counter() - start_time
+    base_tag = "Variable Neighborhood Search (C++)"
+    tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
+
+    return _unpack_c_result(c_res, n, tag, elapsed_time)
+
+
+def grasp_search(
+    graph: Graph,
+    seed: int = 42,
+    max_iterations: int = 50,
+    alpha: float = 0.3
+) -> Result:
+    start_time = time.perf_counter()
+    n = graph.V_count
+    c_filename = _get_c_filename(graph)
+
+    c_res = _lib.run_grasp(
+        c_filename, seed, max_iterations, alpha
+    )
+    elapsed_time = time.perf_counter() - start_time
+    return _unpack_c_result(c_res, n, "GRASP Search (C++)", elapsed_time)
 
 
 # ============ APPROXIMATIONS ==============

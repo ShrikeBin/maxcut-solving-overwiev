@@ -12,7 +12,10 @@ GRAPH_SRCS := ../../../graphs/cpp/Graph.cpp \
 
 ALGO_SRCS  := src/LocalSearch.cpp \
               src/SimulatedAnnealing.cpp \
-              src/Approximations.cpp
+              src/Approximations.cpp \
+              src/Evolutionary.cpp \
+              src/TabuSearch.cpp \
+              src/VNS.cpp 
 
 BIND_SRCS  := src/Bind.cpp
 
@@ -40,6 +43,15 @@ $(BUILD_DIR)/SimulatedAnnealing.o: src/SimulatedAnnealing.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/Approximations.o: src/Approximations.cpp | $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/Evolutionary.o: src/Evolutionary.cpp | $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/TabuSearch.o: src/TabuSearch.cpp | $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+$(BUILD_DIR)/VNS.o: src/VNS.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/Bind.o: src/Bind.cpp | $(BUILD_DIR)
