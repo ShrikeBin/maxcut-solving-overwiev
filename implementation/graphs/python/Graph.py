@@ -5,7 +5,7 @@ class Graph:
         """
         with open(filename, "r") as file:
             lines = file.readlines()
-        
+        self.filename = filename
         self.isDirected = int(lines[0].split("=")[1].strip())
         self.isWeighted = int(lines[1].split("=")[1].strip())
         self.V_count = int(lines[2].split("=")[1].strip())

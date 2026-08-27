@@ -46,10 +46,9 @@ void Graph::load(const std::string& filename) {
             continue;
 
         // Comments
-        if (line.starts_with("/*") ||
-            line.starts_with("*/"))
+        if (line.rfind("/*", 0) == 0 ||
+            line.rfind("*/", 0) == 0)
             continue;
-
         std::stringstream ss(line);
 
         std::string u_string;

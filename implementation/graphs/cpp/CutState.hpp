@@ -30,6 +30,9 @@ public:
     // Change in cut weight if v is flipped
     double flip_delta(int v) const;
 
+    // Initial state
+    void set_partition(const std::vector<int8_t>& p);
+
 private:
 
     const Graph& graph;

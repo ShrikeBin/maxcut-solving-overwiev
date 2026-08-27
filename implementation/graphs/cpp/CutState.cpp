@@ -81,6 +81,11 @@ void CutState::flip(int v) {
     }
 }
 
+void CutState::set_partition(const std::vector<int8_t>& p) {
+    partition_ = p;
+    calculate();
+}
+
 double CutState::cut_weight() const {
     return cut_weight_;
 }

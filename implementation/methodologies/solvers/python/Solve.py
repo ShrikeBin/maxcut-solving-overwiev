@@ -3,7 +3,7 @@ import time
 from implementation.graphs.python.Graph import Graph
 from implementation.graphs.python.Result import Result
 
-def solve_mip(graph: Graph, SOLVE_VERBOSE: bool) -> Result:
+def solve(graph: Graph, SOLVE_VERBOSE: bool) -> Result:
     """
     Solves Max-Cut problem using an exact MIP model.
     """
