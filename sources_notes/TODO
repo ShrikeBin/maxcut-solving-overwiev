@@ -7,4 +7,6 @@
 
 - Document VNS, GRASP etc
 
-- Implement Heuristics
+- Implement QAOA 
+
+- Implement QUBO formulation for D-Wave (maybe D-wave)
