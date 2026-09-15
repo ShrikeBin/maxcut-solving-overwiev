@@ -30,3 +30,6 @@
       - https://github.com/quantumlib/ReCirq/blob/main/docs/qaoa/qaoa_maxcut.ipynb
   - https://arxiv.org/pdf/1706.02998
   - https://arxiv.org/pdf/2401.03616
+  - https://www.mathworks.com/help/matlab/ref/maxcut2qubo.html
+  - https://arxiv.org/pdf/2511.01108
+    "So QAOA doesn't operate on the QUBO matrix directly — it operates on the equivalent Ising Hamiltonian, which QUBO converts to via a simple variable substitution (x_i ∈ {0,1} → z_i ∈ {-1,+1}, where x_i = (1-z_i)/2). This is exactly the same substitution that appeared in the Wang/Hadfield/Jiang/Rieffel paper's Section II — worth citing there since they spell it out explicitly."
