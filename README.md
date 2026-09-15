@@ -20,4 +20,9 @@
 ### Exact solutions (solvers):
   - BIP formulation solvers - Gurobi
 
+### Small presentation:
+![](sources_notes/image1.png)
+![](sources_notes/image2.png)
+![](sources_notes/top5.png)
+
  
