@@ -19,9 +19,7 @@
     - https://www.nature.com/articles/s41534-026-01186-2
     - https://pennylane.ai/demos/tutorial_qaoa_maxcut
     - https://en.wikipedia.org/wiki/Fiduccia%E2%80%93Mattheyses_algorithm (CHECK IT)
-
-- Memetics:
-    - (ADD THE KERINGHA LIN AND ISLAND)
+    - https://en.wikipedia.org/wiki/Fiduccia%E2%80%93Mattheyses_algorithm (Fiduccia–Mattheyses algorithm, improves on KL) 
  
 - Quantum:
   - https://marwahaha.github.io/quantum-maxcut-reference/
