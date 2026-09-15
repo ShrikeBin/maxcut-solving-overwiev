@@ -6,6 +6,8 @@
 
 - Document VNS, GRASP etc
 
+- Add 5%, 1%, 0.1% callback for gurobi to return non optimal solutions
+
 - Implement QAOA 
 
 - Implement QUBO formulation for D-Wave (maybe D-wave)
