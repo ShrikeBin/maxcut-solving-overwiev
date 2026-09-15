@@ -16,7 +16,6 @@
   - Randomized half
   - Randomized greedy edges
   - Randomized greedy vertices
-  - 
 
 ### Exact solutions (solvers):
   - BIP formulation solvers - Gurobi
