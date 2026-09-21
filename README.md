@@ -2,6 +2,7 @@
 
 ### Meta-Heuristics and Memetics:
   - Quantum Annealing
+  - QAOA
   - Local Search
   - Tabu Search
   - GRASP
@@ -21,8 +22,8 @@
   - BIP formulation solvers - Gurobi
 
 ### Small presentation:
-![](sources_notes/image1.png)
-![](sources_notes/image2.png)
-![](sources_notes/top5.png)
+![](sources_notes/screenshots/image1.png)
+![](sources_notes/screenshots/image2.png)
+![](sources_notes/screenshots/top5.png)
 
  

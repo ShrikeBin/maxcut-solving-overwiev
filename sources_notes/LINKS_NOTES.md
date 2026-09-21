@@ -1,4 +1,4 @@
-### WIP
+### General Notes
 
 - General:
     - https://arxiv.org/search/cs?query=maximum+cut+graph&searchtype=all&abstracts=show&order=-announced_date_first&size=50
