@@ -8,7 +8,7 @@ from implementation.graphs.python.Result import Result
 import implementation.methodologies.solvers.python.Solve as mip
 import implementation.methodologies.approximations.python.Approximate as aprx
 import implementation.methodologies.heuristics_memetics.python.CPPLIB as cpplib
-
+import implementation.methodologies.heuristics_memetics.python.Quantum as qtm
 
 def ensure_cpp_library_built():
     """Builds libheuristics_memetics.so using make if it does not exist."""
