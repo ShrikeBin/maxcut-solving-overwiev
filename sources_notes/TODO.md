@@ -7,9 +7,6 @@
     - Check QAOA
     - Check QuantumAnnealing
 
-- `Licenses, New Approaches etc:`
-    - Try adding D-Wave actuall annealer?
-
 
 ## Writing text
 - `Approximations`:
