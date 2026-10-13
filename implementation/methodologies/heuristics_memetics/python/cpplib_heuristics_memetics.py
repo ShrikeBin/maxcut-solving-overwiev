@@ -81,7 +81,7 @@ _lib.run_genetic_algorithm.argtypes = [
 ]
 _lib.run_genetic_algorithm.restype = _CResult
 
-_lib.run_genetic_kl_algorithm.argtypes = [
+_lib.run_genetic_ls_algorithm.argtypes = [
     ctypes.c_char_p,               # Graph filename
     ctypes.c_uint64,               # Seed
     ctypes.c_int,                  # Population size
@@ -89,9 +89,9 @@ _lib.run_genetic_kl_algorithm.argtypes = [
     ctypes.c_double,               # Mutation rate
     ctypes.POINTER(ctypes.c_int8)  # Initial partition pointer (or NULL)
 ]
-_lib.run_genetic_kl_algorithm.restype = _CResult
+_lib.run_genetic_ls_algorithm.restype = _CResult
 
-_lib.run_island_kl_algorithm.argtypes = [
+_lib.run_island_ls_algorithm.argtypes = [
     ctypes.c_char_p,               # Graph filename
     ctypes.c_uint64,               # Seed
     ctypes.c_int,                  # Population size
@@ -100,7 +100,7 @@ _lib.run_island_kl_algorithm.argtypes = [
     ctypes.c_double,               # Mutation rate
     ctypes.POINTER(ctypes.c_int8)  # Initial partition pointer (or NULL)
 ]
-_lib.run_island_kl_algorithm.restype = _CResult
+_lib.run_island_ls_algorithm.restype = _CResult
 
 # Heuristics: VNS & GRASP
 _lib.run_vns.argtypes = [
@@ -112,22 +112,6 @@ _lib.run_grasp.argtypes = [
     ctypes.c_char_p, ctypes.c_uint64, ctypes.c_int, ctypes.c_double
 ]
 _lib.run_grasp.restype = _CResult
-
-# Approximations
-_lib.run_randomized_half.argtypes = [
-    ctypes.c_char_p, ctypes.c_int, ctypes.c_uint64
-]
-_lib.run_randomized_half.restype = _CResult
-
-_lib.run_randomized_greedy_edges.argtypes = [
-    ctypes.c_char_p, ctypes.c_int, ctypes.c_uint64
-]
-_lib.run_randomized_greedy_edges.restype = _CResult
-
-_lib.run_randomized_greedy_vertices.argtypes = [
-    ctypes.c_char_p, ctypes.c_int, ctypes.c_uint64
-]
-_lib.run_randomized_greedy_vertices.restype = _CResult
 
 
 # 4. Helpers
@@ -280,7 +264,7 @@ def genetic_algorithm(
     return _unpack_c_result(c_res, n, tag, elapsed_time)
 
 
-def genetic_KL_algorithm(
+def genetic_ls_algorithm(
     graph: Graph,
     seed: int = 42,
     initial_result: Optional[Result] = None,
@@ -293,17 +277,17 @@ def genetic_KL_algorithm(
     c_filename = _get_c_filename(graph)
     c_init_partition = _convert_partition_to_c(initial_result, n)
 
-    c_res = _lib.run_genetic_kl_algorithm(
+    c_res = _lib.run_genetic_ls_algorithm(
         c_filename, seed, population_size, generations, mutation_rate, c_init_partition
     )
     elapsed_time = time.perf_counter() - start_time
-    base_tag = "Memetic Algorithm + KL (C++)"
+    base_tag = "Memetic Algorithm + ls (C++)"
     tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
 
     return _unpack_c_result(c_res, n, tag, elapsed_time)
 
 
-def island_kl_algorithm(
+def island_ls_algorithm(
     graph: Graph,
     seed: int = 42,
     initial_result: Optional[Result] = None,
@@ -317,11 +301,11 @@ def island_kl_algorithm(
     c_filename = _get_c_filename(graph)
     c_init_partition = _convert_partition_to_c(initial_result, n)
 
-    c_res = _lib.run_island_kl_algorithm(
+    c_res = _lib.run_island_ls_algorithm(
         c_filename, seed, population_size, generations, migration_interval, mutation_rate, c_init_partition
     )
     elapsed_time = time.perf_counter() - start_time
-    base_tag = "Island Memetic Algorithm + KL (C++)"
+    base_tag = "Island Memetic Algorithm + ls (C++)"
     tag = f"{base_tag} : ({initial_result.type})" if initial_result else base_tag
 
     return _unpack_c_result(c_res, n, tag, elapsed_time)

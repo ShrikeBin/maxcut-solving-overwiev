@@ -99,7 +99,7 @@ EvolutionaryResult genetic_algorithm(
 // ----------------------------------------------------------------------------
 // 2. MEMETIC ALGORITHM WITH KERNIGHAN-LIN (Single Threaded / Sequential)
 // ----------------------------------------------------------------------------
-EvolutionaryResult genetic_KL_algorithm(
+EvolutionaryResult genetic_ls_algorithm(
     const Graph& graph, uint64_t seed,
     int population_size, int generations, double mutation_rate,
     const std::vector<int8_t>* initial_partition
@@ -112,8 +112,8 @@ EvolutionaryResult genetic_KL_algorithm(
     int start_idx = 0;
 
     if (initial_partition != nullptr) {
-        auto kl_res = local_search(graph, rng(), initial_partition, LocalSearchMode::KERNIGHAN_LIN);
-        pop[0] = { kl_res.partition, kl_res.cut_weight };
+        auto ls_res = local_search(graph, rng(), initial_partition, LocalSearchMode::KERNIGHAN_LIN);
+        pop[0] = { ls_res.partition, ls_res.cut_weight };
         start_idx = 1;
     }
 
@@ -121,8 +121,8 @@ EvolutionaryResult genetic_KL_algorithm(
         std::vector<int8_t> part(n);
         for (int j = 0; j < n; ++j) part[j] = rng() % 2;
 
-        auto kl_res = local_search(graph, rng(), &part, LocalSearchMode::KERNIGHAN_LIN);
-        pop[i] = { kl_res.partition, kl_res.cut_weight };
+        auto ls_res = local_search(graph, rng(), &part, LocalSearchMode::KERNIGHAN_LIN);
+        pop[i] = { ls_res.partition, ls_res.cut_weight };
     }
 
     for (int gen = 0; gen < generations; ++gen) {
@@ -137,9 +137,9 @@ EvolutionaryResult genetic_KL_algorithm(
         mutate(child, mutation_rate, rng, graph);
 
         // Kernighan-Lin Refinement
-        auto kl_res = local_search(graph, rng(), &child.chromosome, LocalSearchMode::KERNIGHAN_LIN);
-        child.chromosome = kl_res.partition;
-        child.fitness = kl_res.cut_weight;
+        auto ls_res = local_search(graph, rng(), &child.chromosome, LocalSearchMode::KERNIGHAN_LIN);
+        child.chromosome = ls_res.partition;
+        child.fitness = ls_res.cut_weight;
 
         if (child.fitness > pop.back().fitness) {
             pop.back() = child;
@@ -158,7 +158,7 @@ EvolutionaryResult genetic_KL_algorithm(
 // ----------------------------------------------------------------------------
 // 3. ISLAND MODEL MEMETIC ALGORITHM (Parallel with Ring Migration)
 // ----------------------------------------------------------------------------
-EvolutionaryResult island_kl_algorithm(
+EvolutionaryResult island_ls_algorithm(
     const Graph& graph, uint64_t seed,
     int population_size, int generations,
     int migration_interval, double mutation_rate,
@@ -181,18 +181,18 @@ EvolutionaryResult island_kl_algorithm(
         int start_idx = 0;
 
         if (initial_partition != nullptr) {
-            auto kl_res = local_search(graph, rng(), initial_partition, LocalSearchMode::KERNIGHAN_LIN);
-            pop[0] = { kl_res.partition, kl_res.cut_weight };
+            auto ls_res = local_search(graph, rng(), initial_partition, LocalSearchMode::KERNIGHAN_LIN);
+            pop[0] = { ls_res.partition, ls_res.cut_weight };
             start_idx = 1;
         }
 
-        // Initialize local population with KL refinement
+        // Initialize local population with ls refinement
         for (int i = start_idx; i < island_pop_size; ++i) {
             std::vector<int8_t> part(n);
             for (int j = 0; j < n; ++j) part[j] = rng() % 2;
             
-            auto kl_res = local_search(graph, rng(), &part, LocalSearchMode::KERNIGHAN_LIN);
-            pop[i] = { kl_res.partition, kl_res.cut_weight };
+            auto ls_res = local_search(graph, rng(), &part, LocalSearchMode::KERNIGHAN_LIN);
+            pop[i] = { ls_res.partition, ls_res.cut_weight };
         }
 
         for (int gen = 0; gen < generations; ++gen) {
@@ -219,9 +219,9 @@ EvolutionaryResult island_kl_algorithm(
             Individual child = crossover(pop[p1_idx], pop[p2_idx], rng, graph);
             mutate(child, mutation_rate, rng, graph);
 
-            auto kl_res = local_search(graph, rng(), &child.chromosome, LocalSearchMode::KERNIGHAN_LIN);
-            child.chromosome = kl_res.partition;
-            child.fitness = kl_res.cut_weight;
+            auto ls_res = local_search(graph, rng(), &child.chromosome, LocalSearchMode::KERNIGHAN_LIN);
+            child.chromosome = ls_res.partition;
+            child.fitness = ls_res.cut_weight;
 
             if (child.fitness > pop.back().fitness) {
                 pop.back() = child;

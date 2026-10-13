@@ -12,7 +12,6 @@ GRAPH_SRCS := ../../../graphs/cpp/Graph.cpp \
 
 ALGO_SRCS  := src/LocalSearch.cpp \
               src/SimulatedAnnealing.cpp \
-              src/Approximations.cpp \
               src/Evolutionary.cpp \
               src/TabuSearch.cpp \
               src/VNS.cpp 
@@ -40,9 +39,6 @@ $(BUILD_DIR)/LocalSearch.o: src/LocalSearch.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/SimulatedAnnealing.o: src/SimulatedAnnealing.cpp | $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
-
-$(BUILD_DIR)/Approximations.o: src/Approximations.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/Evolutionary.o: src/Evolutionary.cpp | $(BUILD_DIR)

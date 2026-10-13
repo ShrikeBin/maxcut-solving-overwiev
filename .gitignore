@@ -2,7 +2,11 @@
 **/__pycache__
 implementation/methodologies/heuristics_memetics/cpp/build
 implementation/methodologies/heuristics_memetics/cpp/lib
+implementation/methodologies/approximations/cpp/build
+implementation/methodologies/approximations/cpp/lib
+.licenses
 .gurobi_key
+.ibm_quantum_key
 gurobi.lic
 mosek.lic
 .vscode

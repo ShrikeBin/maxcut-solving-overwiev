@@ -1,7 +1,6 @@
 ## Overview of different approaches:
 
 ### Meta-Heuristics and Memetics:
-  - Quantum Annealing
   - QAOA
   - Local Search
   - Tabu Search

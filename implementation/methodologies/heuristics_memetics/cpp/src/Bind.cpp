@@ -6,7 +6,6 @@
 #include "TabuSearch.hpp"
 #include "Evolutionary.hpp"
 #include "VNS.hpp"
-#include "Approximations.hpp"
 
 // Standard C Return Struct matching Python ctypes definition
 extern "C" {
@@ -136,7 +135,7 @@ extern "C" {
         return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
     }
 
-    CResult run_genetic_kl_algorithm(
+    CResult run_genetic_ls_algorithm(
         const char* filename,
         uint64_t seed,
         int population_size,
@@ -154,11 +153,11 @@ extern "C" {
             init_ptr = &init_part;
         }
 
-        auto res = genetic_KL_algorithm(graph, seed, population_size, generations, mutation_rate, init_ptr);
+        auto res = genetic_ls_algorithm(graph, seed, population_size, generations, mutation_rate, init_ptr);
         return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
     }
 
-    CResult run_island_kl_algorithm(
+    CResult run_island_ls_algorithm(
         const char* filename,
         uint64_t seed,
         int population_size,
@@ -177,7 +176,7 @@ extern "C" {
             init_ptr = &init_part;
         }
 
-        auto res = island_kl_algorithm(graph, seed, population_size, generations, migration_interval, mutation_rate, init_ptr);
+        auto res = island_ls_algorithm(graph, seed, population_size, generations, migration_interval, mutation_rate, init_ptr);
         return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
     }
 
@@ -217,30 +216,6 @@ extern "C" {
         Graph graph(filename);
         int n = graph.vertex_count();
         auto res = grasp_search(graph, seed, max_iterations, alpha);
-        return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
-    }
-
-    // ==========================================
-    // APPROXIMATIONS
-    // ==========================================
-    CResult run_randomized_half(const char* filename, int trials, uint64_t seed) {
-        Graph graph(filename);
-        int n = graph.vertex_count();
-        auto res = randomized_half(graph, trials, seed);
-        return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
-    }
-
-    CResult run_randomized_greedy_edges(const char* filename, int trials, uint64_t seed) {
-        Graph graph(filename);
-        int n = graph.vertex_count();
-        auto res = randomized_greedy_edges(graph, trials, seed);
-        return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
-    }
-
-    CResult run_randomized_greedy_vertices(const char* filename, int trials, uint64_t seed) {
-        Graph graph(filename);
-        int n = graph.vertex_count();
-        auto res = randomized_greedy_vertices(graph, trials, seed);
         return make_c_result(n, res.cut_weight, res.cut_edge_count, res.partition);
     }
 }

@@ -2,6 +2,11 @@
 
 `Python`:
 - Goemans–Williamson algorithm
-    - Transformed to SDP ratio = 0.878
+- library interface
+
+`C++`:
+- randomized half
+- randomized greedy edges
+- randomized greedy vertices
 
 

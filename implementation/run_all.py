@@ -7,11 +7,12 @@ from implementation.graphs.python.Graph import Graph
 from implementation.graphs.python.Result import Result
 import implementation.methodologies.solvers.python.Solve as mip
 import implementation.methodologies.approximations.python.Approximate as aprx
-import implementation.methodologies.heuristics_memetics.python.CPPLIB as cpplib
-import implementation.methodologies.heuristics_memetics.python.Quantum as qtm
+import implementation.methodologies.heuristics_memetics.python.cpplib_heuristics_memetics as cpplibhm
+import implementation.methodologies.approximations.python.cpplib_approximations as cpplibax
+import implementation.methodologies.quantum.python.Quantum as qtm
 
 def ensure_cpp_library_built():
-    """Builds libheuristics_memetics.so using make if it does not exist."""
+    """Builds cpp libs using make if it does not exist."""
     # Derive absolute path relative to where run_all.py is located
     base_dir = os.path.dirname(os.path.abspath(__file__))
     cpp_dir = os.path.join(base_dir, "methodologies", "heuristics_memetics", "cpp")
@@ -25,6 +26,32 @@ def ensure_cpp_library_built():
         except subprocess.CalledProcessError as e:
             print(f"[-] Makefile compilation failed:\n{e.stderr}", file=sys.stderr)
             sys.exit(1)
+
+    # Derive absolute path relative to where run_all.py is located
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    cpp_dir = os.path.join(base_dir, "methodologies", "approximations", "cpp")
+    lib_path = os.path.join(cpp_dir, "lib", "libapprox.so")
+
+    if not os.path.exists(lib_path):
+        print("[!] Shared C++ library missing. Compiling with Makefile...")
+        try:
+            subprocess.run(["make"], cwd=cpp_dir, check=True, capture_output=True, text=True)
+            print("[+] Makefile compilation successful.\n")
+        except subprocess.CalledProcessError as e:
+            print(f"[-] Makefile compilation failed:\n{e.stderr}", file=sys.stderr)
+            sys.exit(1)
+
+def mip_checkpoint(res, gap):
+    pct = f"{gap * 100:.4f}%"
+    p_str = res.clear_partition()
+    results_tracker.append({
+        "tag": f"Exact MIP [checkpoint gap<={pct}]",
+        "weight": res.cut_weight,
+        "time": res.execution_time,
+        "edges": res.cut_edge_count,
+        "print_str": p_str
+    })
+    print(p_str)
 
 
 DO_FANCY = True
@@ -94,26 +121,26 @@ if __name__ == "__main__":
                     return res
 
                 # --- Simple Randoms (C++) ---
-                run_and_track("Randomized 0.5", cpplib.randomized_half, graph, TRIALS=2000)
-                run_and_track("Randomized Greedy Edges", cpplib.randomized_greedy_edges, graph, TRIALS=1000)
-                run_and_track("Randomized Greedy Vertices", cpplib.randomized_greedy_vertices, graph, TRIALS=1000)
+                run_and_track("Randomized 0.5", cpplibax.randomized_half, graph, TRIALS=2000)
+                run_and_track("Randomized Greedy Edges", cpplibax.randomized_greedy_edges, graph, TRIALS=1000)
+                run_and_track("Randomized Greedy Vertices", cpplibax.randomized_greedy_vertices, graph, TRIALS=1000)
 
                 # --- Heuristics (C++) ---
-                run_and_track("Local Search [Naive]", cpplib.local_search, graph, seed=42, mode=cpplib.LocalSearchMode.NAIVE_ONE_FLIP)
-                run_and_track("Local Search [K-Flip]", cpplib.local_search, graph, seed=42, mode=cpplib.LocalSearchMode.K_FLIP, k=2)
-                run_and_track("Local Search [Kernighan-Lin]", cpplib.local_search, graph, seed=42, mode=cpplib.LocalSearchMode.KERNIGHAN_LIN)
-                run_and_track("Simulated Annealing", cpplib.simulated_annealing, graph, seed=42, max_iterations=100000, cooling_rate=0.999, initial_temp=100)
+                run_and_track("Local Search [Naive]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.NAIVE_ONE_FLIP)
+                run_and_track("Local Search [K-Flip]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.K_FLIP, k=2)
+                run_and_track("Local Search [Kernighan-Lin]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.KERNIGHAN_LIN)
+                run_and_track("Simulated Annealing", cpplibhm.simulated_annealing, graph, seed=42, max_iterations=100000, cooling_rate=0.999, initial_temp=100)
 
                 # --- Advanced Metaheuristics (C++) ---
-                run_and_track("Tabu Search [Short-Term]", cpplib.tabu_search, graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_TERM_ONLY)
-                run_and_track("Tabu Search [Short & Long]", cpplib.tabu_search, graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_AND_LONG_TERM)
-                run_and_track("Variable Neighborhood Search", cpplib.variable_neighborhood_search, graph, seed=42, k_max=4, max_iterations=500)
-                run_and_track("GRASP Search", cpplib.grasp_search, graph, seed=42, max_iterations=30, alpha=0.3)
+                run_and_track("Tabu Search [Short-Term]", cpplibhm.tabu_search, graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplibhm.TabuMode.SHORT_TERM_ONLY)
+                run_and_track("Tabu Search [Short & Long]", cpplibhm.tabu_search, graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplibhm.TabuMode.SHORT_AND_LONG_TERM)
+                run_and_track("Variable Neighborhood Search", cpplibhm.variable_neighborhood_search, graph, seed=42, k_max=4, max_iterations=500)
+                run_and_track("GRASP Search", cpplibhm.grasp_search, graph, seed=42, max_iterations=30, alpha=0.3)
 
                 # --- Evolutionary & Memetic Algorithms (C++) ---
-                run_and_track("Genetic Algorithm", cpplib.genetic_algorithm, graph, seed=42, population_size=30, generations=100, mutation_rate=0.05)
-                run_and_track("Genetic Algorithm + KL memetic", cpplib.genetic_KL_algorithm, graph, seed=42, population_size=30, generations=100, mutation_rate=0.05)
-                run_and_track("Island Genetic Algorithm + KL memetic", cpplib.island_kl_algorithm, graph, seed=42, population_size=30, generations=100, migration_interval=10, mutation_rate=0.05)
+                run_and_track("Genetic Algorithm", cpplibhm.genetic_algorithm, graph, seed=42, population_size=30, generations=100, mutation_rate=0.05)
+                run_and_track("Genetic Algorithm + LS memetic", cpplibhm.genetic_ls_algorithm, graph, seed=42, population_size=30, generations=100, mutation_rate=0.05)
+                run_and_track("Island Genetic Algorithm + LS memetic", cpplibhm.island_ls_algorithm, graph, seed=42, population_size=30, generations=100, migration_interval=10, mutation_rate=0.05)
 
                 # --- Approximation (SDP) ---
                 warmResult = aprx.goemans_williamson(graph, RANDOM_SLICE_TRIALS=200, SOLVE_VERBOSE=False)
@@ -130,25 +157,31 @@ if __name__ == "__main__":
                 print(gw_p_str)
 
                 # --- Warm-Started Heuristics (C++) [Includes GW prep time] --- 
-                run_and_track("Warm Local Search [Naive]", cpplib.local_search, graph, seed=42, mode=cpplib.LocalSearchMode.NAIVE_ONE_FLIP, initial_result=warmResult, prep_time=gw_time)
-                run_and_track("Warm Local Search [K-Flip]", cpplib.local_search, graph, seed=42, mode=cpplib.LocalSearchMode.K_FLIP, k=2, initial_result=warmResult, prep_time=gw_time)
-                run_and_track("Warm Local Search [Kernighan-Lin]", cpplib.local_search, graph, seed=42, mode=cpplib.LocalSearchMode.KERNIGHAN_LIN, initial_result=warmResult, prep_time=gw_time)
-                run_and_track("Warm Simulated Annealing", cpplib.simulated_annealing, graph, seed=42, max_iterations=100000, initial_result=warmResult, cooling_rate=0.999, initial_temp=100, prep_time=gw_time)
+                run_and_track("Warm Local Search [Naive]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.NAIVE_ONE_FLIP, initial_result=warmResult, prep_time=gw_time)
+                run_and_track("Warm Local Search [K-Flip]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.K_FLIP, k=2, initial_result=warmResult, prep_time=gw_time)
+                run_and_track("Warm Local Search [Kernighan-Lin]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.KERNIGHAN_LIN, initial_result=warmResult, prep_time=gw_time)
+                run_and_track("Warm Simulated Annealing", cpplibhm.simulated_annealing, graph, seed=42, max_iterations=100000, initial_result=warmResult, cooling_rate=0.999, initial_temp=100, prep_time=gw_time)
 
                 # --- Warm-Started Advanced Metaheuristics (C++) ---
-                run_and_track("Warm Tabu Search [Short-Term]", cpplib.tabu_search, graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_TERM_ONLY, prep_time=gw_time)
-                run_and_track("Warm Tabu Search [Short & Long]", cpplib.tabu_search, graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_AND_LONG_TERM, prep_time=gw_time)
-                run_and_track("Warm Variable Neighborhood Search", cpplib.variable_neighborhood_search, graph, seed=42, initial_result=warmResult, k_max=4, max_iterations=500, prep_time=gw_time)
+                run_and_track("Warm Tabu Search [Short-Term]", cpplibhm.tabu_search, graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplibhm.TabuMode.SHORT_TERM_ONLY, prep_time=gw_time)
+                run_and_track("Warm Tabu Search [Short & Long]", cpplibhm.tabu_search, graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplibhm.TabuMode.SHORT_AND_LONG_TERM, prep_time=gw_time)
+                run_and_track("Warm Variable Neighborhood Search", cpplibhm.variable_neighborhood_search, graph, seed=42, initial_result=warmResult, k_max=4, max_iterations=500, prep_time=gw_time)
 
                 # --- Warm-Started Evolutionary & Memetic Algorithms ---
-                run_and_track("Warm Genetic Algorithm", cpplib.genetic_algorithm, graph, seed=42, initial_result=warmResult, population_size=30, generations=100, mutation_rate=0.05, prep_time=gw_time)
-                run_and_track("Warm Genetic Algorithm + KL memetic", cpplib.genetic_KL_algorithm, graph, seed=42, initial_result=warmResult, population_size=30, generations=100, mutation_rate=0.05, prep_time=gw_time)
-                run_and_track("Warm Island Genetic Algorithm + KL memetic", cpplib.island_kl_algorithm, graph, seed=42, initial_result=warmResult, population_size=30, generations=100, migration_interval=10, mutation_rate=0.05, prep_time=gw_time)
+                run_and_track("Warm Genetic Algorithm", cpplibhm.genetic_algorithm, graph, seed=42, initial_result=warmResult, population_size=30, generations=100, mutation_rate=0.05, prep_time=gw_time)
+                run_and_track("Warm Genetic Algorithm + LS memetic", cpplibhm.genetic_ls_algorithm, graph, seed=42, initial_result=warmResult, population_size=30, generations=100, mutation_rate=0.05, prep_time=gw_time)
+                run_and_track("Warm Island Genetic Algorithm + LS memetic", cpplibhm.island_ls_algorithm, graph, seed=42, initial_result=warmResult, population_size=30, generations=100, migration_interval=10, mutation_rate=0.05, prep_time=gw_time)
 
-                # --- Exact MIP ---
-                # run_and_track("EXACT MUO", mip.solve, graph, SOLVE_VERBOSE = True)
-
-
+                # --- Exact MIP (with gap checkpoints) ---
+                run_and_track(
+                    "Exact MIP [final]",
+                    mip.solve_with_partial_results,
+                    graph,
+                    SOLVE_VERBOSE=True,
+                    time_limit=1800,
+                    gap_checkpoints=[0.15, 0.12, 0.09, 0.06, 0.03, 0.01],
+                    on_checkpoint=mip_checkpoint,
+                )
 
                 # === FANCY PRINTING ===
                 print()
@@ -182,56 +215,5 @@ if __name__ == "__main__":
                 raise e
             
         else:
-            try:
-                graph = Graph(file_path)
-                print(graph)
-
-                # --- Simple Randoms (C++) ---
-                print(cpplib.randomized_half(graph, TRIALS=2000).clear_partition())
-                print(cpplib.randomized_greedy_edges(graph, TRIALS=1000).clear_partition())
-                print(cpplib.randomized_greedy_vertices(graph, TRIALS=1000).clear_partition())
-
-                # --- Heuristics (C++) ---
-                print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.NAIVE_ONE_FLIP).clear_partition())
-                print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.K_FLIP, k=2).clear_partition())
-                print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.KERNIGHAN_LIN).clear_partition())
-                print(cpplib.simulated_annealing(graph, seed=42, max_iterations=100000, cooling_rate=0.999, initial_temp=100).clear_partition())
-
-                # --- Advanced Metaheuristics (C++) ---
-                print(cpplib.tabu_search(graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_TERM_ONLY).clear_partition())
-                print(cpplib.tabu_search(graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_AND_LONG_TERM).clear_partition())
-                print(cpplib.variable_neighborhood_search(graph, seed=42, k_max=4, max_iterations=500).clear_partition())
-                print(cpplib.grasp_search(graph, seed=42, max_iterations=30, alpha=0.3).clear_partition())
-
-                # --- Evolutionary & Memetic Algorithms (C++) ---
-                print(cpplib.genetic_algorithm(graph, seed=42, population_size=30, generations=100, mutation_rate=0.05).clear_partition())
-                print(cpplib.genetic_KL_algorithm(graph, seed=42, population_size=30, generations=100, mutation_rate=0.05).clear_partition())
-                print(cpplib.island_kl_algorithm(graph, seed=42, population_size=30, generations=100, migration_interval=10, mutation_rate=0.05).clear_partition())
-
-                # --- Approximation (SDP) ---
-                warmResult = aprx.goemans_williamson(graph, RANDOM_SLICE_TRIALS=200, SOLVE_VERBOSE=False)
-                print(warmResult.clear_partition())
-
-                # --- Warm-Started Heuristics (C++) --- 
-                print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.NAIVE_ONE_FLIP, initial_result=warmResult).clear_partition())
-                print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.K_FLIP, k=2, initial_result=warmResult).clear_partition())
-                print(cpplib.local_search(graph, seed=42, mode=cpplib.LocalSearchMode.KERNIGHAN_LIN, initial_result=warmResult).clear_partition())
-                print(cpplib.simulated_annealing(graph, seed=42, max_iterations=100000, initial_result = warmResult, cooling_rate=0.999, initial_temp=100).clear_partition())
-
-                # --- Warm-Started Advanced Metaheuristics (C++) ---
-                print(cpplib.tabu_search(graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_TERM_ONLY).clear_partition())
-                print(cpplib.tabu_search(graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplib.TabuMode.SHORT_AND_LONG_TERM).clear_partition())
-                print(cpplib.variable_neighborhood_search(graph, seed=42, initial_result=warmResult, k_max=4, max_iterations=500).clear_partition())
-
-                # --- Warm-Started Evolutionary & Memetic Algorithms (using Goemans-Williamson) ---
-                print(cpplib.genetic_algorithm(graph, seed=42, initial_result=warmResult, population_size=30, generations=100, mutation_rate=0.05).clear_partition())
-                print(cpplib.genetic_KL_algorithm(graph, seed=42, initial_result=warmResult, population_size=30, generations=100, mutation_rate=0.05).clear_partition())
-                print(cpplib.island_kl_algorithm(graph, seed=42, initial_result=warmResult, population_size=30, generations=100, migration_interval=10, mutation_rate=0.05).clear_partition())
-
-
-                # --- These take some time ---
-                # print(mip.solve(graph, SOLVE_VERBOSE=True).clear_partition())
-                
-            except Exception as e:
-                print(f"Error processing {file_path}: {e}")
+            print('Cmon.... run fancy...')
             print("\n")

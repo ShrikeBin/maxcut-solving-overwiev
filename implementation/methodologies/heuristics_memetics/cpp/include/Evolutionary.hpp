@@ -20,14 +20,14 @@ EvolutionaryResult genetic_algorithm(
 );
 
 // 2. Memetic Algorithm (GA + Kernighan-Lin refinement per child)
-EvolutionaryResult genetic_KL_algorithm(
+EvolutionaryResult genetic_ls_algorithm(
     const Graph& graph, uint64_t seed = 42,
     int population_size = 30, int generations = 100, double mutation_rate = 0.05,
     const std::vector<int8_t>* initial_partition = nullptr
 );
 
 // 3. Island Model Memetic Algorithm (Parallel isolated populations with periodic migration)
-EvolutionaryResult island_kl_algorithm(
+EvolutionaryResult island_ls_algorithm(
     const Graph& graph, uint64_t seed = 42,
     int population_size = 30, int generations = 100, 
     int migration_interval = 10, double mutation_rate = 0.05,

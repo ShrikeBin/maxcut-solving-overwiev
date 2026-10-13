@@ -1,16 +1,14 @@
 ### Methods:
-
 `Python`:
-- Quantum Annealing
-- QAOA
+- library interface
 
 `C++`:
 - Simulated Annealing
 - Local Search:
     - K-flip
-    - Kernighan-Lin
+    - Kernighan-Lin/Fiduccia–Mattheyses inspired pass
 - Taboo Search
 - Genetic
 - Island Genetic
-- Genetic + KL
-- Island Genetic + KL
+- Genetic + Local-Search
+- Island Genetic + Local-Search

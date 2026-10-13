@@ -143,7 +143,7 @@ LocalSearchResult local_search(
     }
 
     // ------------------------------------------------------------------------
-    // MODE 3: KERNIGHAN-LIN (FM-Style Variable-Depth Pass)
+    // MODE 3: KERNIGHAN-LIN (Fiduccia-Mattheyses-Style Variable-Depth Pass)
     // ------------------------------------------------------------------------
     else if (mode == LocalSearchMode::KERNIGHAN_LIN) {
         std::vector<bool> locked(n, false);

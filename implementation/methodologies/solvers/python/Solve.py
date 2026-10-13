@@ -64,7 +64,7 @@ def solve_with_partial_results(
     callbacks -- the best-known solution is reported live as the solver improves
     it, either on every improving solution (gap_checkpoints=None) or specifically
     when the relative MIP gap crosses each threshold in gap_checkpoints
-    (e.g. [0.05, 0.01, 0.001]).
+    (e.g. [0.15, 0.12, 0.09, 0.06, 0.03, 0.01]).
 
     Returns None if gurobipy isn't installed.
     """
@@ -102,13 +102,15 @@ def solve_with_partial_results(
     )
     model.update()
 
-    def extract_result(var_values: dict, obj_val: float, tag: str) -> Result:
+    def extract_result(var_values: dict, tag: str) -> Result:
         partition = {k: (1 if var_values[k] >= 0.5 else 0) for k in v}
-        _, edge_count = graph.get_cut_info(partition)
+        # Recompute from the partition itself, not the model objective,
+        # since the e-vars are only upper-bounded and can undercount.
+        true_weight, edge_count = graph.get_cut_info(partition)
         elapsed = time.perf_counter() - start_time
         return Result(
             partition=partition,
-            cut_weight=obj_val,
+            cut_weight=true_weight,
             cut_edge_count=edge_count,
             type=f"Exact MIP (Gurobi native, {tag})",
             execution_time=elapsed,
@@ -131,7 +133,7 @@ def solve_with_partial_results(
 
             if should_report and on_checkpoint:
                 var_values = {k: m.cbGetSolution(var) for k, var in v.items()}
-                result = extract_result(var_values, obj_best, f"gap<={gap:.4f}")
+                result = extract_result(var_values, f"gap<={gap*100:.1f}%")
                 on_checkpoint(result, gap)
 
     model.optimize(callback)
@@ -142,14 +144,23 @@ def solve_with_partial_results(
             type="Exact MIP (Gurobi native)", execution_time=0.0,
         )
 
+    hit_time_limit = (model.Status == gp.GRB.TIME_LIMIT)
+
+    # Time ran out: report the best incumbent as one last checkpoint
+    if hit_time_limit and on_checkpoint:
+        var_values = {k: v[k].X for k in v}
+        final_gap = model.MIPGap  # gap between best incumbent and best bound at termination
+        result = extract_result(var_values, f"time limit, gap={final_gap*100:.1f}%")
+        on_checkpoint(result, final_gap)
+
     partition = {k: (1 if v[k].X >= 0.5 else 0) for k in v}
-    max_cut_weight = model.ObjVal
-    _, edge_count = graph.get_cut_info(partition)
+    max_cut_weight, edge_count = graph.get_cut_info(partition)
     elapsed_time = time.perf_counter() - start_time
+
     return Result(
         partition=partition,
         cut_weight=max_cut_weight,
         cut_edge_count=edge_count,
-        type="Exact MIP (Gurobi native)",
+        type="Exact MIP (Gurobi native, time limit)" if hit_time_limit else "Exact MIP (Gurobi native)",
         execution_time=elapsed_time,
     )

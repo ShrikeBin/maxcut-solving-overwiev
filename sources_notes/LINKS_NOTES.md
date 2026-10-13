@@ -18,8 +18,9 @@
 - Heuristics:
     - https://www.nature.com/articles/s41534-026-01186-2
     - https://pennylane.ai/demos/tutorial_qaoa_maxcut
-    - https://en.wikipedia.org/wiki/Fiduccia%E2%80%93Mattheyses_algorithm (CHECK IT)
+    - https://en.wikipedia.org/wiki/Kernighan%E2%80%93Lin_algorithm
     - https://en.wikipedia.org/wiki/Fiduccia%E2%80%93Mattheyses_algorithm (Fiduccia–Mattheyses algorithm, improves on KL) 
+    - the variable depth pass is inspired by these two
  
 - Quantum:
   - https://marwahaha.github.io/quantum-maxcut-reference/
@@ -31,3 +32,7 @@
   - https://www.mathworks.com/help/matlab/ref/maxcut2qubo.html
   - https://arxiv.org/pdf/2511.01108
     "So QAOA doesn't operate on the QUBO matrix directly — it operates on the equivalent Ising Hamiltonian, which QUBO converts to via a simple variable substitution (x_i ∈ {0,1} → z_i ∈ {-1,+1}, where x_i = (1-z_i)/2). This is exactly the same substitution that appeared in the Wang/Hadfield/Jiang/Rieffel paper's Section II — worth citing there since they spell it out explicitly."
+  - D-wave doesnt offer a free plan so no Quantum Annealeres were used
+  - However we do have a free IBM QAOA so they WERE used
+  - https://arxiv.org/pdf/1411.4028 <- QAOA
+  -
