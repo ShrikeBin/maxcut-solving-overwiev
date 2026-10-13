@@ -61,8 +61,8 @@ def generate_random_graph(
 
 
 # --- Configuration ---
-VERTICES = 20
-EDGES = (VERTICES)*(VERTICES-14)/2
+VERTICES = 1000
+EDGES = (VERTICES)*50
 MIN_WEIGHT = 1.0
 MAX_WEIGHT = 5.0
 DIRECTED = False

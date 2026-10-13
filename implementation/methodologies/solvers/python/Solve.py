@@ -62,9 +62,11 @@ def solve_with_partial_results(
     Abstraction layer over solve(). When gurobipy is available, builds and solves
     the Max-Cut model natively with Gurobi's Python API to get true incumbent
     callbacks -- the best-known solution is reported live as the solver improves
-    it, either on every improving solution (gap_checkpoints=None) or specifically
-    when the relative MIP gap crosses each threshold in gap_checkpoints
-    (e.g. [0.15, 0.12, 0.09, 0.06, 0.03, 0.01]).
+    it, either on every incumbent/bound change (gap_checkpoints=None) or
+    specifically when the relative MIP gap crosses each threshold in
+    gap_checkpoints (e.g. [0.15, 0.12, 0.09, 0.06, 0.03, 0.01]).
+
+    Also reports the best incumbent as a final checkpoint if the time limit hits.
 
     Returns None if gurobipy isn't installed.
     """
@@ -116,32 +118,64 @@ def solve_with_partial_results(
             execution_time=elapsed,
         )
 
-    def callback(m, where):
+    # Best incumbent (true cut weight) and last seen bound, shared by the callback
+    state = {"best_obj": None, "best_vals": None, "last_bound": None}
+
+    def report_if_needed(bound):
         nonlocal remaining_checkpoints
-        if where == gp.GRB.Callback.MIPSOL:
-            obj_best = m.cbGet(gp.GRB.Callback.MIPSOL_OBJBST)
-            obj_bound = m.cbGet(gp.GRB.Callback.MIPSOL_OBJBND)
-            gap = abs(obj_best - obj_bound) / max(1e-10, abs(obj_best))
+        if state["best_vals"] is None or abs(bound) >= gp.GRB.INFINITY:
+            return
 
-            if not checkpoints:
+        best = state["best_obj"]
+        gap = abs(bound - best) / max(1e-10, abs(best))
+
+        if not checkpoints:
+            should_report = True
+        else:
+            should_report = False
+            while remaining_checkpoints and gap <= remaining_checkpoints[0]:
                 should_report = True
-            else:
-                should_report = False
-                while remaining_checkpoints and gap <= remaining_checkpoints[0]:
-                    should_report = True
-                    remaining_checkpoints.pop(0)
+                remaining_checkpoints.pop(0)
 
-            if should_report and on_checkpoint:
-                var_values = {k: m.cbGetSolution(var) for k, var in v.items()}
-                result = extract_result(var_values, f"gap<={gap*100:.1f}%")
-                on_checkpoint(result, gap)
+        if should_report and on_checkpoint:
+            result = extract_result(state["best_vals"], f"gap<={gap*100:.1f}%")
+            on_checkpoint(result, gap)
+
+    def callback(m, where):
+        if where == gp.GRB.Callback.MIPSOL:
+            # New incumbent (cbGetSolution only works in this branch)
+            vals = {k: m.cbGetSolution(var) for k, var in v.items()}
+            partition = {k: (1 if vals[k] >= 0.5 else 0) for k in v}
+            true_weight, _ = graph.get_cut_info(partition)
+
+            if state["best_obj"] is None or true_weight > state["best_obj"]:
+                state["best_obj"] = true_weight
+                state["best_vals"] = vals
+
+            bound = m.cbGet(gp.GRB.Callback.MIPSOL_OBJBND)
+            state["last_bound"] = bound
+            report_if_needed(bound)
+
+        elif where == gp.GRB.Callback.MIP:
+            # Periodic call: catches BestBd changes with no new incumbent
+            if state["best_vals"] is None:
+                return
+
+            bound = m.cbGet(gp.GRB.Callback.MIP_OBJBND)
+            last = state["last_bound"]
+            if last is not None and abs(bound - last) < 1e-6:
+                return  # bound unchanged, nothing new to report
+
+            state["last_bound"] = bound
+            report_if_needed(bound)
 
     model.optimize(callback)
 
     if model.SolCount == 0:
         return Result(
             partition={}, cut_weight=0.0, cut_edge_count=0,
-            type="Exact MIP (Gurobi native)", execution_time=0.0,
+            type="Exact MIP (Gurobi native, no solution found)",
+            execution_time=time.perf_counter() - start_time,
         )
 
     hit_time_limit = (model.Status == gp.GRB.TIME_LIMIT)

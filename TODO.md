@@ -1,4 +1,7 @@
 ## Writing Code
+- `Small fixes`:
+    - maybe improve callbacks to call on improved upper bounds too not only on improved lower bouds (do not *only* check `.MIPSOL`)
+
 - `Validity Checks`:
     - Check QAOA simulation
     - Check QAOA IBM QPU pass
