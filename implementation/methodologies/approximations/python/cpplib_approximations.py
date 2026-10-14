@@ -29,7 +29,7 @@ class _CResult(ctypes.Structure):
     _fields_ = [
         ("cut_weight", ctypes.c_double),
         ("cut_edge_count", ctypes.c_int),
-        ("partition", ctypes.POINTER(ctypes.c_int))
+        ("partition", ctypes.POINTER(ctypes.c_int8))
     ]
 
 

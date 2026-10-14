@@ -150,3 +150,63 @@ class Graph:
 
         plt.tight_layout()
         plt.show()
+        
+    def draw_interactive(self, partition: dict[int, int] = None, node_size=200, filename="graph.html"):
+        from pyvis.network import Network
+        import networkx as nx
+        import matplotlib.pyplot as plt
+
+        # 1. Build the NetworkX graph
+        G = nx.Graph()
+        G.add_nodes_from(range(1, self.V_count + 1))
+
+        for u in range(1, self.V_count + 1):
+            for v in range(u + 1, self.V_count + 1):
+                weight = self.matrix[u][v]
+                if weight != 0.0:
+                    G.add_edge(u, v, weight=weight)
+
+        net = Network(height="600px", width="100%", bgcolor="#ffffff", font_color="black")
+        net.from_nx(G)
+
+        pyvis_size = max(25, int((node_size ** 0.5) * 4))
+
+        if partition:
+            unique_partitions = list(set(partition.values()))
+            print("Unique partition values:", set(partition.values()))
+            cmap = plt.get_cmap("Set2")
+
+            for node in net.nodes:
+                node_id = node["id"]
+                part_val = partition.get(node_id, 0)
+                
+                if len(unique_partitions) > 1:
+                    color_idx = unique_partitions.index(part_val) / max(1, len(unique_partitions) - 1)
+                else:
+                    color_idx = 0
+                
+                rgba = cmap(color_idx)
+                hex_color = '#{:02x}{:02x}{:02x}'.format(int(rgba[0]*255), int(rgba[1]*255), int(rgba[2]*255))
+                
+                node["color"] = hex_color
+                node["size"] = pyvis_size
+                node["title"] = f"Node {node_id} (Group {part_val})"
+
+            for edge in net.edges:
+                u, v = edge["from"], edge["to"]
+                if partition.get(u) != partition.get(v):
+                    edge["color"] = "red"
+                    edge["dashes"] = True
+                    edge["width"] = 1.5
+                else:
+                    edge["color"] = "grey"
+                    edge["width"] = 1.5
+        else:
+            for node in net.nodes:
+                node["color"] = "lightblue"
+                node["size"] = pyvis_size
+
+        # Enable physics, save, and launch in browser
+        net.barnes_hut()
+        net.show(filename, notebook=False)
+        print(f"Interactive graph saved and opened as {filename}")

@@ -6,7 +6,7 @@ import os
 import argparse
 
 from implementation.graphs.python.Graph import Graph
-import implementation.methodologies.heuristics_memetics.python.Quantum as qtm
+import implementation.methodologies.quantum.python.Quantum as qtm
 
 MAX_QUBITS = 20  # graphs larger than this are skipped
 MEAN_RE = re.compile(r"mean cut ([0-9.]+)")

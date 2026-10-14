@@ -21,7 +21,7 @@ def _edge_list(graph: Graph):
 
 
 def _cost_diagonal(n, edges):
-    """cut weight of every bitstring; index i has qubit q = bit q of i (little-endian)."""
+    """cut weight of every bitstring; index i has qubit q = bit q of i (little-endian). -> Qskit different convetion"""
     idx = np.arange(2 ** n, dtype=np.uint32)
     diag = np.zeros(2 ** n)
     for u, v, w in edges:

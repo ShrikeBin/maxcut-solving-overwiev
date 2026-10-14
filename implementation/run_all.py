@@ -44,14 +44,14 @@ def ensure_cpp_library_built():
 # -- CONFIG --
 
 DO_FANCY = True
-TOP_AMOUNT = 999
+TOP_AMOUNT = 7
 
 RUN_BASIC = True
 
 RUN_WARM = True
 GOEMANS_VERBOSE = False
 
-RUN_MIP = True
+RUN_MIP = False
 MIP_TIME_LIMIT = 1800
 MIP_VERBOSE = True
 MIP_CALLBACK = [0.30, 0.20, 0.15, 0.12, 0.08, 0.05, 0.03, 0.01]
@@ -101,6 +101,7 @@ if __name__ == "__main__":
                 print(graph)
 
                 results_tracker = []
+                best_result = Result(cut_weight=0, partition=[], cut_edge_count=0)
 
                 def run_and_track(tag, func, *args, prep_time=0.0, **kwargs):
                     res = func(*args, **kwargs)
@@ -111,6 +112,10 @@ if __name__ == "__main__":
                     else:
                         raise RuntimeError
 
+                    global best_result
+                    if res.cut_weight > best_result.cut_weight:
+                        best_result = res
+                    
                     p_str = res.clear_partition()
                     results_tracker.append({
                         "tag": tag,
@@ -181,6 +186,11 @@ if __name__ == "__main__":
                     def mip_checkpoint(res, gap):
                         pct = f"{gap * 100:.4f}%"
                         p_str = res.clear_partition()
+
+                        global best_result
+                        if res.cut_weight > best_result.cut_weight:
+                            best_result = res
+
                         results_tracker.append({
                             "tag": f"Exact MIP [checkpoint gap<={pct} ({res.cut_weight:.4f} : OPT : {res.cut_weight*(gap+1):.4f})]",
                             "weight": res.cut_weight,
@@ -230,6 +240,8 @@ if __name__ == "__main__":
                 box_lines.append(f"{MAGENTA}╚════════════════════════════════════════════════════════════╝{RST}")
 
                 print("\n".join(box_lines))
+
+                #graph.draw_interactive(partition=best_result.partition)
                 
             except Exception as e:
                 print(f"Error occurred: {e}")
