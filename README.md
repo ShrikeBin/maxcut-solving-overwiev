@@ -1,16 +1,18 @@
 # Methodology
 
-This README documents details of the computational and mathematical frameworks implemented for solving the **Max-Cut problem** across exact mathematical programming, theoretical approximations, classical metaheuristics, and quantum computing paradigms.
+`This repository consists of documented details of the computational and mathematical frameworks as well as the implementation of them for solving the **Max-Cut problem** across exact mathematical programming, theoretical approximations, classical metaheuristics, and quantum computing paradigms.`
 
-**Implementation overview:** the exact, SDP-based and quantum solvers are written in Python (Gurobi / python-MIP, MOSEK, Qiskit). The randomized approximations, local searches and metaheuristics are written in C++ with OpenMP parallelism and share a common `CutState` structure that maintains the partition, cut weight, cut edge count and the O(1)-queryable gain of flipping a single vertex (`flip_delta`). All solvers return the partition, cut weight, cut edge count and execution time.
+> be informed that this readme.md also serves a purpose of WIP notebook for all the stuff that will need to be cited or improved (when it comes to explanation) -> therefore it might feel a bit disorganized or confusing to read in some places
+
+**Implementation overview:** The exact, SDP-based and quantum solvers are written in Python (Gurobi / python-MIP, MOSEK, Qiskit). Randomized approximations, local searches and metaheuristics are written in C++ with OpenMP parallelism and share a common `CutState` structure that maintains the partition, cut weight, cut edge count and the O(1)-queryable gain of flipping a single vertex (`flip_delta`). All solvers return the partition, cut weight, cut edge count and execution time. All C++ library have been provided with Python interface that allows usage of common `Result` and `Graph` Python classes with various QOL features like interactive graph presentation, tidy terminal display etc.
 
 ---
 
-## Exact Methods (Mixed-Integer Programming)
+## Exact Methods (Binary-Integer Programming)
 
 Exact methods formulate Max-Cut as a **Binary Integer Program (BIP)** with a linearized objective, guaranteeing global optimality through **Gurobi** (Branch-and-Bound, cutting planes, presolving).
 
-- **Default MIP Formulation** (`solve`, built with python-MIP using the Gurobi backend)
+- **Default BIP Formulation** (`solve`, built with python-MIP using the Gurobi backend)
   - **General idea:** Define a binary vertex variable $v_i \in \{0, 1\}$ (partition side) for each vertex and a binary edge variable $e_{ij}$ for each edge with non-zero weight (only the upper triangle of the weight matrix is iterated). The objective maximizes $\sum_{(i,j) \in E} w_{ij} e_{ij}$.
   - **Linearization:** The quadratic term $w_{ij}(v_i + v_j - 2 v_i v_j)$ is replaced by the edge variable together with two upper-bounding constraints:
     - $e_{ij} \le v_i + v_j$ (an edge can only be cut if at least one endpoint is on side 1)
