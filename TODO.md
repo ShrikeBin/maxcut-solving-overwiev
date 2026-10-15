@@ -1,7 +1,14 @@
 ## Writing Code
+- `Fixes`
+    - FIX INCORRECT TIME COUNTING IN WARM STATED RESULTS!!
+    
 - `Validity Checks`:
     - Check QAOA simulation
     - Check QAOA IBM QPU pass
+ 
+## Testing
+- `Experimenting with Parameters`
+    - make Simulated Annealing *work*
 
 ## Writing actual text
 - `Exact Solution`:
