@@ -6,8 +6,14 @@
 ## Testing
 - `Experimenting with Parameters`
     - combine and figure out best parameters for each:
-        - annealing [ ]
-        - genetic_LS [ ]
+        - [ ] annealing
+        - [ ] genetic_LS
+        - [ ] genetic
+        - [ ] GRASP
+        - [ ] island
+        - [ ] local search
+        - [ ] tabu search
+        - [ ] VNS
 
 ## Writing actual text
 - `Exact Solution`:
