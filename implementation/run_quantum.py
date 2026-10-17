@@ -5,7 +5,7 @@ import glob
 import os
 import argparse
 
-from implementation.graphs.python.Graph import Graph
+from implementation.util.python.Graph import Graph
 import implementation.methodologies.quantum.python.Quantum as qtm
 
 MAX_QUBITS = 20  # graphs larger than this are skipped

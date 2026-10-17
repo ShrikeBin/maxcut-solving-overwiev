@@ -4,8 +4,8 @@ from scipy.optimize import minimize
 from qiskit import QuantumCircuit, transpile
 from qiskit.circuit import Parameter
 from qiskit_aer import AerSimulator
-from implementation.graphs.python.Graph import Graph
-from implementation.graphs.python.Result import Result
+from implementation.util.python.Graph import Graph
+from implementation.util.python.Result import Result
 
 
 # ----------------------------------------------------------------------------

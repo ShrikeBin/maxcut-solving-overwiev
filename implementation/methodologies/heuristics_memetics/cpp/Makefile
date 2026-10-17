@@ -1,14 +1,14 @@
 CXX      := g++
 CXXFLAGS := -O3 -std=c++17 -fPIC -Wall -Wextra -fopenmp
-INCLUDES := -Iinclude -I../../../graphs/cpp
+INCLUDES := -Iinclude -I../../../util/cpp
 
 LIB_DIR   := lib
 BUILD_DIR := build
 TARGET    := $(LIB_DIR)/libheuristics_memetics.so
 
 # Source files
-GRAPH_SRCS := ../../../graphs/cpp/Graph.cpp \
-              ../../../graphs/cpp/CutState.cpp
+GRAPH_SRCS := ../../../util/cpp/Graph.cpp \
+              ../../../util/cpp/CutState.cpp
 
 ALGO_SRCS  := src/LocalSearch.cpp \
               src/SimulatedAnnealing.cpp \
@@ -29,10 +29,10 @@ $(TARGET): $(OBJS) | $(LIB_DIR)
 	$(CXX) $(CXXFLAGS) -shared -fopenmp -o $@ $^
 
 # Object compilation rules
-$(BUILD_DIR)/Graph.o: ../../../graphs/cpp/Graph.cpp | $(BUILD_DIR)
+$(BUILD_DIR)/Graph.o: ../../../util/cpp/Graph.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-$(BUILD_DIR)/CutState.o: ../../../graphs/cpp/CutState.cpp | $(BUILD_DIR)
+$(BUILD_DIR)/CutState.o: ../../../util/cpp/CutState.cpp | $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
 $(BUILD_DIR)/LocalSearch.o: src/LocalSearch.cpp | $(BUILD_DIR)

@@ -1,8 +1,8 @@
 import numpy as np
 import cvxpy as cp
 import time
-from implementation.graphs.python.Graph import Graph
-from implementation.graphs.python.Result import Result
+from implementation.util.python.Graph import Graph
+from implementation.util.python.Result import Result
 
 import mosek.fusion as mf
 import sys

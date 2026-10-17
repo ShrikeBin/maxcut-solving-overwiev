@@ -1,10 +1,9 @@
 import ctypes
 import os
 import time
-from enum import IntEnum
 from typing import Optional
-from implementation.graphs.python.Graph import Graph
-from implementation.graphs.python.Result import Result
+from implementation.util.python.Graph import Graph
+from implementation.util.python.Result import Result
 
 
 # 1. Resolve path to shared library compiled by the Makefile

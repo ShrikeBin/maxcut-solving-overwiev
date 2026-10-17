@@ -3,8 +3,9 @@ import glob
 import os
 import subprocess
 
-from implementation.graphs.python.Graph import Graph
-from implementation.graphs.python.Result import Result
+from implementation.util.python.Graph import Graph
+from implementation.util.python.Result import Result
+from implementation.util.python.Parameters import Parameters
 import implementation.methodologies.solvers.python.Solve as mip
 import implementation.methodologies.approximations.python.Approximate as aprx
 import implementation.methodologies.heuristics_memetics.python.cpplib_heuristics_memetics as cpplibhm
@@ -44,14 +45,14 @@ def ensure_cpp_library_built():
 # -- CONFIG --
 
 DO_FANCY = True
-TOP_AMOUNT = 7
+TOP_AMOUNT = 10
 
 RUN_BASIC = True
 
 RUN_WARM = True
 GOEMANS_VERBOSE = False
 
-RUN_MIP = False
+RUN_MIP = True
 MIP_TIME_LIMIT = 1800
 MIP_VERBOSE = True
 MIP_CALLBACK = [0.30, 0.20, 0.15, 0.12, 0.08, 0.05, 0.03, 0.01]
@@ -104,9 +105,11 @@ if __name__ == "__main__":
                 best_result = Result(cut_weight=0, partition=[], cut_edge_count=0)
 
                 def run_and_track(tag, func, *args, prep_time=0.0, **kwargs):
+                    print_kwargs = {k: v for k, v in kwargs.items() if k not in { 'initial_result' , 'on_checkpoint'}}
+                    params = Parameters(name=tag, **print_kwargs)
+
                     res = func(*args, **kwargs)
                     
-                    # Fallback if result object already tracks its own execution time internally
                     if hasattr(res, 'execution_time') and res.execution_time > 0:
                         elapsed = res.execution_time + prep_time
                     else:
@@ -124,6 +127,7 @@ if __name__ == "__main__":
                         "edges": res.cut_edge_count,
                         "print_str": p_str
                     })
+                    print(params)
                     print(p_str)
                     return res
 
@@ -137,7 +141,7 @@ if __name__ == "__main__":
                     run_and_track("Local Search [Naive]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.NAIVE_ONE_FLIP)
                     run_and_track("Local Search [K-Flip]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.K_FLIP, k=2)
                     run_and_track("Local Search [Kernighan-Lin]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.KERNIGHAN_LIN)
-                    run_and_track("Simulated Annealing", cpplibhm.simulated_annealing, graph, seed=42, max_iterations=100000, cooling_rate=0.999, initial_temp=100)
+                    run_and_track("Simulated Annealing", cpplibhm.simulated_annealing, graph, seed=42, max_iterations=500000, cooling_rate=0.999, initial_temp=1)
 
                     # --- Advanced Metaheuristics (C++) ---
                     run_and_track("Tabu Search [Short-Term]", cpplibhm.tabu_search, graph, seed=42, max_iterations=5000, tabu_tenure=15, mode=cpplibhm.TabuMode.SHORT_TERM_ONLY)
@@ -152,6 +156,13 @@ if __name__ == "__main__":
 
                 if RUN_WARM:
                     # --- Approximation (SDP) ---
+                    gw_params = Parameters(
+                        name="Goemans-Williamson (SDP)", 
+                        RANDOM_SLICE_TRIALS=200, 
+                        SOLVE_VERBOSE=GOEMANS_VERBOSE
+                    )
+                    print(gw_params)
+
                     warmResult = aprx.goemans_williamson(graph, RANDOM_SLICE_TRIALS=200, SOLVE_VERBOSE=GOEMANS_VERBOSE)
                     gw_time = warmResult.execution_time
 
@@ -169,7 +180,7 @@ if __name__ == "__main__":
                     run_and_track("Warm Local Search [Naive]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.NAIVE_ONE_FLIP, initial_result=warmResult, prep_time=gw_time)
                     run_and_track("Warm Local Search [K-Flip]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.K_FLIP, k=2, initial_result=warmResult, prep_time=gw_time)
                     run_and_track("Warm Local Search [Kernighan-Lin]", cpplibhm.local_search, graph, seed=42, mode=cpplibhm.LocalSearchMode.KERNIGHAN_LIN, initial_result=warmResult, prep_time=gw_time)
-                    run_and_track("Warm Simulated Annealing", cpplibhm.simulated_annealing, graph, seed=42, max_iterations=100000, initial_result=warmResult, cooling_rate=0.999, initial_temp=100, prep_time=gw_time)
+                    run_and_track("Warm Simulated Annealing", cpplibhm.simulated_annealing, graph, seed=42, max_iterations=500000, initial_result=warmResult, cooling_rate=0.999, initial_temp=1, prep_time=gw_time)
 
                     # --- Warm-Started Advanced Metaheuristics (C++) ---
                     run_and_track("Warm Tabu Search [Short-Term]", cpplibhm.tabu_search, graph, seed=42, initial_result=warmResult, max_iterations=5000, tabu_tenure=15, mode=cpplibhm.TabuMode.SHORT_TERM_ONLY, prep_time=gw_time)
@@ -240,8 +251,8 @@ if __name__ == "__main__":
                 box_lines.append(f"{MAGENTA}╚════════════════════════════════════════════════════════════╝{RST}")
 
                 print("\n".join(box_lines))
-
-                #graph.draw_interactive(partition=best_result.partition)
+                # graph.draw(partition=best_result.partition)
+                # graph.draw_interactive(partition=best_result.partition)
                 
             except Exception as e:
                 print(f"Error occurred: {e}")
