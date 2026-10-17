@@ -1,0 +1,1295 @@
+method,graph,config_idx,config,weight,cut_edges,time_s
+LocalSearch,N1000E15000.graph,1,mode=0,9207.0,9207,0.003078
+LocalSearch,N1000E15000.graph,2,mode=1;k=2,9352.0,9352,0.382787
+LocalSearch,N1000E15000.graph,3,mode=1;k=3,9373.0,9373,16.105830
+LocalSearch,N1000E15000.graph,4,mode=2,9407.0,9407,0.013291
+TabuSearch,N1000E15000.graph,1,max_iterations=1000;tabu_tenure=5;mode=0,9330.0,9330,0.004079
+TabuSearch,N1000E15000.graph,2,max_iterations=1000;tabu_tenure=5;mode=1,9340.0,9340,0.004195
+TabuSearch,N1000E15000.graph,3,max_iterations=1000;tabu_tenure=10;mode=0,9341.0,9341,0.003792
+TabuSearch,N1000E15000.graph,4,max_iterations=1000;tabu_tenure=10;mode=1,9405.0,9405,0.004230
+TabuSearch,N1000E15000.graph,5,max_iterations=1000;tabu_tenure=15;mode=0,9387.0,9387,0.003842
+TabuSearch,N1000E15000.graph,6,max_iterations=1000;tabu_tenure=15;mode=1,9381.0,9381,0.004300
+TabuSearch,N1000E15000.graph,7,max_iterations=1000;tabu_tenure=25;mode=0,9394.0,9394,0.003804
+TabuSearch,N1000E15000.graph,8,max_iterations=1000;tabu_tenure=25;mode=1,9396.0,9396,0.004253
+TabuSearch,N1000E15000.graph,9,max_iterations=1000;tabu_tenure=50;mode=0,9393.0,9393,0.003872
+TabuSearch,N1000E15000.graph,10,max_iterations=1000;tabu_tenure=50;mode=1,9398.0,9398,0.004231
+TabuSearch,N1000E15000.graph,11,max_iterations=1000;tabu_tenure=100;mode=0,9417.0,9417,0.003965
+TabuSearch,N1000E15000.graph,12,max_iterations=1000;tabu_tenure=100;mode=1,9368.0,9368,0.004305
+TabuSearch,N1000E15000.graph,13,max_iterations=2500;tabu_tenure=5;mode=0,9330.0,9330,0.006091
+TabuSearch,N1000E15000.graph,14,max_iterations=2500;tabu_tenure=5;mode=1,9359.0,9359,0.007055
+TabuSearch,N1000E15000.graph,15,max_iterations=2500;tabu_tenure=10;mode=0,9341.0,9341,0.006124
+TabuSearch,N1000E15000.graph,16,max_iterations=2500;tabu_tenure=10;mode=1,9415.0,9415,0.007465
+TabuSearch,N1000E15000.graph,17,max_iterations=2500;tabu_tenure=15;mode=0,9388.0,9388,0.006211
+TabuSearch,N1000E15000.graph,18,max_iterations=2500;tabu_tenure=15;mode=1,9408.0,9408,0.007311
+TabuSearch,N1000E15000.graph,19,max_iterations=2500;tabu_tenure=25;mode=0,9429.0,9429,0.006584
+TabuSearch,N1000E15000.graph,20,max_iterations=2500;tabu_tenure=25;mode=1,9456.0,9456,0.007428
+TabuSearch,N1000E15000.graph,21,max_iterations=2500;tabu_tenure=50;mode=0,9453.0,9453,0.006675
+TabuSearch,N1000E15000.graph,22,max_iterations=2500;tabu_tenure=50;mode=1,9437.0,9437,0.007518
+TabuSearch,N1000E15000.graph,23,max_iterations=2500;tabu_tenure=100;mode=0,9471.0,9471,0.006751
+TabuSearch,N1000E15000.graph,24,max_iterations=2500;tabu_tenure=100;mode=1,9463.0,9463,0.007593
+TabuSearch,N1000E15000.graph,25,max_iterations=5000;tabu_tenure=5;mode=0,9330.0,9330,0.010109
+TabuSearch,N1000E15000.graph,26,max_iterations=5000;tabu_tenure=5;mode=1,9397.0,9397,0.012109
+TabuSearch,N1000E15000.graph,27,max_iterations=5000;tabu_tenure=10;mode=0,9341.0,9341,0.010044
+TabuSearch,N1000E15000.graph,28,max_iterations=5000;tabu_tenure=10;mode=1,9418.0,9418,0.012298
+TabuSearch,N1000E15000.graph,29,max_iterations=5000;tabu_tenure=15;mode=0,9388.0,9388,0.010271
+TabuSearch,N1000E15000.graph,30,max_iterations=5000;tabu_tenure=15;mode=1,9451.0,9451,0.012548
+TabuSearch,N1000E15000.graph,31,max_iterations=5000;tabu_tenure=25;mode=0,9432.0,9432,0.010845
+TabuSearch,N1000E15000.graph,32,max_iterations=5000;tabu_tenure=25;mode=1,9466.0,9466,0.012738
+TabuSearch,N1000E15000.graph,33,max_iterations=5000;tabu_tenure=50;mode=0,9481.0,9481,0.011119
+TabuSearch,N1000E15000.graph,34,max_iterations=5000;tabu_tenure=50;mode=1,9455.0,9455,0.013258
+TabuSearch,N1000E15000.graph,35,max_iterations=5000;tabu_tenure=100;mode=0,9500.0,9500,0.011469
+TabuSearch,N1000E15000.graph,36,max_iterations=5000;tabu_tenure=100;mode=1,9473.0,9473,0.013713
+TabuSearch,N1000E15000.graph,37,max_iterations=10000;tabu_tenure=5;mode=0,9330.0,9330,0.019160
+TabuSearch,N1000E15000.graph,38,max_iterations=10000;tabu_tenure=5;mode=1,9416.0,9416,0.022791
+TabuSearch,N1000E15000.graph,39,max_iterations=10000;tabu_tenure=10;mode=0,9341.0,9341,0.018947
+TabuSearch,N1000E15000.graph,40,max_iterations=10000;tabu_tenure=10;mode=1,9437.0,9437,0.023550
+TabuSearch,N1000E15000.graph,41,max_iterations=10000;tabu_tenure=15;mode=0,9388.0,9388,0.018311
+TabuSearch,N1000E15000.graph,42,max_iterations=10000;tabu_tenure=15;mode=1,9476.0,9476,0.023023
+TabuSearch,N1000E15000.graph,43,max_iterations=10000;tabu_tenure=25;mode=0,9440.0,9440,0.019024
+TabuSearch,N1000E15000.graph,44,max_iterations=10000;tabu_tenure=25;mode=1,9485.0,9485,0.023433
+TabuSearch,N1000E15000.graph,45,max_iterations=10000;tabu_tenure=50;mode=0,9481.0,9481,0.020204
+TabuSearch,N1000E15000.graph,46,max_iterations=10000;tabu_tenure=50;mode=1,9469.0,9469,0.023982
+TabuSearch,N1000E15000.graph,47,max_iterations=10000;tabu_tenure=100;mode=0,9500.0,9500,0.020962
+TabuSearch,N1000E15000.graph,48,max_iterations=10000;tabu_tenure=100;mode=1,9493.0,9493,0.024316
+TabuSearch,N1000E15000.graph,49,max_iterations=25000;tabu_tenure=5;mode=0,9330.0,9330,0.041576
+TabuSearch,N1000E15000.graph,50,max_iterations=25000;tabu_tenure=5;mode=1,9445.0,9445,0.052175
+TabuSearch,N1000E15000.graph,51,max_iterations=25000;tabu_tenure=10;mode=0,9341.0,9341,0.042097
+TabuSearch,N1000E15000.graph,52,max_iterations=25000;tabu_tenure=10;mode=1,9455.0,9455,0.053162
+TabuSearch,N1000E15000.graph,53,max_iterations=25000;tabu_tenure=15;mode=0,9388.0,9388,0.042263
+TabuSearch,N1000E15000.graph,54,max_iterations=25000;tabu_tenure=15;mode=1,9476.0,9476,0.053650
+TabuSearch,N1000E15000.graph,55,max_iterations=25000;tabu_tenure=25;mode=0,9454.0,9454,0.043894
+TabuSearch,N1000E15000.graph,56,max_iterations=25000;tabu_tenure=25;mode=1,9501.0,9501,0.054978
+TabuSearch,N1000E15000.graph,57,max_iterations=25000;tabu_tenure=50;mode=0,9481.0,9481,0.046973
+TabuSearch,N1000E15000.graph,58,max_iterations=25000;tabu_tenure=50;mode=1,9500.0,9500,0.056558
+TabuSearch,N1000E15000.graph,59,max_iterations=25000;tabu_tenure=100;mode=0,9500.0,9500,0.049058
+TabuSearch,N1000E15000.graph,60,max_iterations=25000;tabu_tenure=100;mode=1,9493.0,9493,0.057815
+VNS,N1000E15000.graph,1,k_max=2;max_iterations=100,9407.0,9407,0.624153
+VNS,N1000E15000.graph,2,k_max=2;max_iterations=250,9407.0,9407,1.537729
+VNS,N1000E15000.graph,3,k_max=2;max_iterations=500,9407.0,9407,3.063182
+VNS,N1000E15000.graph,4,k_max=2;max_iterations=1000,9407.0,9407,6.113732
+VNS,N1000E15000.graph,5,k_max=2;max_iterations=2500,9407.0,9407,15.274362
+VNS,N1000E15000.graph,6,k_max=2;max_iterations=5000,9407.0,9407,30.521296
+VNS,N1000E15000.graph,7,k_max=3;max_iterations=100,9407.0,9407,0.929094
+VNS,N1000E15000.graph,8,k_max=3;max_iterations=250,9407.0,9407,2.302214
+VNS,N1000E15000.graph,9,k_max=3;max_iterations=500,9407.0,9407,4.590420
+VNS,N1000E15000.graph,10,k_max=3;max_iterations=1000,9407.0,9407,9.178673
+VNS,N1000E15000.graph,11,k_max=3;max_iterations=2500,9407.0,9407,22.898594
+VNS,N1000E15000.graph,12,k_max=3;max_iterations=5000,9407.0,9407,45.801232
+VNS,N1000E15000.graph,13,k_max=4;max_iterations=100,9407.0,9407,1.232545
+VNS,N1000E15000.graph,14,k_max=4;max_iterations=250,9407.0,9407,3.063861
+VNS,N1000E15000.graph,15,k_max=4;max_iterations=500,9407.0,9407,6.116120
+VNS,N1000E15000.graph,16,k_max=4;max_iterations=1000,9407.0,9407,12.226058
+VNS,N1000E15000.graph,17,k_max=4;max_iterations=2500,9407.0,9407,30.550806
+VNS,N1000E15000.graph,18,k_max=4;max_iterations=5000,9407.0,9407,61.089823
+VNS,N1000E15000.graph,19,k_max=6;max_iterations=100,9407.0,9407,1.844969
+VNS,N1000E15000.graph,20,k_max=6;max_iterations=250,9407.0,9407,4.595758
+VNS,N1000E15000.graph,21,k_max=6;max_iterations=500,9407.0,9407,9.180038
+VNS,N1000E15000.graph,22,k_max=6;max_iterations=1000,9407.0,9407,18.336602
+VNS,N1000E15000.graph,23,k_max=6;max_iterations=2500,9407.0,9407,45.826788
+VNS,N1000E15000.graph,24,k_max=6;max_iterations=5000,9407.0,9407,91.683665
+VNS,N1000E15000.graph,25,k_max=8;max_iterations=100,9407.0,9407,2.457760
+VNS,N1000E15000.graph,26,k_max=8;max_iterations=250,9407.0,9407,6.126572
+VNS,N1000E15000.graph,27,k_max=8;max_iterations=500,9407.0,9407,12.242837
+VNS,N1000E15000.graph,28,k_max=8;max_iterations=1000,9407.0,9407,24.480200
+VNS,N1000E15000.graph,29,k_max=8;max_iterations=2500,9407.0,9407,61.179269
+VNS,N1000E15000.graph,30,k_max=8;max_iterations=5000,9407.0,9407,122.322502
+VNS,N1000E15000.graph,31,k_max=12;max_iterations=100,9407.0,9407,3.681735
+VNS,N1000E15000.graph,32,k_max=12;max_iterations=250,9407.0,9407,9.183400
+VNS,N1000E15000.graph,33,k_max=12;max_iterations=500,9407.0,9407,18.367430
+VNS,N1000E15000.graph,34,k_max=12;max_iterations=1000,9407.0,9407,36.748956
+VNS,N1000E15000.graph,35,k_max=12;max_iterations=2500,9407.0,9407,91.848344
+VNS,N1000E15000.graph,36,k_max=12;max_iterations=5000,9407.0,9407,183.615646
+Island Genetic Memetic,N1000E15000.graph,1,population_size=10;generations=50;migration_interval=5;mutation_rate=0.01,9506.0,9506,0.572060
+Island Genetic Memetic,N1000E15000.graph,2,population_size=10;generations=50;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.531341
+Island Genetic Memetic,N1000E15000.graph,3,population_size=10;generations=50;migration_interval=5;mutation_rate=0.1,9513.0,9513,0.645516
+Island Genetic Memetic,N1000E15000.graph,4,population_size=10;generations=50;migration_interval=5;mutation_rate=0.2,9519.0,9519,0.723451
+Island Genetic Memetic,N1000E15000.graph,5,population_size=10;generations=50;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.516517
+Island Genetic Memetic,N1000E15000.graph,6,population_size=10;generations=50;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.520308
+Island Genetic Memetic,N1000E15000.graph,7,population_size=10;generations=50;migration_interval=10;mutation_rate=0.1,9513.0,9513,0.590006
+Island Genetic Memetic,N1000E15000.graph,8,population_size=10;generations=50;migration_interval=10;mutation_rate=0.2,9519.0,9519,0.648986
+Island Genetic Memetic,N1000E15000.graph,9,population_size=10;generations=50;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.462922
+Island Genetic Memetic,N1000E15000.graph,10,population_size=10;generations=50;migration_interval=20;mutation_rate=0.05,9502.0,9502,0.481181
+Island Genetic Memetic,N1000E15000.graph,11,population_size=10;generations=50;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.556991
+Island Genetic Memetic,N1000E15000.graph,12,population_size=10;generations=50;migration_interval=20;mutation_rate=0.2,9516.0,9516,0.659223
+Island Genetic Memetic,N1000E15000.graph,13,population_size=10;generations=50;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.403352
+Island Genetic Memetic,N1000E15000.graph,14,population_size=10;generations=50;migration_interval=50;mutation_rate=0.05,9502.0,9502,0.402646
+Island Genetic Memetic,N1000E15000.graph,15,population_size=10;generations=50;migration_interval=50;mutation_rate=0.1,9509.0,9509,0.472518
+Island Genetic Memetic,N1000E15000.graph,16,population_size=10;generations=50;migration_interval=50;mutation_rate=0.2,9515.0,9515,0.554064
+Island Genetic Memetic,N1000E15000.graph,17,population_size=10;generations=100;migration_interval=5;mutation_rate=0.01,9506.0,9506,1.041734
+Island Genetic Memetic,N1000E15000.graph,18,population_size=10;generations=100;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.939752
+Island Genetic Memetic,N1000E15000.graph,19,population_size=10;generations=100;migration_interval=5;mutation_rate=0.1,9513.0,9513,1.048357
+Island Genetic Memetic,N1000E15000.graph,20,population_size=10;generations=100;migration_interval=5;mutation_rate=0.2,9519.0,9519,1.287145
+Island Genetic Memetic,N1000E15000.graph,21,population_size=10;generations=100;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.874645
+Island Genetic Memetic,N1000E15000.graph,22,population_size=10;generations=100;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.992966
+Island Genetic Memetic,N1000E15000.graph,23,population_size=10;generations=100;migration_interval=10;mutation_rate=0.1,9515.0,9515,1.135678
+Island Genetic Memetic,N1000E15000.graph,24,population_size=10;generations=100;migration_interval=10;mutation_rate=0.2,9519.0,9519,1.452543
+Island Genetic Memetic,N1000E15000.graph,25,population_size=10;generations=100;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.882770
+Island Genetic Memetic,N1000E15000.graph,26,population_size=10;generations=100;migration_interval=20;mutation_rate=0.05,9508.0,9508,0.859021
+Island Genetic Memetic,N1000E15000.graph,27,population_size=10;generations=100;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.997991
+Island Genetic Memetic,N1000E15000.graph,28,population_size=10;generations=100;migration_interval=20;mutation_rate=0.2,9516.0,9516,1.138807
+Island Genetic Memetic,N1000E15000.graph,29,population_size=10;generations=100;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.702818
+Island Genetic Memetic,N1000E15000.graph,30,population_size=10;generations=100;migration_interval=50;mutation_rate=0.05,9508.0,9508,0.724724
+Island Genetic Memetic,N1000E15000.graph,31,population_size=10;generations=100;migration_interval=50;mutation_rate=0.1,9514.0,9514,0.981465
+Island Genetic Memetic,N1000E15000.graph,32,population_size=10;generations=100;migration_interval=50;mutation_rate=0.2,9515.0,9515,1.051256
+Island Genetic Memetic,N1000E15000.graph,33,population_size=10;generations=250;migration_interval=5;mutation_rate=0.01,9506.0,9506,2.066381
+Island Genetic Memetic,N1000E15000.graph,34,population_size=10;generations=250;migration_interval=5;mutation_rate=0.05,9505.0,9505,1.815376
+Island Genetic Memetic,N1000E15000.graph,35,population_size=10;generations=250;migration_interval=5;mutation_rate=0.1,9513.0,9513,2.157890
+Island Genetic Memetic,N1000E15000.graph,36,population_size=10;generations=250;migration_interval=5;mutation_rate=0.2,9519.0,9519,2.851479
+Island Genetic Memetic,N1000E15000.graph,37,population_size=10;generations=250;migration_interval=10;mutation_rate=0.01,9517.0,9517,1.927665
+Island Genetic Memetic,N1000E15000.graph,38,population_size=10;generations=250;migration_interval=10;mutation_rate=0.05,9512.0,9512,2.099385
+Island Genetic Memetic,N1000E15000.graph,39,population_size=10;generations=250;migration_interval=10;mutation_rate=0.1,9515.0,9515,2.195930
+Island Genetic Memetic,N1000E15000.graph,40,population_size=10;generations=250;migration_interval=10;mutation_rate=0.2,9519.0,9519,3.136698
+Island Genetic Memetic,N1000E15000.graph,41,population_size=10;generations=250;migration_interval=20;mutation_rate=0.01,9515.0,9515,2.282027
+Island Genetic Memetic,N1000E15000.graph,42,population_size=10;generations=250;migration_interval=20;mutation_rate=0.05,9511.0,9511,1.845847
+Island Genetic Memetic,N1000E15000.graph,43,population_size=10;generations=250;migration_interval=20;mutation_rate=0.1,9516.0,9516,2.218878
+Island Genetic Memetic,N1000E15000.graph,44,population_size=10;generations=250;migration_interval=20;mutation_rate=0.2,9520.0,9520,2.919137
+Island Genetic Memetic,N1000E15000.graph,45,population_size=10;generations=250;migration_interval=50;mutation_rate=0.01,9515.0,9515,1.811654
+Island Genetic Memetic,N1000E15000.graph,46,population_size=10;generations=250;migration_interval=50;mutation_rate=0.05,9513.0,9513,1.805420
+Island Genetic Memetic,N1000E15000.graph,47,population_size=10;generations=250;migration_interval=50;mutation_rate=0.1,9515.0,9515,2.374058
+Island Genetic Memetic,N1000E15000.graph,48,population_size=10;generations=250;migration_interval=50;mutation_rate=0.2,9519.0,9519,2.706888
+Island Genetic Memetic,N1000E15000.graph,49,population_size=10;generations=500;migration_interval=5;mutation_rate=0.01,9506.0,9506,3.928568
+Island Genetic Memetic,N1000E15000.graph,50,population_size=10;generations=500;migration_interval=5;mutation_rate=0.05,9505.0,9505,3.352471
+Island Genetic Memetic,N1000E15000.graph,51,population_size=10;generations=500;migration_interval=5;mutation_rate=0.1,9513.0,9513,4.041999
+Island Genetic Memetic,N1000E15000.graph,52,population_size=10;generations=500;migration_interval=5;mutation_rate=0.2,9519.0,9519,5.541230
+Island Genetic Memetic,N1000E15000.graph,53,population_size=10;generations=500;migration_interval=10;mutation_rate=0.01,9518.0,9518,3.936526
+Island Genetic Memetic,N1000E15000.graph,54,population_size=10;generations=500;migration_interval=10;mutation_rate=0.05,9512.0,9512,3.597846
+Island Genetic Memetic,N1000E15000.graph,55,population_size=10;generations=500;migration_interval=10;mutation_rate=0.1,9515.0,9515,4.064850
+Island Genetic Memetic,N1000E15000.graph,56,population_size=10;generations=500;migration_interval=10;mutation_rate=0.2,9519.0,9519,5.318526
+Island Genetic Memetic,N1000E15000.graph,57,population_size=10;generations=500;migration_interval=20;mutation_rate=0.01,9515.0,9515,3.996834
+Island Genetic Memetic,N1000E15000.graph,58,population_size=10;generations=500;migration_interval=20;mutation_rate=0.05,9517.0,9517,3.544339
+Island Genetic Memetic,N1000E15000.graph,59,population_size=10;generations=500;migration_interval=20;mutation_rate=0.1,9516.0,9516,3.923174
+Island Genetic Memetic,N1000E15000.graph,60,population_size=10;generations=500;migration_interval=20;mutation_rate=0.2,9520.0,9520,5.407055
+Island Genetic Memetic,N1000E15000.graph,61,population_size=10;generations=500;migration_interval=50;mutation_rate=0.01,9515.0,9515,3.420442
+Island Genetic Memetic,N1000E15000.graph,62,population_size=10;generations=500;migration_interval=50;mutation_rate=0.05,9513.0,9513,3.455762
+Island Genetic Memetic,N1000E15000.graph,63,population_size=10;generations=500;migration_interval=50;mutation_rate=0.1,9520.0,9520,4.091493
+Island Genetic Memetic,N1000E15000.graph,64,population_size=10;generations=500;migration_interval=50;mutation_rate=0.2,9519.0,9519,5.263542
+Island Genetic Memetic,N1000E15000.graph,65,population_size=20;generations=50;migration_interval=5;mutation_rate=0.01,9506.0,9506,0.605651
+Island Genetic Memetic,N1000E15000.graph,66,population_size=20;generations=50;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.558695
+Island Genetic Memetic,N1000E15000.graph,67,population_size=20;generations=50;migration_interval=5;mutation_rate=0.1,9513.0,9513,0.634887
+Island Genetic Memetic,N1000E15000.graph,68,population_size=20;generations=50;migration_interval=5;mutation_rate=0.2,9519.0,9519,0.743422
+Island Genetic Memetic,N1000E15000.graph,69,population_size=20;generations=50;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.537782
+Island Genetic Memetic,N1000E15000.graph,70,population_size=20;generations=50;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.535583
+Island Genetic Memetic,N1000E15000.graph,71,population_size=20;generations=50;migration_interval=10;mutation_rate=0.1,9513.0,9513,0.554147
+Island Genetic Memetic,N1000E15000.graph,72,population_size=20;generations=50;migration_interval=10;mutation_rate=0.2,9519.0,9519,0.674075
+Island Genetic Memetic,N1000E15000.graph,73,population_size=20;generations=50;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.478254
+Island Genetic Memetic,N1000E15000.graph,74,population_size=20;generations=50;migration_interval=20;mutation_rate=0.05,9502.0,9502,0.507058
+Island Genetic Memetic,N1000E15000.graph,75,population_size=20;generations=50;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.553947
+Island Genetic Memetic,N1000E15000.graph,76,population_size=20;generations=50;migration_interval=20;mutation_rate=0.2,9516.0,9516,0.628927
+Island Genetic Memetic,N1000E15000.graph,77,population_size=20;generations=50;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.433911
+Island Genetic Memetic,N1000E15000.graph,78,population_size=20;generations=50;migration_interval=50;mutation_rate=0.05,9502.0,9502,0.403096
+Island Genetic Memetic,N1000E15000.graph,79,population_size=20;generations=50;migration_interval=50;mutation_rate=0.1,9509.0,9509,0.524736
+Island Genetic Memetic,N1000E15000.graph,80,population_size=20;generations=50;migration_interval=50;mutation_rate=0.2,9515.0,9515,0.633065
+Island Genetic Memetic,N1000E15000.graph,81,population_size=20;generations=100;migration_interval=5;mutation_rate=0.01,9506.0,9506,1.050617
+Island Genetic Memetic,N1000E15000.graph,82,population_size=20;generations=100;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.932087
+Island Genetic Memetic,N1000E15000.graph,83,population_size=20;generations=100;migration_interval=5;mutation_rate=0.1,9513.0,9513,1.057837
+Island Genetic Memetic,N1000E15000.graph,84,population_size=20;generations=100;migration_interval=5;mutation_rate=0.2,9519.0,9519,1.316171
+Island Genetic Memetic,N1000E15000.graph,85,population_size=20;generations=100;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.959448
+Island Genetic Memetic,N1000E15000.graph,86,population_size=20;generations=100;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.986444
+Island Genetic Memetic,N1000E15000.graph,87,population_size=20;generations=100;migration_interval=10;mutation_rate=0.1,9515.0,9515,1.010634
+Island Genetic Memetic,N1000E15000.graph,88,population_size=20;generations=100;migration_interval=10;mutation_rate=0.2,9519.0,9519,1.170060
+Island Genetic Memetic,N1000E15000.graph,89,population_size=20;generations=100;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.824963
+Island Genetic Memetic,N1000E15000.graph,90,population_size=20;generations=100;migration_interval=20;mutation_rate=0.05,9508.0,9508,0.769231
+Island Genetic Memetic,N1000E15000.graph,91,population_size=20;generations=100;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.960778
+Island Genetic Memetic,N1000E15000.graph,92,population_size=20;generations=100;migration_interval=20;mutation_rate=0.2,9516.0,9516,1.123734
+Island Genetic Memetic,N1000E15000.graph,93,population_size=20;generations=100;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.693553
+Island Genetic Memetic,N1000E15000.graph,94,population_size=20;generations=100;migration_interval=50;mutation_rate=0.05,9508.0,9508,0.698501
+Island Genetic Memetic,N1000E15000.graph,95,population_size=20;generations=100;migration_interval=50;mutation_rate=0.1,9514.0,9514,0.936868
+Island Genetic Memetic,N1000E15000.graph,96,population_size=20;generations=100;migration_interval=50;mutation_rate=0.2,9515.0,9515,1.052427
+Island Genetic Memetic,N1000E15000.graph,97,population_size=20;generations=250;migration_interval=5;mutation_rate=0.01,9506.0,9506,2.052976
+Island Genetic Memetic,N1000E15000.graph,98,population_size=20;generations=250;migration_interval=5;mutation_rate=0.05,9505.0,9505,1.842890
+Island Genetic Memetic,N1000E15000.graph,99,population_size=20;generations=250;migration_interval=5;mutation_rate=0.1,9513.0,9513,2.129292
+Island Genetic Memetic,N1000E15000.graph,100,population_size=20;generations=250;migration_interval=5;mutation_rate=0.2,9519.0,9519,2.950031
+Island Genetic Memetic,N1000E15000.graph,101,population_size=20;generations=250;migration_interval=10;mutation_rate=0.01,9517.0,9517,1.955187
+Island Genetic Memetic,N1000E15000.graph,102,population_size=20;generations=250;migration_interval=10;mutation_rate=0.05,9512.0,9512,2.102397
+Island Genetic Memetic,N1000E15000.graph,103,population_size=20;generations=250;migration_interval=10;mutation_rate=0.1,9515.0,9515,2.329872
+Island Genetic Memetic,N1000E15000.graph,104,population_size=20;generations=250;migration_interval=10;mutation_rate=0.2,9519.0,9519,2.745558
+Island Genetic Memetic,N1000E15000.graph,105,population_size=20;generations=250;migration_interval=20;mutation_rate=0.01,9515.0,9515,2.306461
+Island Genetic Memetic,N1000E15000.graph,106,population_size=20;generations=250;migration_interval=20;mutation_rate=0.05,9511.0,9511,2.003077
+Island Genetic Memetic,N1000E15000.graph,107,population_size=20;generations=250;migration_interval=20;mutation_rate=0.1,9516.0,9516,2.182898
+Island Genetic Memetic,N1000E15000.graph,108,population_size=20;generations=250;migration_interval=20;mutation_rate=0.2,9520.0,9520,2.777650
+Island Genetic Memetic,N1000E15000.graph,109,population_size=20;generations=250;migration_interval=50;mutation_rate=0.01,9515.0,9515,1.701335
+Island Genetic Memetic,N1000E15000.graph,110,population_size=20;generations=250;migration_interval=50;mutation_rate=0.05,9513.0,9513,1.766386
+Island Genetic Memetic,N1000E15000.graph,111,population_size=20;generations=250;migration_interval=50;mutation_rate=0.1,9515.0,9515,2.297036
+Island Genetic Memetic,N1000E15000.graph,112,population_size=20;generations=250;migration_interval=50;mutation_rate=0.2,9519.0,9519,2.569882
+Island Genetic Memetic,N1000E15000.graph,113,population_size=20;generations=500;migration_interval=5;mutation_rate=0.01,9506.0,9506,3.738336
+Island Genetic Memetic,N1000E15000.graph,114,population_size=20;generations=500;migration_interval=5;mutation_rate=0.05,9505.0,9505,3.322378
+Island Genetic Memetic,N1000E15000.graph,115,population_size=20;generations=500;migration_interval=5;mutation_rate=0.1,9513.0,9513,3.940983
+Island Genetic Memetic,N1000E15000.graph,116,population_size=20;generations=500;migration_interval=5;mutation_rate=0.2,9519.0,9519,5.850269
+Island Genetic Memetic,N1000E15000.graph,117,population_size=20;generations=500;migration_interval=10;mutation_rate=0.01,9518.0,9518,3.864280
+Island Genetic Memetic,N1000E15000.graph,118,population_size=20;generations=500;migration_interval=10;mutation_rate=0.05,9512.0,9512,3.460474
+Island Genetic Memetic,N1000E15000.graph,119,population_size=20;generations=500;migration_interval=10;mutation_rate=0.1,9515.0,9515,4.251344
+Island Genetic Memetic,N1000E15000.graph,120,population_size=20;generations=500;migration_interval=10;mutation_rate=0.2,9519.0,9519,5.314567
+Island Genetic Memetic,N1000E15000.graph,121,population_size=20;generations=500;migration_interval=20;mutation_rate=0.01,9515.0,9515,3.867314
+Island Genetic Memetic,N1000E15000.graph,122,population_size=20;generations=500;migration_interval=20;mutation_rate=0.05,9517.0,9517,3.309688
+Island Genetic Memetic,N1000E15000.graph,123,population_size=20;generations=500;migration_interval=20;mutation_rate=0.1,9516.0,9516,3.782547
+Island Genetic Memetic,N1000E15000.graph,124,population_size=20;generations=500;migration_interval=20;mutation_rate=0.2,9520.0,9520,5.429698
+Island Genetic Memetic,N1000E15000.graph,125,population_size=20;generations=500;migration_interval=50;mutation_rate=0.01,9515.0,9515,3.397830
+Island Genetic Memetic,N1000E15000.graph,126,population_size=20;generations=500;migration_interval=50;mutation_rate=0.05,9513.0,9513,3.240399
+Island Genetic Memetic,N1000E15000.graph,127,population_size=20;generations=500;migration_interval=50;mutation_rate=0.1,9520.0,9520,4.283848
+Island Genetic Memetic,N1000E15000.graph,128,population_size=20;generations=500;migration_interval=50;mutation_rate=0.2,9519.0,9519,5.172675
+Island Genetic Memetic,N1000E15000.graph,129,population_size=30;generations=50;migration_interval=5;mutation_rate=0.01,9506.0,9506,0.724167
+Island Genetic Memetic,N1000E15000.graph,130,population_size=30;generations=50;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.646211
+Island Genetic Memetic,N1000E15000.graph,131,population_size=30;generations=50;migration_interval=5;mutation_rate=0.1,9513.0,9513,0.677381
+Island Genetic Memetic,N1000E15000.graph,132,population_size=30;generations=50;migration_interval=5;mutation_rate=0.2,9519.0,9519,0.735995
+Island Genetic Memetic,N1000E15000.graph,133,population_size=30;generations=50;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.549649
+Island Genetic Memetic,N1000E15000.graph,134,population_size=30;generations=50;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.587958
+Island Genetic Memetic,N1000E15000.graph,135,population_size=30;generations=50;migration_interval=10;mutation_rate=0.1,9513.0,9513,0.665224
+Island Genetic Memetic,N1000E15000.graph,136,population_size=30;generations=50;migration_interval=10;mutation_rate=0.2,9519.0,9519,0.862015
+Island Genetic Memetic,N1000E15000.graph,137,population_size=30;generations=50;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.559248
+Island Genetic Memetic,N1000E15000.graph,138,population_size=30;generations=50;migration_interval=20;mutation_rate=0.05,9502.0,9502,0.545344
+Island Genetic Memetic,N1000E15000.graph,139,population_size=30;generations=50;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.593898
+Island Genetic Memetic,N1000E15000.graph,140,population_size=30;generations=50;migration_interval=20;mutation_rate=0.2,9516.0,9516,0.764407
+Island Genetic Memetic,N1000E15000.graph,141,population_size=30;generations=50;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.510430
+Island Genetic Memetic,N1000E15000.graph,142,population_size=30;generations=50;migration_interval=50;mutation_rate=0.05,9502.0,9502,0.507553
+Island Genetic Memetic,N1000E15000.graph,143,population_size=30;generations=50;migration_interval=50;mutation_rate=0.1,9509.0,9509,0.566257
+Island Genetic Memetic,N1000E15000.graph,144,population_size=30;generations=50;migration_interval=50;mutation_rate=0.2,9515.0,9515,0.661534
+Island Genetic Memetic,N1000E15000.graph,145,population_size=30;generations=100;migration_interval=5;mutation_rate=0.01,9506.0,9506,1.085144
+Island Genetic Memetic,N1000E15000.graph,146,population_size=30;generations=100;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.952554
+Island Genetic Memetic,N1000E15000.graph,147,population_size=30;generations=100;migration_interval=5;mutation_rate=0.1,9513.0,9513,1.088708
+Island Genetic Memetic,N1000E15000.graph,148,population_size=30;generations=100;migration_interval=5;mutation_rate=0.2,9519.0,9519,1.374262
+Island Genetic Memetic,N1000E15000.graph,149,population_size=30;generations=100;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.898004
+Island Genetic Memetic,N1000E15000.graph,150,population_size=30;generations=100;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.925947
+Island Genetic Memetic,N1000E15000.graph,151,population_size=30;generations=100;migration_interval=10;mutation_rate=0.1,9515.0,9515,0.999090
+Island Genetic Memetic,N1000E15000.graph,152,population_size=30;generations=100;migration_interval=10;mutation_rate=0.2,9519.0,9519,1.232140
+Island Genetic Memetic,N1000E15000.graph,153,population_size=30;generations=100;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.842377
+Island Genetic Memetic,N1000E15000.graph,154,population_size=30;generations=100;migration_interval=20;mutation_rate=0.05,9508.0,9508,0.765833
+Island Genetic Memetic,N1000E15000.graph,155,population_size=30;generations=100;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.960351
+Island Genetic Memetic,N1000E15000.graph,156,population_size=30;generations=100;migration_interval=20;mutation_rate=0.2,9516.0,9516,1.126728
+Island Genetic Memetic,N1000E15000.graph,157,population_size=30;generations=100;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.691467
+Island Genetic Memetic,N1000E15000.graph,158,population_size=30;generations=100;migration_interval=50;mutation_rate=0.05,9508.0,9508,0.697031
+Island Genetic Memetic,N1000E15000.graph,159,population_size=30;generations=100;migration_interval=50;mutation_rate=0.1,9514.0,9514,0.942439
+Island Genetic Memetic,N1000E15000.graph,160,population_size=30;generations=100;migration_interval=50;mutation_rate=0.2,9515.0,9515,1.022228
+Island Genetic Memetic,N1000E15000.graph,161,population_size=30;generations=250;migration_interval=5;mutation_rate=0.01,9506.0,9506,2.053435
+Island Genetic Memetic,N1000E15000.graph,162,population_size=30;generations=250;migration_interval=5;mutation_rate=0.05,9505.0,9505,1.843675
+Island Genetic Memetic,N1000E15000.graph,163,population_size=30;generations=250;migration_interval=5;mutation_rate=0.1,9513.0,9513,2.174547
+Island Genetic Memetic,N1000E15000.graph,164,population_size=30;generations=250;migration_interval=5;mutation_rate=0.2,9519.0,9519,3.085077
+Island Genetic Memetic,N1000E15000.graph,165,population_size=30;generations=250;migration_interval=10;mutation_rate=0.01,9517.0,9517,2.045273
+Island Genetic Memetic,N1000E15000.graph,166,population_size=30;generations=250;migration_interval=10;mutation_rate=0.05,9512.0,9512,2.001651
+Island Genetic Memetic,N1000E15000.graph,167,population_size=30;generations=250;migration_interval=10;mutation_rate=0.1,9515.0,9515,2.223521
+Island Genetic Memetic,N1000E15000.graph,168,population_size=30;generations=250;migration_interval=10;mutation_rate=0.2,9519.0,9519,2.831714
+Island Genetic Memetic,N1000E15000.graph,169,population_size=30;generations=250;migration_interval=20;mutation_rate=0.01,9515.0,9515,2.122274
+Island Genetic Memetic,N1000E15000.graph,170,population_size=30;generations=250;migration_interval=20;mutation_rate=0.05,9511.0,9511,1.809881
+Island Genetic Memetic,N1000E15000.graph,171,population_size=30;generations=250;migration_interval=20;mutation_rate=0.1,9516.0,9516,2.135823
+Island Genetic Memetic,N1000E15000.graph,172,population_size=30;generations=250;migration_interval=20;mutation_rate=0.2,9520.0,9520,2.768516
+Island Genetic Memetic,N1000E15000.graph,173,population_size=30;generations=250;migration_interval=50;mutation_rate=0.01,9515.0,9515,1.636456
+Island Genetic Memetic,N1000E15000.graph,174,population_size=30;generations=250;migration_interval=50;mutation_rate=0.05,9513.0,9513,1.671629
+Island Genetic Memetic,N1000E15000.graph,175,population_size=30;generations=250;migration_interval=50;mutation_rate=0.1,9515.0,9515,2.288414
+Island Genetic Memetic,N1000E15000.graph,176,population_size=30;generations=250;migration_interval=50;mutation_rate=0.2,9519.0,9519,2.630258
+Island Genetic Memetic,N1000E15000.graph,177,population_size=30;generations=500;migration_interval=5;mutation_rate=0.01,9506.0,9506,3.871968
+Island Genetic Memetic,N1000E15000.graph,178,population_size=30;generations=500;migration_interval=5;mutation_rate=0.05,9505.0,9505,3.471237
+Island Genetic Memetic,N1000E15000.graph,179,population_size=30;generations=500;migration_interval=5;mutation_rate=0.1,9513.0,9513,4.012354
+Island Genetic Memetic,N1000E15000.graph,180,population_size=30;generations=500;migration_interval=5;mutation_rate=0.2,9519.0,9519,5.595259
+Island Genetic Memetic,N1000E15000.graph,181,population_size=30;generations=500;migration_interval=10;mutation_rate=0.01,9518.0,9518,4.002300
+Island Genetic Memetic,N1000E15000.graph,182,population_size=30;generations=500;migration_interval=10;mutation_rate=0.05,9512.0,9512,3.769301
+Island Genetic Memetic,N1000E15000.graph,183,population_size=30;generations=500;migration_interval=10;mutation_rate=0.1,9515.0,9515,4.115273
+Island Genetic Memetic,N1000E15000.graph,184,population_size=30;generations=500;migration_interval=10;mutation_rate=0.2,9519.0,9519,5.716649
+Island Genetic Memetic,N1000E15000.graph,185,population_size=30;generations=500;migration_interval=20;mutation_rate=0.01,9515.0,9515,3.935220
+Island Genetic Memetic,N1000E15000.graph,186,population_size=30;generations=500;migration_interval=20;mutation_rate=0.05,9517.0,9517,3.472857
+Island Genetic Memetic,N1000E15000.graph,187,population_size=30;generations=500;migration_interval=20;mutation_rate=0.1,9516.0,9516,4.066422
+Island Genetic Memetic,N1000E15000.graph,188,population_size=30;generations=500;migration_interval=20;mutation_rate=0.2,9520.0,9520,5.599992
+Island Genetic Memetic,N1000E15000.graph,189,population_size=30;generations=500;migration_interval=50;mutation_rate=0.01,9515.0,9515,3.388217
+Island Genetic Memetic,N1000E15000.graph,190,population_size=30;generations=500;migration_interval=50;mutation_rate=0.05,9513.0,9513,3.311557
+Island Genetic Memetic,N1000E15000.graph,191,population_size=30;generations=500;migration_interval=50;mutation_rate=0.1,9520.0,9520,4.186807
+Island Genetic Memetic,N1000E15000.graph,192,population_size=30;generations=500;migration_interval=50;mutation_rate=0.2,9519.0,9519,5.009199
+Island Genetic Memetic,N1000E15000.graph,193,population_size=50;generations=50;migration_interval=5;mutation_rate=0.01,9506.0,9506,0.578018
+Island Genetic Memetic,N1000E15000.graph,194,population_size=50;generations=50;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.551621
+Island Genetic Memetic,N1000E15000.graph,195,population_size=50;generations=50;migration_interval=5;mutation_rate=0.1,9513.0,9513,0.685597
+Island Genetic Memetic,N1000E15000.graph,196,population_size=50;generations=50;migration_interval=5;mutation_rate=0.2,9519.0,9519,0.897407
+Island Genetic Memetic,N1000E15000.graph,197,population_size=50;generations=50;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.563414
+Island Genetic Memetic,N1000E15000.graph,198,population_size=50;generations=50;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.534741
+Island Genetic Memetic,N1000E15000.graph,199,population_size=50;generations=50;migration_interval=10;mutation_rate=0.1,9513.0,9513,0.559251
+Island Genetic Memetic,N1000E15000.graph,200,population_size=50;generations=50;migration_interval=10;mutation_rate=0.2,9519.0,9519,0.657155
+Island Genetic Memetic,N1000E15000.graph,201,population_size=50;generations=50;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.464582
+Island Genetic Memetic,N1000E15000.graph,202,population_size=50;generations=50;migration_interval=20;mutation_rate=0.05,9502.0,9502,0.478559
+Island Genetic Memetic,N1000E15000.graph,203,population_size=50;generations=50;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.540885
+Island Genetic Memetic,N1000E15000.graph,204,population_size=50;generations=50;migration_interval=20;mutation_rate=0.2,9516.0,9516,0.642750
+Island Genetic Memetic,N1000E15000.graph,205,population_size=50;generations=50;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.416159
+Island Genetic Memetic,N1000E15000.graph,206,population_size=50;generations=50;migration_interval=50;mutation_rate=0.05,9502.0,9502,0.443201
+Island Genetic Memetic,N1000E15000.graph,207,population_size=50;generations=50;migration_interval=50;mutation_rate=0.1,9509.0,9509,0.570233
+Island Genetic Memetic,N1000E15000.graph,208,population_size=50;generations=50;migration_interval=50;mutation_rate=0.2,9515.0,9515,0.584908
+Island Genetic Memetic,N1000E15000.graph,209,population_size=50;generations=100;migration_interval=5;mutation_rate=0.01,9506.0,9506,1.052346
+Island Genetic Memetic,N1000E15000.graph,210,population_size=50;generations=100;migration_interval=5;mutation_rate=0.05,9503.0,9503,0.933291
+Island Genetic Memetic,N1000E15000.graph,211,population_size=50;generations=100;migration_interval=5;mutation_rate=0.1,9513.0,9513,1.075512
+Island Genetic Memetic,N1000E15000.graph,212,population_size=50;generations=100;migration_interval=5;mutation_rate=0.2,9519.0,9519,1.315570
+Island Genetic Memetic,N1000E15000.graph,213,population_size=50;generations=100;migration_interval=10;mutation_rate=0.01,9502.0,9502,0.960321
+Island Genetic Memetic,N1000E15000.graph,214,population_size=50;generations=100;migration_interval=10;mutation_rate=0.05,9512.0,9512,0.914888
+Island Genetic Memetic,N1000E15000.graph,215,population_size=50;generations=100;migration_interval=10;mutation_rate=0.1,9515.0,9515,1.048185
+Island Genetic Memetic,N1000E15000.graph,216,population_size=50;generations=100;migration_interval=10;mutation_rate=0.2,9519.0,9519,1.209446
+Island Genetic Memetic,N1000E15000.graph,217,population_size=50;generations=100;migration_interval=20;mutation_rate=0.01,9503.0,9503,0.867690
+Island Genetic Memetic,N1000E15000.graph,218,population_size=50;generations=100;migration_interval=20;mutation_rate=0.05,9508.0,9508,0.780196
+Island Genetic Memetic,N1000E15000.graph,219,population_size=50;generations=100;migration_interval=20;mutation_rate=0.1,9516.0,9516,0.960507
+Island Genetic Memetic,N1000E15000.graph,220,population_size=50;generations=100;migration_interval=20;mutation_rate=0.2,9516.0,9516,1.079273
+Island Genetic Memetic,N1000E15000.graph,221,population_size=50;generations=100;migration_interval=50;mutation_rate=0.01,9496.0,9496,0.701615
+Island Genetic Memetic,N1000E15000.graph,222,population_size=50;generations=100;migration_interval=50;mutation_rate=0.05,9508.0,9508,0.696074
+Island Genetic Memetic,N1000E15000.graph,223,population_size=50;generations=100;migration_interval=50;mutation_rate=0.1,9514.0,9514,0.929766
+Island Genetic Memetic,N1000E15000.graph,224,population_size=50;generations=100;migration_interval=50;mutation_rate=0.2,9515.0,9515,1.051079
+Island Genetic Memetic,N1000E15000.graph,225,population_size=50;generations=250;migration_interval=5;mutation_rate=0.01,9506.0,9506,2.064595
+Island Genetic Memetic,N1000E15000.graph,226,population_size=50;generations=250;migration_interval=5;mutation_rate=0.05,9505.0,9505,1.862754
+Island Genetic Memetic,N1000E15000.graph,227,population_size=50;generations=250;migration_interval=5;mutation_rate=0.1,9513.0,9513,2.331661
+Island Genetic Memetic,N1000E15000.graph,228,population_size=50;generations=250;migration_interval=5;mutation_rate=0.2,9519.0,9519,3.246127
+Island Genetic Memetic,N1000E15000.graph,229,population_size=50;generations=250;migration_interval=10;mutation_rate=0.01,9517.0,9517,2.058790
+Island Genetic Memetic,N1000E15000.graph,230,population_size=50;generations=250;migration_interval=10;mutation_rate=0.05,9512.0,9512,1.995308
+Island Genetic Memetic,N1000E15000.graph,231,population_size=50;generations=250;migration_interval=10;mutation_rate=0.1,9515.0,9515,2.161704
+Island Genetic Memetic,N1000E15000.graph,232,population_size=50;generations=250;migration_interval=10;mutation_rate=0.2,9519.0,9519,2.761565
+Island Genetic Memetic,N1000E15000.graph,233,population_size=50;generations=250;migration_interval=20;mutation_rate=0.01,9515.0,9515,2.129673
+Island Genetic Memetic,N1000E15000.graph,234,population_size=50;generations=250;migration_interval=20;mutation_rate=0.05,9511.0,9511,2.011254
+Island Genetic Memetic,N1000E15000.graph,235,population_size=50;generations=250;migration_interval=20;mutation_rate=0.1,9516.0,9516,2.107412
+Island Genetic Memetic,N1000E15000.graph,236,population_size=50;generations=250;migration_interval=20;mutation_rate=0.2,9520.0,9520,2.666416
+Island Genetic Memetic,N1000E15000.graph,237,population_size=50;generations=250;migration_interval=50;mutation_rate=0.01,9515.0,9515,1.626305
+Island Genetic Memetic,N1000E15000.graph,238,population_size=50;generations=250;migration_interval=50;mutation_rate=0.05,9513.0,9513,1.616871
+Island Genetic Memetic,N1000E15000.graph,239,population_size=50;generations=250;migration_interval=50;mutation_rate=0.1,9515.0,9515,2.278288
+Island Genetic Memetic,N1000E15000.graph,240,population_size=50;generations=250;migration_interval=50;mutation_rate=0.2,9519.0,9519,2.780762
+Island Genetic Memetic,N1000E15000.graph,241,population_size=50;generations=500;migration_interval=5;mutation_rate=0.01,9506.0,9506,4.460324
+Island Genetic Memetic,N1000E15000.graph,242,population_size=50;generations=500;migration_interval=5;mutation_rate=0.05,9505.0,9505,3.381267
+Island Genetic Memetic,N1000E15000.graph,243,population_size=50;generations=500;migration_interval=5;mutation_rate=0.1,9513.0,9513,4.066473
+Island Genetic Memetic,N1000E15000.graph,244,population_size=50;generations=500;migration_interval=5;mutation_rate=0.2,9519.0,9519,5.612308
+Island Genetic Memetic,N1000E15000.graph,245,population_size=50;generations=500;migration_interval=10;mutation_rate=0.01,9518.0,9518,3.499600
+Island Genetic Memetic,N1000E15000.graph,246,population_size=50;generations=500;migration_interval=10;mutation_rate=0.05,9512.0,9512,3.461657
+Island Genetic Memetic,N1000E15000.graph,247,population_size=50;generations=500;migration_interval=10;mutation_rate=0.1,9515.0,9515,3.911855
+Island Genetic Memetic,N1000E15000.graph,248,population_size=50;generations=500;migration_interval=10;mutation_rate=0.2,9519.0,9519,5.227849
+Island Genetic Memetic,N1000E15000.graph,249,population_size=50;generations=500;migration_interval=20;mutation_rate=0.01,9515.0,9515,3.704714
+Island Genetic Memetic,N1000E15000.graph,250,population_size=50;generations=500;migration_interval=20;mutation_rate=0.05,9517.0,9517,3.366590
+Island Genetic Memetic,N1000E15000.graph,251,population_size=50;generations=500;migration_interval=20;mutation_rate=0.1,9516.0,9516,3.790882
+Island Genetic Memetic,N1000E15000.graph,252,population_size=50;generations=500;migration_interval=20;mutation_rate=0.2,9520.0,9520,5.162820
+Island Genetic Memetic,N1000E15000.graph,253,population_size=50;generations=500;migration_interval=50;mutation_rate=0.01,9515.0,9515,3.077214
+Island Genetic Memetic,N1000E15000.graph,254,population_size=50;generations=500;migration_interval=50;mutation_rate=0.05,9513.0,9513,3.219158
+Island Genetic Memetic,N1000E15000.graph,255,population_size=50;generations=500;migration_interval=50;mutation_rate=0.1,9520.0,9520,4.019231
+Island Genetic Memetic,N1000E15000.graph,256,population_size=50;generations=500;migration_interval=50;mutation_rate=0.2,9519.0,9519,5.202491
+GRASP,N1000E15000.graph,1,max_iterations=10;alpha=0.0,9448.0,9448,0.112164
+GRASP,N1000E15000.graph,2,max_iterations=10;alpha=0.1,9463.0,9463,0.106721
+GRASP,N1000E15000.graph,3,max_iterations=10;alpha=0.2,9458.0,9458,0.109117
+GRASP,N1000E15000.graph,4,max_iterations=10;alpha=0.3,9440.0,9440,0.102987
+GRASP,N1000E15000.graph,5,max_iterations=10;alpha=0.5,9449.0,9449,0.111876
+GRASP,N1000E15000.graph,6,max_iterations=10;alpha=0.7,9449.0,9449,0.106078
+GRASP,N1000E15000.graph,7,max_iterations=10;alpha=0.9,9450.0,9450,0.109268
+GRASP,N1000E15000.graph,8,max_iterations=10;alpha=1.0,9450.0,9450,0.105649
+GRASP,N1000E15000.graph,9,max_iterations=30;alpha=0.0,9491.0,9491,0.229784
+GRASP,N1000E15000.graph,10,max_iterations=30;alpha=0.1,9471.0,9471,0.233315
+GRASP,N1000E15000.graph,11,max_iterations=30;alpha=0.2,9469.0,9469,0.235408
+GRASP,N1000E15000.graph,12,max_iterations=30;alpha=0.3,9471.0,9471,0.235312
+GRASP,N1000E15000.graph,13,max_iterations=30;alpha=0.5,9466.0,9466,0.259222
+GRASP,N1000E15000.graph,14,max_iterations=30;alpha=0.7,9469.0,9469,0.252669
+GRASP,N1000E15000.graph,15,max_iterations=30;alpha=0.9,9469.0,9469,0.268010
+GRASP,N1000E15000.graph,16,max_iterations=30;alpha=1.0,9457.0,9457,0.265047
+GRASP,N1000E15000.graph,17,max_iterations=100;alpha=0.0,9491.0,9491,0.750295
+GRASP,N1000E15000.graph,18,max_iterations=100;alpha=0.1,9471.0,9471,0.715692
+GRASP,N1000E15000.graph,19,max_iterations=100;alpha=0.2,9479.0,9479,0.721295
+GRASP,N1000E15000.graph,20,max_iterations=100;alpha=0.3,9473.0,9473,0.771732
+GRASP,N1000E15000.graph,21,max_iterations=100;alpha=0.5,9481.0,9481,0.731754
+GRASP,N1000E15000.graph,22,max_iterations=100;alpha=0.7,9469.0,9469,0.777277
+GRASP,N1000E15000.graph,23,max_iterations=100;alpha=0.9,9469.0,9469,0.772587
+GRASP,N1000E15000.graph,24,max_iterations=100;alpha=1.0,9463.0,9463,0.732351
+GRASP,N1000E15000.graph,25,max_iterations=250;alpha=0.0,9491.0,9491,1.654861
+GRASP,N1000E15000.graph,26,max_iterations=250;alpha=0.1,9471.0,9471,1.668744
+GRASP,N1000E15000.graph,27,max_iterations=250;alpha=0.2,9480.0,9480,1.673223
+GRASP,N1000E15000.graph,28,max_iterations=250;alpha=0.3,9473.0,9473,1.704586
+GRASP,N1000E15000.graph,29,max_iterations=250;alpha=0.5,9493.0,9493,1.754327
+GRASP,N1000E15000.graph,30,max_iterations=250;alpha=0.7,9485.0,9485,1.812064
+GRASP,N1000E15000.graph,31,max_iterations=250;alpha=0.9,9487.0,9487,1.848021
+GRASP,N1000E15000.graph,32,max_iterations=250;alpha=1.0,9477.0,9477,1.806917
+GRASP,N1000E15000.graph,33,max_iterations=500;alpha=0.0,9491.0,9491,3.242588
+GRASP,N1000E15000.graph,34,max_iterations=500;alpha=0.1,9490.0,9490,3.287848
+GRASP,N1000E15000.graph,35,max_iterations=500;alpha=0.2,9484.0,9484,3.264084
+GRASP,N1000E15000.graph,36,max_iterations=500;alpha=0.3,9480.0,9480,3.287531
+GRASP,N1000E15000.graph,37,max_iterations=500;alpha=0.5,9493.0,9493,3.403675
+GRASP,N1000E15000.graph,38,max_iterations=500;alpha=0.7,9487.0,9487,3.577901
+GRASP,N1000E15000.graph,39,max_iterations=500;alpha=0.9,9487.0,9487,3.668703
+GRASP,N1000E15000.graph,40,max_iterations=500;alpha=1.0,9492.0,9492,3.619738
+GRASP,N1000E15000.graph,41,max_iterations=1000;alpha=0.0,9492.0,9492,6.607558
+GRASP,N1000E15000.graph,42,max_iterations=1000;alpha=0.1,9502.0,9502,6.594318
+GRASP,N1000E15000.graph,43,max_iterations=1000;alpha=0.2,9484.0,9484,6.542782
+GRASP,N1000E15000.graph,44,max_iterations=1000;alpha=0.3,9482.0,9482,6.774622
+GRASP,N1000E15000.graph,45,max_iterations=1000;alpha=0.5,9493.0,9493,6.955592
+GRASP,N1000E15000.graph,46,max_iterations=1000;alpha=0.7,9489.0,9489,7.072532
+GRASP,N1000E15000.graph,47,max_iterations=1000;alpha=0.9,9487.0,9487,7.145417
+GRASP,N1000E15000.graph,48,max_iterations=1000;alpha=1.0,9492.0,9492,7.298373
+Genetic,N1000E15000.graph,1,population_size=10;generations=25;mutation_rate=0.01,7664.0,7664,0.011823
+Genetic,N1000E15000.graph,2,population_size=10;generations=25;mutation_rate=0.02,7637.0,7637,0.011251
+Genetic,N1000E15000.graph,3,population_size=10;generations=25;mutation_rate=0.05,7642.0,7642,0.011985
+Genetic,N1000E15000.graph,4,population_size=10;generations=25;mutation_rate=0.1,7683.0,7683,0.011264
+Genetic,N1000E15000.graph,5,population_size=10;generations=25;mutation_rate=0.2,7650.0,7650,0.011410
+Genetic,N1000E15000.graph,6,population_size=10;generations=50;mutation_rate=0.01,7782.0,7782,0.018072
+Genetic,N1000E15000.graph,7,population_size=10;generations=50;mutation_rate=0.02,7705.0,7705,0.018277
+Genetic,N1000E15000.graph,8,population_size=10;generations=50;mutation_rate=0.05,7731.0,7731,0.018663
+Genetic,N1000E15000.graph,9,population_size=10;generations=50;mutation_rate=0.1,7683.0,7683,0.019007
+Genetic,N1000E15000.graph,10,population_size=10;generations=50;mutation_rate=0.2,7650.0,7650,0.019233
+Genetic,N1000E15000.graph,11,population_size=10;generations=100;mutation_rate=0.01,7834.0,7834,0.029346
+Genetic,N1000E15000.graph,12,population_size=10;generations=100;mutation_rate=0.02,7777.0,7777,0.032130
+Genetic,N1000E15000.graph,13,population_size=10;generations=100;mutation_rate=0.05,7810.0,7810,0.033668
+Genetic,N1000E15000.graph,14,population_size=10;generations=100;mutation_rate=0.1,7683.0,7683,0.034511
+Genetic,N1000E15000.graph,15,population_size=10;generations=100;mutation_rate=0.2,7705.0,7705,0.034775
+Genetic,N1000E15000.graph,16,population_size=10;generations=250;mutation_rate=0.01,7988.0,7988,0.065174
+Genetic,N1000E15000.graph,17,population_size=10;generations=250;mutation_rate=0.02,7952.0,7952,0.074787
+Genetic,N1000E15000.graph,18,population_size=10;generations=250;mutation_rate=0.05,7848.0,7848,0.079265
+Genetic,N1000E15000.graph,19,population_size=10;generations=250;mutation_rate=0.1,7720.0,7720,0.081303
+Genetic,N1000E15000.graph,20,population_size=10;generations=250;mutation_rate=0.2,7705.0,7705,0.081873
+Genetic,N1000E15000.graph,21,population_size=10;generations=500;mutation_rate=0.01,8130.0,8130,0.120758
+Genetic,N1000E15000.graph,22,population_size=10;generations=500;mutation_rate=0.02,8077.0,8077,0.143839
+Genetic,N1000E15000.graph,23,population_size=10;generations=500;mutation_rate=0.05,7941.0,7941,0.155421
+Genetic,N1000E15000.graph,24,population_size=10;generations=500;mutation_rate=0.1,7780.0,7780,0.159098
+Genetic,N1000E15000.graph,25,population_size=10;generations=500;mutation_rate=0.2,7732.0,7732,0.160479
+Genetic,N1000E15000.graph,26,population_size=20;generations=25;mutation_rate=0.01,7621.0,7621,0.012324
+Genetic,N1000E15000.graph,27,population_size=20;generations=25;mutation_rate=0.02,7633.0,7633,0.012478
+Genetic,N1000E15000.graph,28,population_size=20;generations=25;mutation_rate=0.05,7663.0,7663,0.012720
+Genetic,N1000E15000.graph,29,population_size=20;generations=25;mutation_rate=0.1,7669.0,7669,0.012743
+Genetic,N1000E15000.graph,30,population_size=20;generations=25;mutation_rate=0.2,7623.0,7623,0.012837
+Genetic,N1000E15000.graph,31,population_size=20;generations=50;mutation_rate=0.01,7621.0,7621,0.019787
+Genetic,N1000E15000.graph,32,population_size=20;generations=50;mutation_rate=0.02,7655.0,7655,0.020023
+Genetic,N1000E15000.graph,33,population_size=20;generations=50;mutation_rate=0.05,7674.0,7674,0.020423
+Genetic,N1000E15000.graph,34,population_size=20;generations=50;mutation_rate=0.1,7669.0,7669,0.020566
+Genetic,N1000E15000.graph,35,population_size=20;generations=50;mutation_rate=0.2,7623.0,7623,0.020678
+Genetic,N1000E15000.graph,36,population_size=20;generations=100;mutation_rate=0.01,7725.0,7725,0.034567
+Genetic,N1000E15000.graph,37,population_size=20;generations=100;mutation_rate=0.02,7762.0,7762,0.034857
+Genetic,N1000E15000.graph,38,population_size=20;generations=100;mutation_rate=0.05,7748.0,7748,0.035621
+Genetic,N1000E15000.graph,39,population_size=20;generations=100;mutation_rate=0.1,7708.0,7708,0.036129
+Genetic,N1000E15000.graph,40,population_size=20;generations=100;mutation_rate=0.2,7657.0,7657,0.036330
+Genetic,N1000E15000.graph,41,population_size=20;generations=250;mutation_rate=0.01,7890.0,7890,0.077473
+Genetic,N1000E15000.graph,42,population_size=20;generations=250;mutation_rate=0.02,7955.0,7955,0.079184
+Genetic,N1000E15000.graph,43,population_size=20;generations=250;mutation_rate=0.05,7871.0,7871,0.081383
+Genetic,N1000E15000.graph,44,population_size=20;generations=250;mutation_rate=0.1,7775.0,7775,0.082775
+Genetic,N1000E15000.graph,45,population_size=20;generations=250;mutation_rate=0.2,7704.0,7704,0.083712
+Genetic,N1000E15000.graph,46,population_size=20;generations=500;mutation_rate=0.01,8136.0,8136,0.146530
+Genetic,N1000E15000.graph,47,population_size=20;generations=500;mutation_rate=0.02,8061.0,8061,0.152849
+Genetic,N1000E15000.graph,48,population_size=20;generations=500;mutation_rate=0.05,7920.0,7920,0.157827
+Genetic,N1000E15000.graph,49,population_size=20;generations=500;mutation_rate=0.1,7787.0,7787,0.160422
+Genetic,N1000E15000.graph,50,population_size=20;generations=500;mutation_rate=0.2,7704.0,7704,0.162122
+Genetic,N1000E15000.graph,51,population_size=30;generations=25;mutation_rate=0.01,7645.0,7645,0.013915
+Genetic,N1000E15000.graph,52,population_size=30;generations=25;mutation_rate=0.02,7661.0,7661,0.014010
+Genetic,N1000E15000.graph,53,population_size=30;generations=25;mutation_rate=0.05,7612.0,7612,0.014218
+Genetic,N1000E15000.graph,54,population_size=30;generations=25;mutation_rate=0.1,7633.0,7633,0.014243
+Genetic,N1000E15000.graph,55,population_size=30;generations=25;mutation_rate=0.2,7644.0,7644,0.014290
+Genetic,N1000E15000.graph,56,population_size=30;generations=50;mutation_rate=0.01,7680.0,7680,0.021195
+Genetic,N1000E15000.graph,57,population_size=30;generations=50;mutation_rate=0.02,7669.0,7669,0.021469
+Genetic,N1000E15000.graph,58,population_size=30;generations=50;mutation_rate=0.05,7626.0,7626,0.021810
+Genetic,N1000E15000.graph,59,population_size=30;generations=50;mutation_rate=0.1,7659.0,7659,0.022077
+Genetic,N1000E15000.graph,60,population_size=30;generations=50;mutation_rate=0.2,7644.0,7644,0.022164
+Genetic,N1000E15000.graph,61,population_size=30;generations=100;mutation_rate=0.01,7784.0,7784,0.035954
+Genetic,N1000E15000.graph,62,population_size=30;generations=100;mutation_rate=0.02,7720.0,7720,0.036342
+Genetic,N1000E15000.graph,63,population_size=30;generations=100;mutation_rate=0.05,7737.0,7737,0.037180
+Genetic,N1000E15000.graph,64,population_size=30;generations=100;mutation_rate=0.1,7661.0,7661,0.037639
+Genetic,N1000E15000.graph,65,population_size=30;generations=100;mutation_rate=0.2,7671.0,7671,0.037905
+Genetic,N1000E15000.graph,66,population_size=30;generations=250;mutation_rate=0.01,7924.0,7924,0.079850
+Genetic,N1000E15000.graph,67,population_size=30;generations=250;mutation_rate=0.02,7748.0,7748,0.081359
+Genetic,N1000E15000.graph,68,population_size=30;generations=250;mutation_rate=0.05,7768.0,7768,0.083169
+Genetic,N1000E15000.graph,69,population_size=30;generations=250;mutation_rate=0.1,7704.0,7704,0.084330
+Genetic,N1000E15000.graph,70,population_size=30;generations=250;mutation_rate=0.2,7680.0,7680,0.085090
+Genetic,N1000E15000.graph,71,population_size=30;generations=500;mutation_rate=0.01,8062.0,8062,0.150637
+Genetic,N1000E15000.graph,72,population_size=30;generations=500;mutation_rate=0.02,7899.0,7899,0.155745
+Genetic,N1000E15000.graph,73,population_size=30;generations=500;mutation_rate=0.05,7833.0,7833,0.159803
+Genetic,N1000E15000.graph,74,population_size=30;generations=500;mutation_rate=0.1,7734.0,7734,0.162371
+Genetic,N1000E15000.graph,75,population_size=30;generations=500;mutation_rate=0.2,7680.0,7680,0.163756
+Genetic,N1000E15000.graph,76,population_size=50;generations=25;mutation_rate=0.01,7612.0,7612,0.016970
+Genetic,N1000E15000.graph,77,population_size=50;generations=25;mutation_rate=0.02,7585.0,7585,0.017082
+Genetic,N1000E15000.graph,78,population_size=50;generations=25;mutation_rate=0.05,7618.0,7618,0.017165
+Genetic,N1000E15000.graph,79,population_size=50;generations=25;mutation_rate=0.1,7604.0,7604,0.017286
+Genetic,N1000E15000.graph,80,population_size=50;generations=25;mutation_rate=0.2,7706.0,7706,0.017333
+Genetic,N1000E15000.graph,81,population_size=50;generations=50;mutation_rate=0.01,7659.0,7659,0.024221
+Genetic,N1000E15000.graph,82,population_size=50;generations=50;mutation_rate=0.02,7662.0,7662,0.024538
+Genetic,N1000E15000.graph,83,population_size=50;generations=50;mutation_rate=0.05,7618.0,7618,0.024930
+Genetic,N1000E15000.graph,84,population_size=50;generations=50;mutation_rate=0.1,7619.0,7619,0.025053
+Genetic,N1000E15000.graph,85,population_size=50;generations=50;mutation_rate=0.2,7706.0,7706,0.025303
+Genetic,N1000E15000.graph,86,population_size=50;generations=100;mutation_rate=0.01,7659.0,7659,0.039144
+Genetic,N1000E15000.graph,87,population_size=50;generations=100;mutation_rate=0.02,7688.0,7688,0.039509
+Genetic,N1000E15000.graph,88,population_size=50;generations=100;mutation_rate=0.05,7708.0,7708,0.040258
+Genetic,N1000E15000.graph,89,population_size=50;generations=100;mutation_rate=0.1,7671.0,7671,0.040670
+Genetic,N1000E15000.graph,90,population_size=50;generations=100;mutation_rate=0.2,7706.0,7706,0.040956
+Genetic,N1000E15000.graph,91,population_size=50;generations=250;mutation_rate=0.01,7760.0,7760,0.083465
+Genetic,N1000E15000.graph,92,population_size=50;generations=250;mutation_rate=0.02,7756.0,7756,0.084415
+Genetic,N1000E15000.graph,93,population_size=50;generations=250;mutation_rate=0.05,7719.0,7719,0.086396
+Genetic,N1000E15000.graph,94,population_size=50;generations=250;mutation_rate=0.1,7671.0,7671,0.087423
+Genetic,N1000E15000.graph,95,population_size=50;generations=250;mutation_rate=0.2,7706.0,7706,0.088107
+Genetic,N1000E15000.graph,96,population_size=50;generations=500;mutation_rate=0.01,7917.0,7917,0.157338
+Genetic,N1000E15000.graph,97,population_size=50;generations=500;mutation_rate=0.02,7831.0,7831,0.159483
+Genetic,N1000E15000.graph,98,population_size=50;generations=500;mutation_rate=0.05,7802.0,7802,0.163086
+Genetic,N1000E15000.graph,99,population_size=50;generations=500;mutation_rate=0.1,7711.0,7711,0.165035
+Genetic,N1000E15000.graph,100,population_size=50;generations=500;mutation_rate=0.2,7706.0,7706,0.166819
+Genetic,N1000E15000.graph,101,population_size=100;generations=25;mutation_rate=0.01,7633.0,7633,0.024515
+Genetic,N1000E15000.graph,102,population_size=100;generations=25;mutation_rate=0.02,7633.0,7633,0.024674
+Genetic,N1000E15000.graph,103,population_size=100;generations=25;mutation_rate=0.05,7657.0,7657,0.024887
+Genetic,N1000E15000.graph,104,population_size=100;generations=25;mutation_rate=0.1,7633.0,7633,0.024976
+Genetic,N1000E15000.graph,105,population_size=100;generations=25;mutation_rate=0.2,7633.0,7633,0.025005
+Genetic,N1000E15000.graph,106,population_size=100;generations=50;mutation_rate=0.01,7682.0,7682,0.032005
+Genetic,N1000E15000.graph,107,population_size=100;generations=50;mutation_rate=0.02,7660.0,7660,0.032153
+Genetic,N1000E15000.graph,108,population_size=100;generations=50;mutation_rate=0.05,7657.0,7657,0.032498
+Genetic,N1000E15000.graph,109,population_size=100;generations=50;mutation_rate=0.1,7647.0,7647,0.032712
+Genetic,N1000E15000.graph,110,population_size=100;generations=50;mutation_rate=0.2,7698.0,7698,0.032878
+Genetic,N1000E15000.graph,111,population_size=100;generations=100;mutation_rate=0.01,7682.0,7682,0.046790
+Genetic,N1000E15000.graph,112,population_size=100;generations=100;mutation_rate=0.02,7676.0,7676,0.047160
+Genetic,N1000E15000.graph,113,population_size=100;generations=100;mutation_rate=0.05,7706.0,7706,0.047980
+Genetic,N1000E15000.graph,114,population_size=100;generations=100;mutation_rate=0.1,7647.0,7647,0.048367
+Genetic,N1000E15000.graph,115,population_size=100;generations=100;mutation_rate=0.2,7698.0,7698,0.048720
+Genetic,N1000E15000.graph,116,population_size=100;generations=250;mutation_rate=0.01,7735.0,7735,0.091280
+Genetic,N1000E15000.graph,117,population_size=100;generations=250;mutation_rate=0.02,7738.0,7738,0.092182
+Genetic,N1000E15000.graph,118,population_size=100;generations=250;mutation_rate=0.05,7710.0,7710,0.094108
+Genetic,N1000E15000.graph,119,population_size=100;generations=250;mutation_rate=0.1,7669.0,7669,0.095166
+Genetic,N1000E15000.graph,120,population_size=100;generations=250;mutation_rate=0.2,7698.0,7698,0.095913
+Genetic,N1000E15000.graph,121,population_size=100;generations=500;mutation_rate=0.01,7745.0,7745,0.165641
+Genetic,N1000E15000.graph,122,population_size=100;generations=500;mutation_rate=0.02,7783.0,7783,0.167649
+Genetic,N1000E15000.graph,123,population_size=100;generations=500;mutation_rate=0.05,7740.0,7740,0.170682
+Genetic,N1000E15000.graph,124,population_size=100;generations=500;mutation_rate=0.1,7706.0,7706,0.173317
+Genetic,N1000E15000.graph,125,population_size=100;generations=500;mutation_rate=0.2,7698.0,7698,0.174895
+Genetic Memetic,N1000E15000.graph,1,population_size=10;generations=25;mutation_rate=0.01,9472.0,9472,0.275366
+Genetic Memetic,N1000E15000.graph,2,population_size=10;generations=25;mutation_rate=0.02,9488.0,9488,0.269397
+Genetic Memetic,N1000E15000.graph,3,population_size=10;generations=25;mutation_rate=0.05,9452.0,9452,0.233614
+Genetic Memetic,N1000E15000.graph,4,population_size=10;generations=25;mutation_rate=0.1,9489.0,9489,0.274055
+Genetic Memetic,N1000E15000.graph,5,population_size=10;generations=25;mutation_rate=0.2,9513.0,9513,0.326419
+Genetic Memetic,N1000E15000.graph,6,population_size=10;generations=50;mutation_rate=0.01,9485.0,9485,0.402746
+Genetic Memetic,N1000E15000.graph,7,population_size=10;generations=50;mutation_rate=0.02,9489.0,9489,0.362444
+Genetic Memetic,N1000E15000.graph,8,population_size=10;generations=50;mutation_rate=0.05,9453.0,9453,0.325667
+Genetic Memetic,N1000E15000.graph,9,population_size=10;generations=50;mutation_rate=0.1,9505.0,9505,0.414958
+Genetic Memetic,N1000E15000.graph,10,population_size=10;generations=50;mutation_rate=0.2,9515.0,9515,0.511009
+Genetic Memetic,N1000E15000.graph,11,population_size=10;generations=100;mutation_rate=0.01,9485.0,9485,0.571800
+Genetic Memetic,N1000E15000.graph,12,population_size=10;generations=100;mutation_rate=0.02,9489.0,9489,0.522645
+Genetic Memetic,N1000E15000.graph,13,population_size=10;generations=100;mutation_rate=0.05,9453.0,9453,0.497824
+Genetic Memetic,N1000E15000.graph,14,population_size=10;generations=100;mutation_rate=0.1,9505.0,9505,0.602890
+Genetic Memetic,N1000E15000.graph,15,population_size=10;generations=100;mutation_rate=0.2,9515.0,9515,0.766547
+Genetic Memetic,N1000E15000.graph,16,population_size=10;generations=250;mutation_rate=0.01,9485.0,9485,1.061364
+Genetic Memetic,N1000E15000.graph,17,population_size=10;generations=250;mutation_rate=0.02,9489.0,9489,1.018936
+Genetic Memetic,N1000E15000.graph,18,population_size=10;generations=250;mutation_rate=0.05,9453.0,9453,1.009402
+Genetic Memetic,N1000E15000.graph,19,population_size=10;generations=250;mutation_rate=0.1,9505.0,9505,1.183511
+Genetic Memetic,N1000E15000.graph,20,population_size=10;generations=250;mutation_rate=0.2,9518.0,9518,1.567743
+Genetic Memetic,N1000E15000.graph,21,population_size=10;generations=500;mutation_rate=0.01,9485.0,9485,1.889072
+Genetic Memetic,N1000E15000.graph,22,population_size=10;generations=500;mutation_rate=0.02,9489.0,9489,1.845017
+Genetic Memetic,N1000E15000.graph,23,population_size=10;generations=500;mutation_rate=0.05,9453.0,9453,1.874675
+Genetic Memetic,N1000E15000.graph,24,population_size=10;generations=500;mutation_rate=0.1,9506.0,9506,2.129293
+Genetic Memetic,N1000E15000.graph,25,population_size=10;generations=500;mutation_rate=0.2,9518.0,9518,2.913173
+Genetic Memetic,N1000E15000.graph,26,population_size=20;generations=25;mutation_rate=0.01,9470.0,9470,0.418491
+Genetic Memetic,N1000E15000.graph,27,population_size=20;generations=25;mutation_rate=0.02,9474.0,9474,0.431956
+Genetic Memetic,N1000E15000.graph,28,population_size=20;generations=25;mutation_rate=0.05,9465.0,9465,0.430912
+Genetic Memetic,N1000E15000.graph,29,population_size=20;generations=25;mutation_rate=0.1,9486.0,9486,0.432321
+Genetic Memetic,N1000E15000.graph,30,population_size=20;generations=25;mutation_rate=0.2,9490.0,9490,0.436607
+Genetic Memetic,N1000E15000.graph,31,population_size=20;generations=50;mutation_rate=0.01,9504.0,9504,0.633920
+Genetic Memetic,N1000E15000.graph,32,population_size=20;generations=50;mutation_rate=0.02,9490.0,9490,0.605225
+Genetic Memetic,N1000E15000.graph,33,population_size=20;generations=50;mutation_rate=0.05,9475.0,9475,0.642778
+Genetic Memetic,N1000E15000.graph,34,population_size=20;generations=50;mutation_rate=0.1,9491.0,9491,0.618267
+Genetic Memetic,N1000E15000.graph,35,population_size=20;generations=50;mutation_rate=0.2,9501.0,9501,0.643386
+Genetic Memetic,N1000E15000.graph,36,population_size=20;generations=100;mutation_rate=0.01,9513.0,9513,0.914157
+Genetic Memetic,N1000E15000.graph,37,population_size=20;generations=100;mutation_rate=0.02,9504.0,9504,0.872018
+Genetic Memetic,N1000E15000.graph,38,population_size=20;generations=100;mutation_rate=0.05,9489.0,9489,0.967923
+Genetic Memetic,N1000E15000.graph,39,population_size=20;generations=100;mutation_rate=0.1,9498.0,9498,0.916245
+Genetic Memetic,N1000E15000.graph,40,population_size=20;generations=100;mutation_rate=0.2,9504.0,9504,1.005850
+Genetic Memetic,N1000E15000.graph,41,population_size=20;generations=250;mutation_rate=0.01,9513.0,9513,1.435328
+Genetic Memetic,N1000E15000.graph,42,population_size=20;generations=250;mutation_rate=0.02,9504.0,9504,1.373639
+Genetic Memetic,N1000E15000.graph,43,population_size=20;generations=250;mutation_rate=0.05,9499.0,9499,1.739335
+Genetic Memetic,N1000E15000.graph,44,population_size=20;generations=250;mutation_rate=0.1,9500.0,9500,1.502443
+Genetic Memetic,N1000E15000.graph,45,population_size=20;generations=250;mutation_rate=0.2,9506.0,9506,1.889449
+Genetic Memetic,N1000E15000.graph,46,population_size=20;generations=500;mutation_rate=0.01,9513.0,9513,2.256956
+Genetic Memetic,N1000E15000.graph,47,population_size=20;generations=500;mutation_rate=0.02,9504.0,9504,2.200041
+Genetic Memetic,N1000E15000.graph,48,population_size=20;generations=500;mutation_rate=0.05,9500.0,9500,2.606211
+Genetic Memetic,N1000E15000.graph,49,population_size=20;generations=500;mutation_rate=0.1,9500.0,9500,2.443426
+Genetic Memetic,N1000E15000.graph,50,population_size=20;generations=500;mutation_rate=0.2,9506.0,9506,3.276599
+Genetic Memetic,N1000E15000.graph,51,population_size=30;generations=25;mutation_rate=0.01,9480.0,9480,0.547769
+Genetic Memetic,N1000E15000.graph,52,population_size=30;generations=25;mutation_rate=0.02,9482.0,9482,0.515597
+Genetic Memetic,N1000E15000.graph,53,population_size=30;generations=25;mutation_rate=0.05,9476.0,9476,0.515523
+Genetic Memetic,N1000E15000.graph,54,population_size=30;generations=25;mutation_rate=0.1,9496.0,9496,0.520740
+Genetic Memetic,N1000E15000.graph,55,population_size=30;generations=25;mutation_rate=0.2,9469.0,9469,0.515501
+Genetic Memetic,N1000E15000.graph,56,population_size=30;generations=50;mutation_rate=0.01,9492.0,9492,0.746923
+Genetic Memetic,N1000E15000.graph,57,population_size=30;generations=50;mutation_rate=0.02,9495.0,9495,0.722069
+Genetic Memetic,N1000E15000.graph,58,population_size=30;generations=50;mutation_rate=0.05,9476.0,9476,0.747969
+Genetic Memetic,N1000E15000.graph,59,population_size=30;generations=50;mutation_rate=0.1,9496.0,9496,0.707448
+Genetic Memetic,N1000E15000.graph,60,population_size=30;generations=50;mutation_rate=0.2,9479.0,9479,0.744461
+Genetic Memetic,N1000E15000.graph,61,population_size=30;generations=100;mutation_rate=0.01,9495.0,9495,1.083731
+Genetic Memetic,N1000E15000.graph,62,population_size=30;generations=100;mutation_rate=0.02,9502.0,9502,1.031941
+Genetic Memetic,N1000E15000.graph,63,population_size=30;generations=100;mutation_rate=0.05,9498.0,9498,1.143346
+Genetic Memetic,N1000E15000.graph,64,population_size=30;generations=100;mutation_rate=0.1,9507.0,9507,1.019621
+Genetic Memetic,N1000E15000.graph,65,population_size=30;generations=100;mutation_rate=0.2,9484.0,9484,1.174237
+Genetic Memetic,N1000E15000.graph,66,population_size=30;generations=250;mutation_rate=0.01,9499.0,9499,1.825026
+Genetic Memetic,N1000E15000.graph,67,population_size=30;generations=250;mutation_rate=0.02,9504.0,9504,1.594196
+Genetic Memetic,N1000E15000.graph,68,population_size=30;generations=250;mutation_rate=0.05,9500.0,9500,1.741920
+Genetic Memetic,N1000E15000.graph,69,population_size=30;generations=250;mutation_rate=0.1,9507.0,9507,1.634175
+Genetic Memetic,N1000E15000.graph,70,population_size=30;generations=250;mutation_rate=0.2,9513.0,9513,2.303950
+Genetic Memetic,N1000E15000.graph,71,population_size=30;generations=500;mutation_rate=0.01,9499.0,9499,2.641781
+Genetic Memetic,N1000E15000.graph,72,population_size=30;generations=500;mutation_rate=0.02,9504.0,9504,2.418090
+Genetic Memetic,N1000E15000.graph,73,population_size=30;generations=500;mutation_rate=0.05,9500.0,9500,2.585976
+Genetic Memetic,N1000E15000.graph,74,population_size=30;generations=500;mutation_rate=0.1,9507.0,9507,2.611025
+Genetic Memetic,N1000E15000.graph,75,population_size=30;generations=500;mutation_rate=0.2,9517.0,9517,3.834199
+Genetic Memetic,N1000E15000.graph,76,population_size=50;generations=25;mutation_rate=0.01,9475.0,9475,0.712617
+Genetic Memetic,N1000E15000.graph,77,population_size=50;generations=25;mutation_rate=0.02,9504.0,9504,0.697261
+Genetic Memetic,N1000E15000.graph,78,population_size=50;generations=25;mutation_rate=0.05,9500.0,9500,0.711339
+Genetic Memetic,N1000E15000.graph,79,population_size=50;generations=25;mutation_rate=0.1,9475.0,9475,0.718723
+Genetic Memetic,N1000E15000.graph,80,population_size=50;generations=25;mutation_rate=0.2,9488.0,9488,0.720929
+Genetic Memetic,N1000E15000.graph,81,population_size=50;generations=50;mutation_rate=0.01,9475.0,9475,0.928171
+Genetic Memetic,N1000E15000.graph,82,population_size=50;generations=50;mutation_rate=0.02,9504.0,9504,0.905180
+Genetic Memetic,N1000E15000.graph,83,population_size=50;generations=50;mutation_rate=0.05,9500.0,9500,0.916405
+Genetic Memetic,N1000E15000.graph,84,population_size=50;generations=50;mutation_rate=0.1,9495.0,9495,0.924483
+Genetic Memetic,N1000E15000.graph,85,population_size=50;generations=50;mutation_rate=0.2,9488.0,9488,0.950199
+Genetic Memetic,N1000E15000.graph,86,population_size=50;generations=100;mutation_rate=0.01,9495.0,9495,1.325838
+Genetic Memetic,N1000E15000.graph,87,population_size=50;generations=100;mutation_rate=0.02,9505.0,9505,1.318246
+Genetic Memetic,N1000E15000.graph,88,population_size=50;generations=100;mutation_rate=0.05,9515.0,9515,1.348908
+Genetic Memetic,N1000E15000.graph,89,population_size=50;generations=100;mutation_rate=0.1,9509.0,9509,1.337478
+Genetic Memetic,N1000E15000.graph,90,population_size=50;generations=100;mutation_rate=0.2,9506.0,9506,1.394924
+Genetic Memetic,N1000E15000.graph,91,population_size=50;generations=250;mutation_rate=0.01,9505.0,9505,2.227186
+Genetic Memetic,N1000E15000.graph,92,population_size=50;generations=250;mutation_rate=0.02,9518.0,9518,2.266098
+Genetic Memetic,N1000E15000.graph,93,population_size=50;generations=250;mutation_rate=0.05,9515.0,9515,2.177177
+Genetic Memetic,N1000E15000.graph,94,population_size=50;generations=250;mutation_rate=0.1,9516.0,9516,2.240275
+Genetic Memetic,N1000E15000.graph,95,population_size=50;generations=250;mutation_rate=0.2,9507.0,9507,2.503320
+Genetic Memetic,N1000E15000.graph,96,population_size=50;generations=500;mutation_rate=0.01,9506.0,9506,3.263794
+Genetic Memetic,N1000E15000.graph,97,population_size=50;generations=500;mutation_rate=0.02,9518.0,9518,3.091133
+Genetic Memetic,N1000E15000.graph,98,population_size=50;generations=500;mutation_rate=0.05,9515.0,9515,3.109589
+Genetic Memetic,N1000E15000.graph,99,population_size=50;generations=500;mutation_rate=0.1,9516.0,9516,3.310487
+Genetic Memetic,N1000E15000.graph,100,population_size=50;generations=500;mutation_rate=0.2,9507.0,9507,4.069330
+Genetic Memetic,N1000E15000.graph,101,population_size=100;generations=25;mutation_rate=0.01,9508.0,9508,1.211588
+Genetic Memetic,N1000E15000.graph,102,population_size=100;generations=25;mutation_rate=0.02,9482.0,9482,1.195387
+Genetic Memetic,N1000E15000.graph,103,population_size=100;generations=25;mutation_rate=0.05,9485.0,9485,1.214932
+Genetic Memetic,N1000E15000.graph,104,population_size=100;generations=25;mutation_rate=0.1,9490.0,9490,1.224622
+Genetic Memetic,N1000E15000.graph,105,population_size=100;generations=25;mutation_rate=0.2,9482.0,9482,1.253608
+Genetic Memetic,N1000E15000.graph,106,population_size=100;generations=50;mutation_rate=0.01,9508.0,9508,1.429377
+Genetic Memetic,N1000E15000.graph,107,population_size=100;generations=50;mutation_rate=0.02,9485.0,9485,1.436595
+Genetic Memetic,N1000E15000.graph,108,population_size=100;generations=50;mutation_rate=0.05,9485.0,9485,1.469153
+Genetic Memetic,N1000E15000.graph,109,population_size=100;generations=50;mutation_rate=0.1,9493.0,9493,1.453939
+Genetic Memetic,N1000E15000.graph,110,population_size=100;generations=50;mutation_rate=0.2,9482.0,9482,1.473639
+Genetic Memetic,N1000E15000.graph,111,population_size=100;generations=100;mutation_rate=0.01,9508.0,9508,1.862361
+Genetic Memetic,N1000E15000.graph,112,population_size=100;generations=100;mutation_rate=0.02,9489.0,9489,1.874490
+Genetic Memetic,N1000E15000.graph,113,population_size=100;generations=100;mutation_rate=0.05,9498.0,9498,1.902486
+Genetic Memetic,N1000E15000.graph,114,population_size=100;generations=100;mutation_rate=0.1,9498.0,9498,1.890483
+Genetic Memetic,N1000E15000.graph,115,population_size=100;generations=100;mutation_rate=0.2,9485.0,9485,1.942153
+Genetic Memetic,N1000E15000.graph,116,population_size=100;generations=250;mutation_rate=0.01,9511.0,9511,3.050449
+Genetic Memetic,N1000E15000.graph,117,population_size=100;generations=250;mutation_rate=0.02,9507.0,9507,3.101697
+Genetic Memetic,N1000E15000.graph,118,population_size=100;generations=250;mutation_rate=0.05,9501.0,9501,3.209971
+Genetic Memetic,N1000E15000.graph,119,population_size=100;generations=250;mutation_rate=0.1,9515.0,9515,3.151937
+Genetic Memetic,N1000E15000.graph,120,population_size=100;generations=250;mutation_rate=0.2,9496.0,9496,3.289961
+Genetic Memetic,N1000E15000.graph,121,population_size=100;generations=500;mutation_rate=0.01,9516.0,9516,4.672635
+Genetic Memetic,N1000E15000.graph,122,population_size=100;generations=500;mutation_rate=0.02,9513.0,9513,5.029748
+Genetic Memetic,N1000E15000.graph,123,population_size=100;generations=500;mutation_rate=0.05,9505.0,9505,4.990782
+Genetic Memetic,N1000E15000.graph,124,population_size=100;generations=500;mutation_rate=0.1,9521.0,9521,4.738276
+Genetic Memetic,N1000E15000.graph,125,population_size=100;generations=500;mutation_rate=0.2,9506.0,9506,5.329289
+Simulated Annealing,N1000E15000.graph,1,max_iterations=5000;cooling_rate=0.9;initial_temp=1,9101.0,9101,0.002615
+Simulated Annealing,N1000E15000.graph,2,max_iterations=5000;cooling_rate=0.9;initial_temp=5,8520.0,8520,0.002754
+Simulated Annealing,N1000E15000.graph,3,max_iterations=5000;cooling_rate=0.9;initial_temp=10,8152.0,8152,0.002993
+Simulated Annealing,N1000E15000.graph,4,max_iterations=5000;cooling_rate=0.9;initial_temp=25,7807.0,7807,0.003133
+Simulated Annealing,N1000E15000.graph,5,max_iterations=5000;cooling_rate=0.9;initial_temp=50,7804.0,7804,0.003173
+Simulated Annealing,N1000E15000.graph,6,max_iterations=5000;cooling_rate=0.9;initial_temp=100,7765.0,7765,0.003105
+Simulated Annealing,N1000E15000.graph,7,max_iterations=5000;cooling_rate=0.9;initial_temp=250,7630.0,7630,0.003157
+Simulated Annealing,N1000E15000.graph,8,max_iterations=5000;cooling_rate=0.9;initial_temp=500,7731.0,7731,0.003090
+Simulated Annealing,N1000E15000.graph,9,max_iterations=5000;cooling_rate=0.9;initial_temp=1000,7630.0,7630,0.003080
+Simulated Annealing,N1000E15000.graph,10,max_iterations=5000;cooling_rate=0.9;initial_temp=5000,7646.0,7646,0.003201
+Simulated Annealing,N1000E15000.graph,11,max_iterations=5000;cooling_rate=0.95;initial_temp=1,9088.0,9088,0.002294
+Simulated Annealing,N1000E15000.graph,12,max_iterations=5000;cooling_rate=0.95;initial_temp=5,8447.0,8447,0.002759
+Simulated Annealing,N1000E15000.graph,13,max_iterations=5000;cooling_rate=0.95;initial_temp=10,8058.0,8058,0.002906
+Simulated Annealing,N1000E15000.graph,14,max_iterations=5000;cooling_rate=0.95;initial_temp=25,7792.0,7792,0.003210
+Simulated Annealing,N1000E15000.graph,15,max_iterations=5000;cooling_rate=0.95;initial_temp=50,7707.0,7707,0.003059
+Simulated Annealing,N1000E15000.graph,16,max_iterations=5000;cooling_rate=0.95;initial_temp=100,7696.0,7696,0.003101
+Simulated Annealing,N1000E15000.graph,17,max_iterations=5000;cooling_rate=0.95;initial_temp=250,7698.0,7698,0.003211
+Simulated Annealing,N1000E15000.graph,18,max_iterations=5000;cooling_rate=0.95;initial_temp=500,7657.0,7657,0.003108
+Simulated Annealing,N1000E15000.graph,19,max_iterations=5000;cooling_rate=0.95;initial_temp=1000,7630.0,7630,0.003204
+Simulated Annealing,N1000E15000.graph,20,max_iterations=5000;cooling_rate=0.95;initial_temp=5000,7646.0,7646,0.003108
+Simulated Annealing,N1000E15000.graph,21,max_iterations=5000;cooling_rate=0.98;initial_temp=1,9110.0,9110,0.002372
+Simulated Annealing,N1000E15000.graph,22,max_iterations=5000;cooling_rate=0.98;initial_temp=5,8336.0,8336,0.002721
+Simulated Annealing,N1000E15000.graph,23,max_iterations=5000;cooling_rate=0.98;initial_temp=10,7978.0,7978,0.002929
+Simulated Annealing,N1000E15000.graph,24,max_iterations=5000;cooling_rate=0.98;initial_temp=25,7795.0,7795,0.003158
+Simulated Annealing,N1000E15000.graph,25,max_iterations=5000;cooling_rate=0.98;initial_temp=50,7707.0,7707,0.003290
+Simulated Annealing,N1000E15000.graph,26,max_iterations=5000;cooling_rate=0.98;initial_temp=100,7688.0,7688,0.003307
+Simulated Annealing,N1000E15000.graph,27,max_iterations=5000;cooling_rate=0.98;initial_temp=250,7639.0,7639,0.003091
+Simulated Annealing,N1000E15000.graph,28,max_iterations=5000;cooling_rate=0.98;initial_temp=500,7682.0,7682,0.003086
+Simulated Annealing,N1000E15000.graph,29,max_iterations=5000;cooling_rate=0.98;initial_temp=1000,7630.0,7630,0.003082
+Simulated Annealing,N1000E15000.graph,30,max_iterations=5000;cooling_rate=0.98;initial_temp=5000,7646.0,7646,0.003112
+Simulated Annealing,N1000E15000.graph,31,max_iterations=5000;cooling_rate=0.99;initial_temp=1,9079.0,9079,0.002390
+Simulated Annealing,N1000E15000.graph,32,max_iterations=5000;cooling_rate=0.99;initial_temp=5,8362.0,8362,0.002831
+Simulated Annealing,N1000E15000.graph,33,max_iterations=5000;cooling_rate=0.99;initial_temp=10,8032.0,8032,0.002934
+Simulated Annealing,N1000E15000.graph,34,max_iterations=5000;cooling_rate=0.99;initial_temp=25,7795.0,7795,0.003046
+Simulated Annealing,N1000E15000.graph,35,max_iterations=5000;cooling_rate=0.99;initial_temp=50,7674.0,7674,0.003149
+Simulated Annealing,N1000E15000.graph,36,max_iterations=5000;cooling_rate=0.99;initial_temp=100,7688.0,7688,0.003113
+Simulated Annealing,N1000E15000.graph,37,max_iterations=5000;cooling_rate=0.99;initial_temp=250,7639.0,7639,0.003277
+Simulated Annealing,N1000E15000.graph,38,max_iterations=5000;cooling_rate=0.99;initial_temp=500,7682.0,7682,0.003322
+Simulated Annealing,N1000E15000.graph,39,max_iterations=5000;cooling_rate=0.99;initial_temp=1000,7630.0,7630,0.003123
+Simulated Annealing,N1000E15000.graph,40,max_iterations=5000;cooling_rate=0.99;initial_temp=5000,7646.0,7646,0.003122
+Simulated Annealing,N1000E15000.graph,41,max_iterations=5000;cooling_rate=0.995;initial_temp=1,9112.0,9112,0.002293
+Simulated Annealing,N1000E15000.graph,42,max_iterations=5000;cooling_rate=0.995;initial_temp=5,8340.0,8340,0.002699
+Simulated Annealing,N1000E15000.graph,43,max_iterations=5000;cooling_rate=0.995;initial_temp=10,7993.0,7993,0.002905
+Simulated Annealing,N1000E15000.graph,44,max_iterations=5000;cooling_rate=0.995;initial_temp=25,7788.0,7788,0.003008
+Simulated Annealing,N1000E15000.graph,45,max_iterations=5000;cooling_rate=0.995;initial_temp=50,7673.0,7673,0.003046
+Simulated Annealing,N1000E15000.graph,46,max_iterations=5000;cooling_rate=0.995;initial_temp=100,7688.0,7688,0.003147
+Simulated Annealing,N1000E15000.graph,47,max_iterations=5000;cooling_rate=0.995;initial_temp=250,7639.0,7639,0.003287
+Simulated Annealing,N1000E15000.graph,48,max_iterations=5000;cooling_rate=0.995;initial_temp=500,7682.0,7682,0.003125
+Simulated Annealing,N1000E15000.graph,49,max_iterations=5000;cooling_rate=0.995;initial_temp=1000,7630.0,7630,0.003084
+Simulated Annealing,N1000E15000.graph,50,max_iterations=5000;cooling_rate=0.995;initial_temp=5000,7646.0,7646,0.003095
+Simulated Annealing,N1000E15000.graph,51,max_iterations=5000;cooling_rate=0.999;initial_temp=1,9082.0,9082,0.002267
+Simulated Annealing,N1000E15000.graph,52,max_iterations=5000;cooling_rate=0.999;initial_temp=5,8329.0,8329,0.002707
+Simulated Annealing,N1000E15000.graph,53,max_iterations=5000;cooling_rate=0.999;initial_temp=10,7988.0,7988,0.002906
+Simulated Annealing,N1000E15000.graph,54,max_iterations=5000;cooling_rate=0.999;initial_temp=25,7847.0,7847,0.003032
+Simulated Annealing,N1000E15000.graph,55,max_iterations=5000;cooling_rate=0.999;initial_temp=50,7673.0,7673,0.003064
+Simulated Annealing,N1000E15000.graph,56,max_iterations=5000;cooling_rate=0.999;initial_temp=100,7688.0,7688,0.003103
+Simulated Annealing,N1000E15000.graph,57,max_iterations=5000;cooling_rate=0.999;initial_temp=250,7675.0,7675,0.003175
+Simulated Annealing,N1000E15000.graph,58,max_iterations=5000;cooling_rate=0.999;initial_temp=500,7677.0,7677,0.003094
+Simulated Annealing,N1000E15000.graph,59,max_iterations=5000;cooling_rate=0.999;initial_temp=1000,7630.0,7630,0.003098
+Simulated Annealing,N1000E15000.graph,60,max_iterations=5000;cooling_rate=0.999;initial_temp=5000,7646.0,7646,0.003102
+Simulated Annealing,N1000E15000.graph,61,max_iterations=5000;cooling_rate=0.9995;initial_temp=1,9082.0,9082,0.002268
+Simulated Annealing,N1000E15000.graph,62,max_iterations=5000;cooling_rate=0.9995;initial_temp=5,8332.0,8332,0.002722
+Simulated Annealing,N1000E15000.graph,63,max_iterations=5000;cooling_rate=0.9995;initial_temp=10,7988.0,7988,0.002894
+Simulated Annealing,N1000E15000.graph,64,max_iterations=5000;cooling_rate=0.9995;initial_temp=25,7847.0,7847,0.003042
+Simulated Annealing,N1000E15000.graph,65,max_iterations=5000;cooling_rate=0.9995;initial_temp=50,7673.0,7673,0.003091
+Simulated Annealing,N1000E15000.graph,66,max_iterations=5000;cooling_rate=0.9995;initial_temp=100,7714.0,7714,0.003109
+Simulated Annealing,N1000E15000.graph,67,max_iterations=5000;cooling_rate=0.9995;initial_temp=250,7675.0,7675,0.003086
+Simulated Annealing,N1000E15000.graph,68,max_iterations=5000;cooling_rate=0.9995;initial_temp=500,7677.0,7677,0.003106
+Simulated Annealing,N1000E15000.graph,69,max_iterations=5000;cooling_rate=0.9995;initial_temp=1000,7630.0,7630,0.003111
+Simulated Annealing,N1000E15000.graph,70,max_iterations=5000;cooling_rate=0.9995;initial_temp=5000,7646.0,7646,0.003100
+Simulated Annealing,N1000E15000.graph,71,max_iterations=5000;cooling_rate=0.9999;initial_temp=1,9082.0,9082,0.002273
+Simulated Annealing,N1000E15000.graph,72,max_iterations=5000;cooling_rate=0.9999;initial_temp=5,8332.0,8332,0.002754
+Simulated Annealing,N1000E15000.graph,73,max_iterations=5000;cooling_rate=0.9999;initial_temp=10,7984.0,7984,0.002909
+Simulated Annealing,N1000E15000.graph,74,max_iterations=5000;cooling_rate=0.9999;initial_temp=25,7847.0,7847,0.003061
+Simulated Annealing,N1000E15000.graph,75,max_iterations=5000;cooling_rate=0.9999;initial_temp=50,7673.0,7673,0.003064
+Simulated Annealing,N1000E15000.graph,76,max_iterations=5000;cooling_rate=0.9999;initial_temp=100,7714.0,7714,0.003093
+Simulated Annealing,N1000E15000.graph,77,max_iterations=5000;cooling_rate=0.9999;initial_temp=250,7675.0,7675,0.003082
+Simulated Annealing,N1000E15000.graph,78,max_iterations=5000;cooling_rate=0.9999;initial_temp=500,7677.0,7677,0.003109
+Simulated Annealing,N1000E15000.graph,79,max_iterations=5000;cooling_rate=0.9999;initial_temp=1000,7630.0,7630,0.003100
+Simulated Annealing,N1000E15000.graph,80,max_iterations=5000;cooling_rate=0.9999;initial_temp=5000,7646.0,7646,0.003108
+Simulated Annealing,N1000E15000.graph,81,max_iterations=10000;cooling_rate=0.9;initial_temp=1,9256.0,9256,0.002375
+Simulated Annealing,N1000E15000.graph,82,max_iterations=10000;cooling_rate=0.9;initial_temp=5,8926.0,8926,0.003091
+Simulated Annealing,N1000E15000.graph,83,max_iterations=10000;cooling_rate=0.9;initial_temp=10,8514.0,8514,0.003594
+Simulated Annealing,N1000E15000.graph,84,max_iterations=10000;cooling_rate=0.9;initial_temp=25,8001.0,8001,0.003912
+Simulated Annealing,N1000E15000.graph,85,max_iterations=10000;cooling_rate=0.9;initial_temp=50,7804.0,7804,0.004554
+Simulated Annealing,N1000E15000.graph,86,max_iterations=10000;cooling_rate=0.9;initial_temp=100,7765.0,7765,0.004409
+Simulated Annealing,N1000E15000.graph,87,max_iterations=10000;cooling_rate=0.9;initial_temp=250,7705.0,7705,0.004341
+Simulated Annealing,N1000E15000.graph,88,max_iterations=10000;cooling_rate=0.9;initial_temp=500,7731.0,7731,0.004360
+Simulated Annealing,N1000E15000.graph,89,max_iterations=10000;cooling_rate=0.9;initial_temp=1000,7647.0,7647,0.004470
+Simulated Annealing,N1000E15000.graph,90,max_iterations=10000;cooling_rate=0.9;initial_temp=5000,7646.0,7646,0.004484
+Simulated Annealing,N1000E15000.graph,91,max_iterations=10000;cooling_rate=0.95;initial_temp=1,9278.0,9278,0.002891
+Simulated Annealing,N1000E15000.graph,92,max_iterations=10000;cooling_rate=0.95;initial_temp=5,8642.0,8642,0.003260
+Simulated Annealing,N1000E15000.graph,93,max_iterations=10000;cooling_rate=0.95;initial_temp=10,8173.0,8173,0.003920
+Simulated Annealing,N1000E15000.graph,94,max_iterations=10000;cooling_rate=0.95;initial_temp=25,7834.0,7834,0.004320
+Simulated Annealing,N1000E15000.graph,95,max_iterations=10000;cooling_rate=0.95;initial_temp=50,7749.0,7749,0.004519
+Simulated Annealing,N1000E15000.graph,96,max_iterations=10000;cooling_rate=0.95;initial_temp=100,7696.0,7696,0.004402
+Simulated Annealing,N1000E15000.graph,97,max_iterations=10000;cooling_rate=0.95;initial_temp=250,7698.0,7698,0.004568
+Simulated Annealing,N1000E15000.graph,98,max_iterations=10000;cooling_rate=0.95;initial_temp=500,7669.0,7669,0.004209
+Simulated Annealing,N1000E15000.graph,99,max_iterations=10000;cooling_rate=0.95;initial_temp=1000,7681.0,7681,0.004252
+Simulated Annealing,N1000E15000.graph,100,max_iterations=10000;cooling_rate=0.95;initial_temp=5000,7646.0,7646,0.004310
+Simulated Annealing,N1000E15000.graph,101,max_iterations=10000;cooling_rate=0.98;initial_temp=1,9280.0,9280,0.002504
+Simulated Annealing,N1000E15000.graph,102,max_iterations=10000;cooling_rate=0.98;initial_temp=5,8450.0,8450,0.003348
+Simulated Annealing,N1000E15000.graph,103,max_iterations=10000;cooling_rate=0.98;initial_temp=10,8029.0,8029,0.003775
+Simulated Annealing,N1000E15000.graph,104,max_iterations=10000;cooling_rate=0.98;initial_temp=25,7795.0,7795,0.004035
+Simulated Annealing,N1000E15000.graph,105,max_iterations=10000;cooling_rate=0.98;initial_temp=50,7739.0,7739,0.004155
+Simulated Annealing,N1000E15000.graph,106,max_iterations=10000;cooling_rate=0.98;initial_temp=100,7688.0,7688,0.004180
+Simulated Annealing,N1000E15000.graph,107,max_iterations=10000;cooling_rate=0.98;initial_temp=250,7644.0,7644,0.004189
+Simulated Annealing,N1000E15000.graph,108,max_iterations=10000;cooling_rate=0.98;initial_temp=500,7682.0,7682,0.004183
+Simulated Annealing,N1000E15000.graph,109,max_iterations=10000;cooling_rate=0.98;initial_temp=1000,7673.0,7673,0.004190
+Simulated Annealing,N1000E15000.graph,110,max_iterations=10000;cooling_rate=0.98;initial_temp=5000,7646.0,7646,0.004190
+Simulated Annealing,N1000E15000.graph,111,max_iterations=10000;cooling_rate=0.99;initial_temp=1,9280.0,9280,0.002683
+Simulated Annealing,N1000E15000.graph,112,max_iterations=10000;cooling_rate=0.99;initial_temp=5,8375.0,8375,0.003385
+Simulated Annealing,N1000E15000.graph,113,max_iterations=10000;cooling_rate=0.99;initial_temp=10,8059.0,8059,0.003794
+Simulated Annealing,N1000E15000.graph,114,max_iterations=10000;cooling_rate=0.99;initial_temp=25,7795.0,7795,0.004034
+Simulated Annealing,N1000E15000.graph,115,max_iterations=10000;cooling_rate=0.99;initial_temp=50,7753.0,7753,0.004117
+Simulated Annealing,N1000E15000.graph,116,max_iterations=10000;cooling_rate=0.99;initial_temp=100,7688.0,7688,0.004132
+Simulated Annealing,N1000E15000.graph,117,max_iterations=10000;cooling_rate=0.99;initial_temp=250,7662.0,7662,0.004178
+Simulated Annealing,N1000E15000.graph,118,max_iterations=10000;cooling_rate=0.99;initial_temp=500,7698.0,7698,0.004157
+Simulated Annealing,N1000E15000.graph,119,max_iterations=10000;cooling_rate=0.99;initial_temp=1000,7630.0,7630,0.004266
+Simulated Annealing,N1000E15000.graph,120,max_iterations=10000;cooling_rate=0.99;initial_temp=5000,7646.0,7646,0.004220
+Simulated Annealing,N1000E15000.graph,121,max_iterations=10000;cooling_rate=0.995;initial_temp=1,9298.0,9298,0.002467
+Simulated Annealing,N1000E15000.graph,122,max_iterations=10000;cooling_rate=0.995;initial_temp=5,8358.0,8358,0.003414
+Simulated Annealing,N1000E15000.graph,123,max_iterations=10000;cooling_rate=0.995;initial_temp=10,8093.0,8093,0.003794
+Simulated Annealing,N1000E15000.graph,124,max_iterations=10000;cooling_rate=0.995;initial_temp=25,7842.0,7842,0.003998
+Simulated Annealing,N1000E15000.graph,125,max_iterations=10000;cooling_rate=0.995;initial_temp=50,7736.0,7736,0.004133
+Simulated Annealing,N1000E15000.graph,126,max_iterations=10000;cooling_rate=0.995;initial_temp=100,7688.0,7688,0.004214
+Simulated Annealing,N1000E15000.graph,127,max_iterations=10000;cooling_rate=0.995;initial_temp=250,7718.0,7718,0.004194
+Simulated Annealing,N1000E15000.graph,128,max_iterations=10000;cooling_rate=0.995;initial_temp=500,7682.0,7682,0.004186
+Simulated Annealing,N1000E15000.graph,129,max_iterations=10000;cooling_rate=0.995;initial_temp=1000,7668.0,7668,0.004174
+Simulated Annealing,N1000E15000.graph,130,max_iterations=10000;cooling_rate=0.995;initial_temp=5000,7646.0,7646,0.004231
+Simulated Annealing,N1000E15000.graph,131,max_iterations=10000;cooling_rate=0.999;initial_temp=1,9248.0,9248,0.002471
+Simulated Annealing,N1000E15000.graph,132,max_iterations=10000;cooling_rate=0.999;initial_temp=5,8329.0,8329,0.003438
+Simulated Annealing,N1000E15000.graph,133,max_iterations=10000;cooling_rate=0.999;initial_temp=10,8027.0,8027,0.003786
+Simulated Annealing,N1000E15000.graph,134,max_iterations=10000;cooling_rate=0.999;initial_temp=25,7847.0,7847,0.004065
+Simulated Annealing,N1000E15000.graph,135,max_iterations=10000;cooling_rate=0.999;initial_temp=50,7753.0,7753,0.004091
+Simulated Annealing,N1000E15000.graph,136,max_iterations=10000;cooling_rate=0.999;initial_temp=100,7688.0,7688,0.004153
+Simulated Annealing,N1000E15000.graph,137,max_iterations=10000;cooling_rate=0.999;initial_temp=250,7675.0,7675,0.004150
+Simulated Annealing,N1000E15000.graph,138,max_iterations=10000;cooling_rate=0.999;initial_temp=500,7677.0,7677,0.004176
+Simulated Annealing,N1000E15000.graph,139,max_iterations=10000;cooling_rate=0.999;initial_temp=1000,7668.0,7668,0.004177
+Simulated Annealing,N1000E15000.graph,140,max_iterations=10000;cooling_rate=0.999;initial_temp=5000,7646.0,7646,0.004215
+Simulated Annealing,N1000E15000.graph,141,max_iterations=10000;cooling_rate=0.9995;initial_temp=1,9248.0,9248,0.002438
+Simulated Annealing,N1000E15000.graph,142,max_iterations=10000;cooling_rate=0.9995;initial_temp=5,8422.0,8422,0.003398
+Simulated Annealing,N1000E15000.graph,143,max_iterations=10000;cooling_rate=0.9995;initial_temp=10,8028.0,8028,0.003778
+Simulated Annealing,N1000E15000.graph,144,max_iterations=10000;cooling_rate=0.9995;initial_temp=25,7847.0,7847,0.004029
+Simulated Annealing,N1000E15000.graph,145,max_iterations=10000;cooling_rate=0.9995;initial_temp=50,7753.0,7753,0.004087
+Simulated Annealing,N1000E15000.graph,146,max_iterations=10000;cooling_rate=0.9995;initial_temp=100,7714.0,7714,0.004211
+Simulated Annealing,N1000E15000.graph,147,max_iterations=10000;cooling_rate=0.9995;initial_temp=250,7675.0,7675,0.004263
+Simulated Annealing,N1000E15000.graph,148,max_iterations=10000;cooling_rate=0.9995;initial_temp=500,7677.0,7677,0.004283
+Simulated Annealing,N1000E15000.graph,149,max_iterations=10000;cooling_rate=0.9995;initial_temp=1000,7668.0,7668,0.004296
+Simulated Annealing,N1000E15000.graph,150,max_iterations=10000;cooling_rate=0.9995;initial_temp=5000,7646.0,7646,0.004266
+Simulated Annealing,N1000E15000.graph,151,max_iterations=10000;cooling_rate=0.9999;initial_temp=1,9246.0,9246,0.002455
+Simulated Annealing,N1000E15000.graph,152,max_iterations=10000;cooling_rate=0.9999;initial_temp=5,8422.0,8422,0.003435
+Simulated Annealing,N1000E15000.graph,153,max_iterations=10000;cooling_rate=0.9999;initial_temp=10,8030.0,8030,0.003855
+Simulated Annealing,N1000E15000.graph,154,max_iterations=10000;cooling_rate=0.9999;initial_temp=25,7847.0,7847,0.004041
+Simulated Annealing,N1000E15000.graph,155,max_iterations=10000;cooling_rate=0.9999;initial_temp=50,7768.0,7768,0.004109
+Simulated Annealing,N1000E15000.graph,156,max_iterations=10000;cooling_rate=0.9999;initial_temp=100,7714.0,7714,0.004154
+Simulated Annealing,N1000E15000.graph,157,max_iterations=10000;cooling_rate=0.9999;initial_temp=250,7675.0,7675,0.004163
+Simulated Annealing,N1000E15000.graph,158,max_iterations=10000;cooling_rate=0.9999;initial_temp=500,7677.0,7677,0.004165
+Simulated Annealing,N1000E15000.graph,159,max_iterations=10000;cooling_rate=0.9999;initial_temp=1000,7668.0,7668,0.004191
+Simulated Annealing,N1000E15000.graph,160,max_iterations=10000;cooling_rate=0.9999;initial_temp=5000,7646.0,7646,0.004167
+Simulated Annealing,N1000E15000.graph,161,max_iterations=25000;cooling_rate=0.9;initial_temp=1,9338.0,9338,0.002618
+Simulated Annealing,N1000E15000.graph,162,max_iterations=25000;cooling_rate=0.9;initial_temp=5,9394.0,9394,0.003573
+Simulated Annealing,N1000E15000.graph,163,max_iterations=25000;cooling_rate=0.9;initial_temp=10,9262.0,9262,0.004425
+Simulated Annealing,N1000E15000.graph,164,max_iterations=25000;cooling_rate=0.9;initial_temp=25,8950.0,8950,0.005671
+Simulated Annealing,N1000E15000.graph,165,max_iterations=25000;cooling_rate=0.9;initial_temp=50,8344.0,8344,0.006449
+Simulated Annealing,N1000E15000.graph,166,max_iterations=25000;cooling_rate=0.9;initial_temp=100,8055.0,8055,0.006892
+Simulated Annealing,N1000E15000.graph,167,max_iterations=25000;cooling_rate=0.9;initial_temp=250,7825.0,7825,0.007161
+Simulated Annealing,N1000E15000.graph,168,max_iterations=25000;cooling_rate=0.9;initial_temp=500,7765.0,7765,0.007284
+Simulated Annealing,N1000E15000.graph,169,max_iterations=25000;cooling_rate=0.9;initial_temp=1000,7743.0,7743,0.007305
+Simulated Annealing,N1000E15000.graph,170,max_iterations=25000;cooling_rate=0.9;initial_temp=5000,7646.0,7646,0.007352
+Simulated Annealing,N1000E15000.graph,171,max_iterations=25000;cooling_rate=0.95;initial_temp=1,9408.0,9408,0.002654
+Simulated Annealing,N1000E15000.graph,172,max_iterations=25000;cooling_rate=0.95;initial_temp=5,9217.0,9217,0.004198
+Simulated Annealing,N1000E15000.graph,173,max_iterations=25000;cooling_rate=0.95;initial_temp=10,8654.0,8654,0.005423
+Simulated Annealing,N1000E15000.graph,174,max_iterations=25000;cooling_rate=0.95;initial_temp=25,8137.0,8137,0.006535
+Simulated Annealing,N1000E15000.graph,175,max_iterations=25000;cooling_rate=0.95;initial_temp=50,7867.0,7867,0.006943
+Simulated Annealing,N1000E15000.graph,176,max_iterations=25000;cooling_rate=0.95;initial_temp=100,7768.0,7768,0.007206
+Simulated Annealing,N1000E15000.graph,177,max_iterations=25000;cooling_rate=0.95;initial_temp=250,7698.0,7698,0.007337
+Simulated Annealing,N1000E15000.graph,178,max_iterations=25000;cooling_rate=0.95;initial_temp=500,7759.0,7759,0.007296
+Simulated Annealing,N1000E15000.graph,179,max_iterations=25000;cooling_rate=0.95;initial_temp=1000,7719.0,7719,0.007413
+Simulated Annealing,N1000E15000.graph,180,max_iterations=25000;cooling_rate=0.95;initial_temp=5000,7678.0,7678,0.007456
+Simulated Annealing,N1000E15000.graph,181,max_iterations=25000;cooling_rate=0.98;initial_temp=1,9391.0,9391,0.002797
+Simulated Annealing,N1000E15000.graph,182,max_iterations=25000;cooling_rate=0.98;initial_temp=5,8736.0,8736,0.004875
+Simulated Annealing,N1000E15000.graph,183,max_iterations=25000;cooling_rate=0.98;initial_temp=10,8302.0,8302,0.006049
+Simulated Annealing,N1000E15000.graph,184,max_iterations=25000;cooling_rate=0.98;initial_temp=25,7935.0,7935,0.006820
+Simulated Annealing,N1000E15000.graph,185,max_iterations=25000;cooling_rate=0.98;initial_temp=50,7794.0,7794,0.007089
+Simulated Annealing,N1000E15000.graph,186,max_iterations=25000;cooling_rate=0.98;initial_temp=100,7777.0,7777,0.007246
+Simulated Annealing,N1000E15000.graph,187,max_iterations=25000;cooling_rate=0.98;initial_temp=250,7692.0,7692,0.007300
+Simulated Annealing,N1000E15000.graph,188,max_iterations=25000;cooling_rate=0.98;initial_temp=500,7682.0,7682,0.007326
+Simulated Annealing,N1000E15000.graph,189,max_iterations=25000;cooling_rate=0.98;initial_temp=1000,7675.0,7675,0.007344
+Simulated Annealing,N1000E15000.graph,190,max_iterations=25000;cooling_rate=0.98;initial_temp=5000,7702.0,7702,0.007368
+Simulated Annealing,N1000E15000.graph,191,max_iterations=25000;cooling_rate=0.99;initial_temp=1,9408.0,9408,0.002736
+Simulated Annealing,N1000E15000.graph,192,max_iterations=25000;cooling_rate=0.99;initial_temp=5,8482.0,8482,0.005193
+Simulated Annealing,N1000E15000.graph,193,max_iterations=25000;cooling_rate=0.99;initial_temp=10,8125.0,8125,0.006203
+Simulated Annealing,N1000E15000.graph,194,max_iterations=25000;cooling_rate=0.99;initial_temp=25,7892.0,7892,0.006885
+Simulated Annealing,N1000E15000.graph,195,max_iterations=25000;cooling_rate=0.99;initial_temp=50,7753.0,7753,0.007162
+Simulated Annealing,N1000E15000.graph,196,max_iterations=25000;cooling_rate=0.99;initial_temp=100,7772.0,7772,0.007302
+Simulated Annealing,N1000E15000.graph,197,max_iterations=25000;cooling_rate=0.99;initial_temp=250,7701.0,7701,0.007405
+Simulated Annealing,N1000E15000.graph,198,max_iterations=25000;cooling_rate=0.99;initial_temp=500,7698.0,7698,0.007340
+Simulated Annealing,N1000E15000.graph,199,max_iterations=25000;cooling_rate=0.99;initial_temp=1000,7691.0,7691,0.007437
+Simulated Annealing,N1000E15000.graph,200,max_iterations=25000;cooling_rate=0.99;initial_temp=5000,7667.0,7667,0.007441
+Simulated Annealing,N1000E15000.graph,201,max_iterations=25000;cooling_rate=0.995;initial_temp=1,9381.0,9381,0.002838
+Simulated Annealing,N1000E15000.graph,202,max_iterations=25000;cooling_rate=0.995;initial_temp=5,8431.0,8431,0.005214
+Simulated Annealing,N1000E15000.graph,203,max_iterations=25000;cooling_rate=0.995;initial_temp=10,8112.0,8112,0.006238
+Simulated Annealing,N1000E15000.graph,204,max_iterations=25000;cooling_rate=0.995;initial_temp=25,7842.0,7842,0.006887
+Simulated Annealing,N1000E15000.graph,205,max_iterations=25000;cooling_rate=0.995;initial_temp=50,7746.0,7746,0.007112
+Simulated Annealing,N1000E15000.graph,206,max_iterations=25000;cooling_rate=0.995;initial_temp=100,7780.0,7780,0.007223
+Simulated Annealing,N1000E15000.graph,207,max_iterations=25000;cooling_rate=0.995;initial_temp=250,7718.0,7718,0.007290
+Simulated Annealing,N1000E15000.graph,208,max_iterations=25000;cooling_rate=0.995;initial_temp=500,7687.0,7687,0.007313
+Simulated Annealing,N1000E15000.graph,209,max_iterations=25000;cooling_rate=0.995;initial_temp=1000,7668.0,7668,0.007305
+Simulated Annealing,N1000E15000.graph,210,max_iterations=25000;cooling_rate=0.995;initial_temp=5000,7673.0,7673,0.007316
+Simulated Annealing,N1000E15000.graph,211,max_iterations=25000;cooling_rate=0.999;initial_temp=1,9383.0,9383,0.002778
+Simulated Annealing,N1000E15000.graph,212,max_iterations=25000;cooling_rate=0.999;initial_temp=5,8423.0,8423,0.005383
+Simulated Annealing,N1000E15000.graph,213,max_iterations=25000;cooling_rate=0.999;initial_temp=10,8027.0,8027,0.006387
+Simulated Annealing,N1000E15000.graph,214,max_iterations=25000;cooling_rate=0.999;initial_temp=25,7847.0,7847,0.006919
+Simulated Annealing,N1000E15000.graph,215,max_iterations=25000;cooling_rate=0.999;initial_temp=50,7787.0,7787,0.007111
+Simulated Annealing,N1000E15000.graph,216,max_iterations=25000;cooling_rate=0.999;initial_temp=100,7689.0,7689,0.007329
+Simulated Annealing,N1000E15000.graph,217,max_iterations=25000;cooling_rate=0.999;initial_temp=250,7736.0,7736,0.007355
+Simulated Annealing,N1000E15000.graph,218,max_iterations=25000;cooling_rate=0.999;initial_temp=500,7705.0,7705,0.007364
+Simulated Annealing,N1000E15000.graph,219,max_iterations=25000;cooling_rate=0.999;initial_temp=1000,7668.0,7668,0.007413
+Simulated Annealing,N1000E15000.graph,220,max_iterations=25000;cooling_rate=0.999;initial_temp=5000,7673.0,7673,0.007355
+Simulated Annealing,N1000E15000.graph,221,max_iterations=25000;cooling_rate=0.9995;initial_temp=1,9383.0,9383,0.002780
+Simulated Annealing,N1000E15000.graph,222,max_iterations=25000;cooling_rate=0.9995;initial_temp=5,8422.0,8422,0.005335
+Simulated Annealing,N1000E15000.graph,223,max_iterations=25000;cooling_rate=0.9995;initial_temp=10,8054.0,8054,0.006293
+Simulated Annealing,N1000E15000.graph,224,max_iterations=25000;cooling_rate=0.9995;initial_temp=25,7847.0,7847,0.006952
+Simulated Annealing,N1000E15000.graph,225,max_iterations=25000;cooling_rate=0.9995;initial_temp=50,7759.0,7759,0.007113
+Simulated Annealing,N1000E15000.graph,226,max_iterations=25000;cooling_rate=0.9995;initial_temp=100,7714.0,7714,0.007279
+Simulated Annealing,N1000E15000.graph,227,max_iterations=25000;cooling_rate=0.9995;initial_temp=250,7735.0,7735,0.007349
+Simulated Annealing,N1000E15000.graph,228,max_iterations=25000;cooling_rate=0.9995;initial_temp=500,7705.0,7705,0.007326
+Simulated Annealing,N1000E15000.graph,229,max_iterations=25000;cooling_rate=0.9995;initial_temp=1000,7668.0,7668,0.007321
+Simulated Annealing,N1000E15000.graph,230,max_iterations=25000;cooling_rate=0.9995;initial_temp=5000,7673.0,7673,0.007320
+Simulated Annealing,N1000E15000.graph,231,max_iterations=25000;cooling_rate=0.9999;initial_temp=1,9364.0,9364,0.002768
+Simulated Annealing,N1000E15000.graph,232,max_iterations=25000;cooling_rate=0.9999;initial_temp=5,8422.0,8422,0.005392
+Simulated Annealing,N1000E15000.graph,233,max_iterations=25000;cooling_rate=0.9999;initial_temp=10,8031.0,8031,0.006343
+Simulated Annealing,N1000E15000.graph,234,max_iterations=25000;cooling_rate=0.9999;initial_temp=25,7865.0,7865,0.007019
+Simulated Annealing,N1000E15000.graph,235,max_iterations=25000;cooling_rate=0.9999;initial_temp=50,7774.0,7774,0.007142
+Simulated Annealing,N1000E15000.graph,236,max_iterations=25000;cooling_rate=0.9999;initial_temp=100,7729.0,7729,0.007208
+Simulated Annealing,N1000E15000.graph,237,max_iterations=25000;cooling_rate=0.9999;initial_temp=250,7735.0,7735,0.007353
+Simulated Annealing,N1000E15000.graph,238,max_iterations=25000;cooling_rate=0.9999;initial_temp=500,7705.0,7705,0.007379
+Simulated Annealing,N1000E15000.graph,239,max_iterations=25000;cooling_rate=0.9999;initial_temp=1000,7668.0,7668,0.007349
+Simulated Annealing,N1000E15000.graph,240,max_iterations=25000;cooling_rate=0.9999;initial_temp=5000,7673.0,7673,0.007401
+Simulated Annealing,N1000E15000.graph,241,max_iterations=50000;cooling_rate=0.9;initial_temp=1,9353.0,9353,0.003024
+Simulated Annealing,N1000E15000.graph,242,max_iterations=50000;cooling_rate=0.9;initial_temp=5,9407.0,9407,0.003849
+Simulated Annealing,N1000E15000.graph,243,max_iterations=50000;cooling_rate=0.9;initial_temp=10,9377.0,9377,0.004815
+Simulated Annealing,N1000E15000.graph,244,max_iterations=50000;cooling_rate=0.9;initial_temp=25,9363.0,9363,0.006246
+Simulated Annealing,N1000E15000.graph,245,max_iterations=50000;cooling_rate=0.9;initial_temp=50,9414.0,9414,0.007513
+Simulated Annealing,N1000E15000.graph,246,max_iterations=50000;cooling_rate=0.9;initial_temp=100,9327.0,9327,0.008764
+Simulated Annealing,N1000E15000.graph,247,max_iterations=50000;cooling_rate=0.9;initial_temp=250,9070.0,9070,0.010308
+Simulated Annealing,N1000E15000.graph,248,max_iterations=50000;cooling_rate=0.9;initial_temp=500,8686.0,8686,0.011224
+Simulated Annealing,N1000E15000.graph,249,max_iterations=50000;cooling_rate=0.9;initial_temp=1000,8186.0,8186,0.011858
+Simulated Annealing,N1000E15000.graph,250,max_iterations=50000;cooling_rate=0.9;initial_temp=5000,7728.0,7728,0.012503
+Simulated Annealing,N1000E15000.graph,251,max_iterations=50000;cooling_rate=0.95;initial_temp=1,9417.0,9417,0.002981
+Simulated Annealing,N1000E15000.graph,252,max_iterations=50000;cooling_rate=0.95;initial_temp=5,9440.0,9440,0.004687
+Simulated Annealing,N1000E15000.graph,253,max_iterations=50000;cooling_rate=0.95;initial_temp=10,9361.0,9361,0.006512
+Simulated Annealing,N1000E15000.graph,254,max_iterations=50000;cooling_rate=0.95;initial_temp=25,9019.0,9019,0.009190
+Simulated Annealing,N1000E15000.graph,255,max_iterations=50000;cooling_rate=0.95;initial_temp=50,8426.0,8426,0.010819
+Simulated Annealing,N1000E15000.graph,256,max_iterations=50000;cooling_rate=0.95;initial_temp=100,8061.0,8061,0.011705
+Simulated Annealing,N1000E15000.graph,257,max_iterations=50000;cooling_rate=0.95;initial_temp=250,7821.0,7821,0.012248
+Simulated Annealing,N1000E15000.graph,258,max_iterations=50000;cooling_rate=0.95;initial_temp=500,7759.0,7759,0.012369
+Simulated Annealing,N1000E15000.graph,259,max_iterations=50000;cooling_rate=0.95;initial_temp=1000,7745.0,7745,0.012503
+Simulated Annealing,N1000E15000.graph,260,max_iterations=50000;cooling_rate=0.95;initial_temp=5000,7743.0,7743,0.012590
+Simulated Annealing,N1000E15000.graph,261,max_iterations=50000;cooling_rate=0.98;initial_temp=1,9432.0,9432,0.003157
+Simulated Annealing,N1000E15000.graph,262,max_iterations=50000;cooling_rate=0.98;initial_temp=5,9220.0,9220,0.006612
+Simulated Annealing,N1000E15000.graph,263,max_iterations=50000;cooling_rate=0.98;initial_temp=10,8535.0,8535,0.009184
+Simulated Annealing,N1000E15000.graph,264,max_iterations=50000;cooling_rate=0.98;initial_temp=25,8002.0,8002,0.011197
+Simulated Annealing,N1000E15000.graph,265,max_iterations=50000;cooling_rate=0.98;initial_temp=50,7867.0,7867,0.011871
+Simulated Annealing,N1000E15000.graph,266,max_iterations=50000;cooling_rate=0.98;initial_temp=100,7777.0,7777,0.012206
+Simulated Annealing,N1000E15000.graph,267,max_iterations=50000;cooling_rate=0.98;initial_temp=250,7711.0,7711,0.012410
+Simulated Annealing,N1000E15000.graph,268,max_iterations=50000;cooling_rate=0.98;initial_temp=500,7722.0,7722,0.012597
+Simulated Annealing,N1000E15000.graph,269,max_iterations=50000;cooling_rate=0.98;initial_temp=1000,7712.0,7712,0.012497
+Simulated Annealing,N1000E15000.graph,270,max_iterations=50000;cooling_rate=0.98;initial_temp=5000,7702.0,7702,0.012587
+Simulated Annealing,N1000E15000.graph,271,max_iterations=50000;cooling_rate=0.99;initial_temp=1,9435.0,9435,0.003211
+Simulated Annealing,N1000E15000.graph,272,max_iterations=50000;cooling_rate=0.99;initial_temp=5,8807.0,8807,0.007665
+Simulated Annealing,N1000E15000.graph,273,max_iterations=50000;cooling_rate=0.99;initial_temp=10,8226.0,8226,0.009952
+Simulated Annealing,N1000E15000.graph,274,max_iterations=50000;cooling_rate=0.99;initial_temp=25,7903.0,7903,0.011612
+Simulated Annealing,N1000E15000.graph,275,max_iterations=50000;cooling_rate=0.99;initial_temp=50,7768.0,7768,0.012072
+Simulated Annealing,N1000E15000.graph,276,max_iterations=50000;cooling_rate=0.99;initial_temp=100,7772.0,7772,0.012315
+Simulated Annealing,N1000E15000.graph,277,max_iterations=50000;cooling_rate=0.99;initial_temp=250,7701.0,7701,0.012521
+Simulated Annealing,N1000E15000.graph,278,max_iterations=50000;cooling_rate=0.99;initial_temp=500,7733.0,7733,0.012497
+Simulated Annealing,N1000E15000.graph,279,max_iterations=50000;cooling_rate=0.99;initial_temp=1000,7696.0,7696,0.012485
+Simulated Annealing,N1000E15000.graph,280,max_iterations=50000;cooling_rate=0.99;initial_temp=5000,7766.0,7766,0.012551
+Simulated Annealing,N1000E15000.graph,281,max_iterations=50000;cooling_rate=0.995;initial_temp=1,9417.0,9417,0.003266
+Simulated Annealing,N1000E15000.graph,282,max_iterations=50000;cooling_rate=0.995;initial_temp=5,8533.0,8533,0.008232
+Simulated Annealing,N1000E15000.graph,283,max_iterations=50000;cooling_rate=0.995;initial_temp=10,8136.0,8136,0.010290
+Simulated Annealing,N1000E15000.graph,284,max_iterations=50000;cooling_rate=0.995;initial_temp=25,7896.0,7896,0.011671
+Simulated Annealing,N1000E15000.graph,285,max_iterations=50000;cooling_rate=0.995;initial_temp=50,7786.0,7786,0.012111
+Simulated Annealing,N1000E15000.graph,286,max_iterations=50000;cooling_rate=0.995;initial_temp=100,7780.0,7780,0.012316
+Simulated Annealing,N1000E15000.graph,287,max_iterations=50000;cooling_rate=0.995;initial_temp=250,7718.0,7718,0.012422
+Simulated Annealing,N1000E15000.graph,288,max_iterations=50000;cooling_rate=0.995;initial_temp=500,7694.0,7694,0.012497
+Simulated Annealing,N1000E15000.graph,289,max_iterations=50000;cooling_rate=0.995;initial_temp=1000,7693.0,7693,0.012494
+Simulated Annealing,N1000E15000.graph,290,max_iterations=50000;cooling_rate=0.995;initial_temp=5000,7675.0,7675,0.012507
+Simulated Annealing,N1000E15000.graph,291,max_iterations=50000;cooling_rate=0.999;initial_temp=1,9413.0,9413,0.003337
+Simulated Annealing,N1000E15000.graph,292,max_iterations=50000;cooling_rate=0.999;initial_temp=5,8423.0,8423,0.008520
+Simulated Annealing,N1000E15000.graph,293,max_iterations=50000;cooling_rate=0.999;initial_temp=10,8047.0,8047,0.010471
+Simulated Annealing,N1000E15000.graph,294,max_iterations=50000;cooling_rate=0.999;initial_temp=25,7847.0,7847,0.011728
+Simulated Annealing,N1000E15000.graph,295,max_iterations=50000;cooling_rate=0.999;initial_temp=50,7787.0,7787,0.012091
+Simulated Annealing,N1000E15000.graph,296,max_iterations=50000;cooling_rate=0.999;initial_temp=100,7701.0,7701,0.012341
+Simulated Annealing,N1000E15000.graph,297,max_iterations=50000;cooling_rate=0.999;initial_temp=250,7736.0,7736,0.012450
+Simulated Annealing,N1000E15000.graph,298,max_iterations=50000;cooling_rate=0.999;initial_temp=500,7705.0,7705,0.012499
+Simulated Annealing,N1000E15000.graph,299,max_iterations=50000;cooling_rate=0.999;initial_temp=1000,7726.0,7726,0.012511
+Simulated Annealing,N1000E15000.graph,300,max_iterations=50000;cooling_rate=0.999;initial_temp=5000,7673.0,7673,0.012523
+Simulated Annealing,N1000E15000.graph,301,max_iterations=50000;cooling_rate=0.9995;initial_temp=1,9392.0,9392,0.003373
+Simulated Annealing,N1000E15000.graph,302,max_iterations=50000;cooling_rate=0.9995;initial_temp=5,8422.0,8422,0.008638
+Simulated Annealing,N1000E15000.graph,303,max_iterations=50000;cooling_rate=0.9995;initial_temp=10,8054.0,8054,0.010446
+Simulated Annealing,N1000E15000.graph,304,max_iterations=50000;cooling_rate=0.9995;initial_temp=25,7847.0,7847,0.011734
+Simulated Annealing,N1000E15000.graph,305,max_iterations=50000;cooling_rate=0.9995;initial_temp=50,7759.0,7759,0.012196
+Simulated Annealing,N1000E15000.graph,306,max_iterations=50000;cooling_rate=0.9995;initial_temp=100,7789.0,7789,0.012421
+Simulated Annealing,N1000E15000.graph,307,max_iterations=50000;cooling_rate=0.9995;initial_temp=250,7749.0,7749,0.012544
+Simulated Annealing,N1000E15000.graph,308,max_iterations=50000;cooling_rate=0.9995;initial_temp=500,7705.0,7705,0.012550
+Simulated Annealing,N1000E15000.graph,309,max_iterations=50000;cooling_rate=0.9995;initial_temp=1000,7726.0,7726,0.012525
+Simulated Annealing,N1000E15000.graph,310,max_iterations=50000;cooling_rate=0.9995;initial_temp=5000,7673.0,7673,0.012606
+Simulated Annealing,N1000E15000.graph,311,max_iterations=50000;cooling_rate=0.9999;initial_temp=1,9417.0,9417,0.003285
+Simulated Annealing,N1000E15000.graph,312,max_iterations=50000;cooling_rate=0.9999;initial_temp=5,8422.0,8422,0.008602
+Simulated Annealing,N1000E15000.graph,313,max_iterations=50000;cooling_rate=0.9999;initial_temp=10,8031.0,8031,0.010503
+Simulated Annealing,N1000E15000.graph,314,max_iterations=50000;cooling_rate=0.9999;initial_temp=25,7865.0,7865,0.011715
+Simulated Annealing,N1000E15000.graph,315,max_iterations=50000;cooling_rate=0.9999;initial_temp=50,7785.0,7785,0.012127
+Simulated Annealing,N1000E15000.graph,316,max_iterations=50000;cooling_rate=0.9999;initial_temp=100,7729.0,7729,0.012366
+Simulated Annealing,N1000E15000.graph,317,max_iterations=50000;cooling_rate=0.9999;initial_temp=250,7735.0,7735,0.012571
+Simulated Annealing,N1000E15000.graph,318,max_iterations=50000;cooling_rate=0.9999;initial_temp=500,7705.0,7705,0.012559
+Simulated Annealing,N1000E15000.graph,319,max_iterations=50000;cooling_rate=0.9999;initial_temp=1000,7722.0,7722,0.012497
+Simulated Annealing,N1000E15000.graph,320,max_iterations=50000;cooling_rate=0.9999;initial_temp=5000,7673.0,7673,0.012520
+Simulated Annealing,N1000E15000.graph,321,max_iterations=100000;cooling_rate=0.9;initial_temp=1,9358.0,9358,0.003986
+Simulated Annealing,N1000E15000.graph,322,max_iterations=100000;cooling_rate=0.9;initial_temp=5,9408.0,9408,0.004709
+Simulated Annealing,N1000E15000.graph,323,max_iterations=100000;cooling_rate=0.9;initial_temp=10,9390.0,9390,0.005660
+Simulated Annealing,N1000E15000.graph,324,max_iterations=100000;cooling_rate=0.9;initial_temp=25,9364.0,9364,0.007027
+Simulated Annealing,N1000E15000.graph,325,max_iterations=100000;cooling_rate=0.9;initial_temp=50,9429.0,9429,0.008272
+Simulated Annealing,N1000E15000.graph,326,max_iterations=100000;cooling_rate=0.9;initial_temp=100,9370.0,9370,0.009446
+Simulated Annealing,N1000E15000.graph,327,max_iterations=100000;cooling_rate=0.9;initial_temp=250,9411.0,9411,0.011114
+Simulated Annealing,N1000E15000.graph,328,max_iterations=100000;cooling_rate=0.9;initial_temp=500,9390.0,9390,0.012362
+Simulated Annealing,N1000E15000.graph,329,max_iterations=100000;cooling_rate=0.9;initial_temp=1000,9413.0,9413,0.013589
+Simulated Annealing,N1000E15000.graph,330,max_iterations=100000;cooling_rate=0.9;initial_temp=5000,9384.0,9384,0.016748
+Simulated Annealing,N1000E15000.graph,331,max_iterations=100000;cooling_rate=0.95;initial_temp=1,9420.0,9420,0.003844
+Simulated Annealing,N1000E15000.graph,332,max_iterations=100000;cooling_rate=0.95;initial_temp=5,9451.0,9451,0.005216
+Simulated Annealing,N1000E15000.graph,333,max_iterations=100000;cooling_rate=0.95;initial_temp=10,9438.0,9438,0.007209
+Simulated Annealing,N1000E15000.graph,334,max_iterations=100000;cooling_rate=0.95;initial_temp=25,9469.0,9469,0.010243
+Simulated Annealing,N1000E15000.graph,335,max_iterations=100000;cooling_rate=0.95;initial_temp=50,9430.0,9430,0.012807
+Simulated Annealing,N1000E15000.graph,336,max_iterations=100000;cooling_rate=0.95;initial_temp=100,9394.0,9394,0.015470
+Simulated Annealing,N1000E15000.graph,337,max_iterations=100000;cooling_rate=0.95;initial_temp=250,9106.0,9106,0.018655
+Simulated Annealing,N1000E15000.graph,338,max_iterations=100000;cooling_rate=0.95;initial_temp=500,8655.0,8655,0.020584
+Simulated Annealing,N1000E15000.graph,339,max_iterations=100000;cooling_rate=0.95;initial_temp=1000,8199.0,8199,0.021832
+Simulated Annealing,N1000E15000.graph,340,max_iterations=100000;cooling_rate=0.95;initial_temp=5000,7743.0,7743,0.022816
+Simulated Annealing,N1000E15000.graph,341,max_iterations=100000;cooling_rate=0.98;initial_temp=1,9439.0,9439,0.003668
+Simulated Annealing,N1000E15000.graph,342,max_iterations=100000;cooling_rate=0.98;initial_temp=5,9484.0,9484,0.007928
+Simulated Annealing,N1000E15000.graph,343,max_iterations=100000;cooling_rate=0.98;initial_temp=10,9288.0,9288,0.012504
+Simulated Annealing,N1000E15000.graph,344,max_iterations=100000;cooling_rate=0.98;initial_temp=25,8555.0,8555,0.018055
+Simulated Annealing,N1000E15000.graph,345,max_iterations=100000;cooling_rate=0.98;initial_temp=50,8161.0,8161,0.020508
+Simulated Annealing,N1000E15000.graph,346,max_iterations=100000;cooling_rate=0.98;initial_temp=100,7894.0,7894,0.021889
+Simulated Annealing,N1000E15000.graph,347,max_iterations=100000;cooling_rate=0.98;initial_temp=250,7759.0,7759,0.022638
+Simulated Annealing,N1000E15000.graph,348,max_iterations=100000;cooling_rate=0.98;initial_temp=500,7747.0,7747,0.022937
+Simulated Annealing,N1000E15000.graph,349,max_iterations=100000;cooling_rate=0.98;initial_temp=1000,7712.0,7712,0.023078
+Simulated Annealing,N1000E15000.graph,350,max_iterations=100000;cooling_rate=0.98;initial_temp=5000,7722.0,7722,0.023067
+Simulated Annealing,N1000E15000.graph,351,max_iterations=100000;cooling_rate=0.99;initial_temp=1,9464.0,9464,0.003846
+Simulated Annealing,N1000E15000.graph,352,max_iterations=100000;cooling_rate=0.99;initial_temp=5,9103.0,9103,0.011008
+Simulated Annealing,N1000E15000.graph,353,max_iterations=100000;cooling_rate=0.99;initial_temp=10,8571.0,8571,0.016188
+Simulated Annealing,N1000E15000.graph,354,max_iterations=100000;cooling_rate=0.99;initial_temp=25,8046.0,8046,0.020398
+Simulated Annealing,N1000E15000.graph,355,max_iterations=100000;cooling_rate=0.99;initial_temp=50,7844.0,7844,0.021736
+Simulated Annealing,N1000E15000.graph,356,max_iterations=100000;cooling_rate=0.99;initial_temp=100,7786.0,7786,0.022507
+Simulated Annealing,N1000E15000.graph,357,max_iterations=100000;cooling_rate=0.99;initial_temp=250,7715.0,7715,0.022786
+Simulated Annealing,N1000E15000.graph,358,max_iterations=100000;cooling_rate=0.99;initial_temp=500,7733.0,7733,0.022843
+Simulated Annealing,N1000E15000.graph,359,max_iterations=100000;cooling_rate=0.99;initial_temp=1000,7770.0,7770,0.022891
+Simulated Annealing,N1000E15000.graph,360,max_iterations=100000;cooling_rate=0.99;initial_temp=5000,7766.0,7766,0.023246
+Simulated Annealing,N1000E15000.graph,361,max_iterations=100000;cooling_rate=0.995;initial_temp=1,9446.0,9446,0.004018
+Simulated Annealing,N1000E15000.graph,362,max_iterations=100000;cooling_rate=0.995;initial_temp=5,8767.0,8767,0.013086
+Simulated Annealing,N1000E15000.graph,363,max_iterations=100000;cooling_rate=0.995;initial_temp=10,8305.0,8305,0.017669
+Simulated Annealing,N1000E15000.graph,364,max_iterations=100000;cooling_rate=0.995;initial_temp=25,7934.0,7934,0.020943
+Simulated Annealing,N1000E15000.graph,365,max_iterations=100000;cooling_rate=0.995;initial_temp=50,7839.0,7839,0.022234
+Simulated Annealing,N1000E15000.graph,366,max_iterations=100000;cooling_rate=0.995;initial_temp=100,7780.0,7780,0.022882
+Simulated Annealing,N1000E15000.graph,367,max_iterations=100000;cooling_rate=0.995;initial_temp=250,7718.0,7718,0.023064
+Simulated Annealing,N1000E15000.graph,368,max_iterations=100000;cooling_rate=0.995;initial_temp=500,7695.0,7695,0.022927
+Simulated Annealing,N1000E15000.graph,369,max_iterations=100000;cooling_rate=0.995;initial_temp=1000,7721.0,7721,0.023067
+Simulated Annealing,N1000E15000.graph,370,max_iterations=100000;cooling_rate=0.995;initial_temp=5000,7696.0,7696,0.022975
+Simulated Annealing,N1000E15000.graph,371,max_iterations=100000;cooling_rate=0.999;initial_temp=1,9441.0,9441,0.004338
+Simulated Annealing,N1000E15000.graph,372,max_iterations=100000;cooling_rate=0.999;initial_temp=5,8433.0,8433,0.014729
+Simulated Annealing,N1000E15000.graph,373,max_iterations=100000;cooling_rate=0.999;initial_temp=10,8130.0,8130,0.018780
+Simulated Annealing,N1000E15000.graph,374,max_iterations=100000;cooling_rate=0.999;initial_temp=25,7864.0,7864,0.021490
+Simulated Annealing,N1000E15000.graph,375,max_iterations=100000;cooling_rate=0.999;initial_temp=50,7787.0,7787,0.022288
+Simulated Annealing,N1000E15000.graph,376,max_iterations=100000;cooling_rate=0.999;initial_temp=100,7759.0,7759,0.022728
+Simulated Annealing,N1000E15000.graph,377,max_iterations=100000;cooling_rate=0.999;initial_temp=250,7736.0,7736,0.022910
+Simulated Annealing,N1000E15000.graph,378,max_iterations=100000;cooling_rate=0.999;initial_temp=500,7705.0,7705,0.023020
+Simulated Annealing,N1000E15000.graph,379,max_iterations=100000;cooling_rate=0.999;initial_temp=1000,7729.0,7729,0.023072
+Simulated Annealing,N1000E15000.graph,380,max_iterations=100000;cooling_rate=0.999;initial_temp=5000,7711.0,7711,0.023074
+Simulated Annealing,N1000E15000.graph,381,max_iterations=100000;cooling_rate=0.9995;initial_temp=1,9428.0,9428,0.004470
+Simulated Annealing,N1000E15000.graph,382,max_iterations=100000;cooling_rate=0.9995;initial_temp=5,8422.0,8422,0.014981
+Simulated Annealing,N1000E15000.graph,383,max_iterations=100000;cooling_rate=0.9995;initial_temp=10,8090.0,8090,0.018909
+Simulated Annealing,N1000E15000.graph,384,max_iterations=100000;cooling_rate=0.9995;initial_temp=25,7880.0,7880,0.021463
+Simulated Annealing,N1000E15000.graph,385,max_iterations=100000;cooling_rate=0.9995;initial_temp=50,7764.0,7764,0.022358
+Simulated Annealing,N1000E15000.graph,386,max_iterations=100000;cooling_rate=0.9995;initial_temp=100,7789.0,7789,0.022804
+Simulated Annealing,N1000E15000.graph,387,max_iterations=100000;cooling_rate=0.9995;initial_temp=250,7749.0,7749,0.022994
+Simulated Annealing,N1000E15000.graph,388,max_iterations=100000;cooling_rate=0.9995;initial_temp=500,7706.0,7706,0.023054
+Simulated Annealing,N1000E15000.graph,389,max_iterations=100000;cooling_rate=0.9995;initial_temp=1000,7726.0,7726,0.023072
+Simulated Annealing,N1000E15000.graph,390,max_iterations=100000;cooling_rate=0.9995;initial_temp=5000,7711.0,7711,0.023077
+Simulated Annealing,N1000E15000.graph,391,max_iterations=100000;cooling_rate=0.9999;initial_temp=1,9419.0,9419,0.004434
+Simulated Annealing,N1000E15000.graph,392,max_iterations=100000;cooling_rate=0.9999;initial_temp=5,8427.0,8427,0.015105
+Simulated Annealing,N1000E15000.graph,393,max_iterations=100000;cooling_rate=0.9999;initial_temp=10,8046.0,8046,0.018977
+Simulated Annealing,N1000E15000.graph,394,max_iterations=100000;cooling_rate=0.9999;initial_temp=25,7865.0,7865,0.021456
+Simulated Annealing,N1000E15000.graph,395,max_iterations=100000;cooling_rate=0.9999;initial_temp=50,7785.0,7785,0.022271
+Simulated Annealing,N1000E15000.graph,396,max_iterations=100000;cooling_rate=0.9999;initial_temp=100,7739.0,7739,0.022672
+Simulated Annealing,N1000E15000.graph,397,max_iterations=100000;cooling_rate=0.9999;initial_temp=250,7769.0,7769,0.022895
+Simulated Annealing,N1000E15000.graph,398,max_iterations=100000;cooling_rate=0.9999;initial_temp=500,7719.0,7719,0.022992
+Simulated Annealing,N1000E15000.graph,399,max_iterations=100000;cooling_rate=0.9999;initial_temp=1000,7722.0,7722,0.023093
+Simulated Annealing,N1000E15000.graph,400,max_iterations=100000;cooling_rate=0.9999;initial_temp=5000,7704.0,7704,0.023161
+Simulated Annealing,N1000E15000.graph,401,max_iterations=250000;cooling_rate=0.9;initial_temp=1,9358.0,9358,0.006607
+Simulated Annealing,N1000E15000.graph,402,max_iterations=250000;cooling_rate=0.9;initial_temp=5,9408.0,9408,0.007431
+Simulated Annealing,N1000E15000.graph,403,max_iterations=250000;cooling_rate=0.9;initial_temp=10,9390.0,9390,0.008386
+Simulated Annealing,N1000E15000.graph,404,max_iterations=250000;cooling_rate=0.9;initial_temp=25,9364.0,9364,0.009748
+Simulated Annealing,N1000E15000.graph,405,max_iterations=250000;cooling_rate=0.9;initial_temp=50,9429.0,9429,0.011013
+Simulated Annealing,N1000E15000.graph,406,max_iterations=250000;cooling_rate=0.9;initial_temp=100,9370.0,9370,0.012074
+Simulated Annealing,N1000E15000.graph,407,max_iterations=250000;cooling_rate=0.9;initial_temp=250,9412.0,9412,0.014010
+Simulated Annealing,N1000E15000.graph,408,max_iterations=250000;cooling_rate=0.9;initial_temp=500,9390.0,9390,0.015055
+Simulated Annealing,N1000E15000.graph,409,max_iterations=250000;cooling_rate=0.9;initial_temp=1000,9413.0,9413,0.016377
+Simulated Annealing,N1000E15000.graph,410,max_iterations=250000;cooling_rate=0.9;initial_temp=5000,9385.0,9385,0.019403
+Simulated Annealing,N1000E15000.graph,411,max_iterations=250000;cooling_rate=0.95;initial_temp=1,9420.0,9420,0.006528
+Simulated Annealing,N1000E15000.graph,412,max_iterations=250000;cooling_rate=0.95;initial_temp=5,9452.0,9452,0.008152
+Simulated Annealing,N1000E15000.graph,413,max_iterations=250000;cooling_rate=0.95;initial_temp=10,9438.0,9438,0.010022
+Simulated Annealing,N1000E15000.graph,414,max_iterations=250000;cooling_rate=0.95;initial_temp=25,9471.0,9471,0.012940
+Simulated Annealing,N1000E15000.graph,415,max_iterations=250000;cooling_rate=0.95;initial_temp=50,9436.0,9436,0.015294
+Simulated Annealing,N1000E15000.graph,416,max_iterations=250000;cooling_rate=0.95;initial_temp=100,9423.0,9423,0.018025
+Simulated Annealing,N1000E15000.graph,417,max_iterations=250000;cooling_rate=0.95;initial_temp=250,9400.0,9400,0.021312
+Simulated Annealing,N1000E15000.graph,418,max_iterations=250000;cooling_rate=0.95;initial_temp=500,9421.0,9421,0.023847
+Simulated Annealing,N1000E15000.graph,419,max_iterations=250000;cooling_rate=0.95;initial_temp=1000,9422.0,9422,0.026366
+Simulated Annealing,N1000E15000.graph,420,max_iterations=250000;cooling_rate=0.95;initial_temp=5000,9470.0,9470,0.032211
+Simulated Annealing,N1000E15000.graph,421,max_iterations=250000;cooling_rate=0.98;initial_temp=1,9439.0,9439,0.006025
+Simulated Annealing,N1000E15000.graph,422,max_iterations=250000;cooling_rate=0.98;initial_temp=5,9501.0,9501,0.009533
+Simulated Annealing,N1000E15000.graph,423,max_iterations=250000;cooling_rate=0.98;initial_temp=10,9478.0,9478,0.014533
+Simulated Annealing,N1000E15000.graph,424,max_iterations=250000;cooling_rate=0.98;initial_temp=25,9474.0,9474,0.022237
+Simulated Annealing,N1000E15000.graph,425,max_iterations=250000;cooling_rate=0.98;initial_temp=50,9481.0,9481,0.028752
+Simulated Annealing,N1000E15000.graph,426,max_iterations=250000;cooling_rate=0.98;initial_temp=100,9424.0,9424,0.035543
+Simulated Annealing,N1000E15000.graph,427,max_iterations=250000;cooling_rate=0.98;initial_temp=250,9207.0,9207,0.043621
+Simulated Annealing,N1000E15000.graph,428,max_iterations=250000;cooling_rate=0.98;initial_temp=500,8719.0,8719,0.048391
+Simulated Annealing,N1000E15000.graph,429,max_iterations=250000;cooling_rate=0.98;initial_temp=1000,8204.0,8204,0.052539
+Simulated Annealing,N1000E15000.graph,430,max_iterations=250000;cooling_rate=0.98;initial_temp=5000,7826.0,7826,0.054119
+Simulated Annealing,N1000E15000.graph,431,max_iterations=250000;cooling_rate=0.99;initial_temp=1,9468.0,9468,0.005523
+Simulated Annealing,N1000E15000.graph,432,max_iterations=250000;cooling_rate=0.99;initial_temp=5,9488.0,9488,0.014401
+Simulated Annealing,N1000E15000.graph,433,max_iterations=250000;cooling_rate=0.99;initial_temp=10,9470.0,9470,0.023781
+Simulated Annealing,N1000E15000.graph,434,max_iterations=250000;cooling_rate=0.99;initial_temp=25,9060.0,9060,0.037529
+Simulated Annealing,N1000E15000.graph,435,max_iterations=250000;cooling_rate=0.99;initial_temp=50,8486.0,8486,0.045470
+Simulated Annealing,N1000E15000.graph,436,max_iterations=250000;cooling_rate=0.99;initial_temp=100,8100.0,8100,0.049914
+Simulated Annealing,N1000E15000.graph,437,max_iterations=250000;cooling_rate=0.99;initial_temp=250,7879.0,7879,0.052671
+Simulated Annealing,N1000E15000.graph,438,max_iterations=250000;cooling_rate=0.99;initial_temp=500,7779.0,7779,0.053691
+Simulated Annealing,N1000E15000.graph,439,max_iterations=250000;cooling_rate=0.99;initial_temp=1000,7770.0,7770,0.054047
+Simulated Annealing,N1000E15000.graph,440,max_iterations=250000;cooling_rate=0.99;initial_temp=5000,7766.0,7766,0.054420
+Simulated Annealing,N1000E15000.graph,441,max_iterations=250000;cooling_rate=0.995;initial_temp=1,9456.0,9456,0.005806
+Simulated Annealing,N1000E15000.graph,442,max_iterations=250000;cooling_rate=0.995;initial_temp=5,9381.0,9381,0.021606
+Simulated Annealing,N1000E15000.graph,443,max_iterations=250000;cooling_rate=0.995;initial_temp=10,8799.0,8799,0.035015
+Simulated Annealing,N1000E15000.graph,444,max_iterations=250000;cooling_rate=0.995;initial_temp=25,8159.0,8159,0.046422
+Simulated Annealing,N1000E15000.graph,445,max_iterations=250000;cooling_rate=0.995;initial_temp=50,7970.0,7970,0.050602
+Simulated Annealing,N1000E15000.graph,446,max_iterations=250000;cooling_rate=0.995;initial_temp=100,7794.0,7794,0.052599
+Simulated Annealing,N1000E15000.graph,447,max_iterations=250000;cooling_rate=0.995;initial_temp=250,7748.0,7748,0.053817
+Simulated Annealing,N1000E15000.graph,448,max_iterations=250000;cooling_rate=0.995;initial_temp=500,7772.0,7772,0.054212
+Simulated Annealing,N1000E15000.graph,449,max_iterations=250000;cooling_rate=0.995;initial_temp=1000,7731.0,7731,0.054277
+Simulated Annealing,N1000E15000.graph,450,max_iterations=250000;cooling_rate=0.995;initial_temp=5000,7727.0,7727,0.054471
+Simulated Annealing,N1000E15000.graph,451,max_iterations=250000;cooling_rate=0.999;initial_temp=1,9462.0,9462,0.006952
+Simulated Annealing,N1000E15000.graph,452,max_iterations=250000;cooling_rate=0.999;initial_temp=5,8566.0,8566,0.032068
+Simulated Annealing,N1000E15000.graph,453,max_iterations=250000;cooling_rate=0.999;initial_temp=10,8188.0,8188,0.042821
+Simulated Annealing,N1000E15000.graph,454,max_iterations=250000;cooling_rate=0.999;initial_temp=25,7871.0,7871,0.050061
+Simulated Annealing,N1000E15000.graph,455,max_iterations=250000;cooling_rate=0.999;initial_temp=50,7823.0,7823,0.052272
+Simulated Annealing,N1000E15000.graph,456,max_iterations=250000;cooling_rate=0.999;initial_temp=100,7795.0,7795,0.053466
+Simulated Annealing,N1000E15000.graph,457,max_iterations=250000;cooling_rate=0.999;initial_temp=250,7764.0,7764,0.054208
+Simulated Annealing,N1000E15000.graph,458,max_iterations=250000;cooling_rate=0.999;initial_temp=500,7708.0,7708,0.054349
+Simulated Annealing,N1000E15000.graph,459,max_iterations=250000;cooling_rate=0.999;initial_temp=1000,7769.0,7769,0.054506
+Simulated Annealing,N1000E15000.graph,460,max_iterations=250000;cooling_rate=0.999;initial_temp=5000,7714.0,7714,0.054464
+Simulated Annealing,N1000E15000.graph,461,max_iterations=250000;cooling_rate=0.9995;initial_temp=1,9466.0,9466,0.007343
+Simulated Annealing,N1000E15000.graph,462,max_iterations=250000;cooling_rate=0.9995;initial_temp=5,8496.0,8496,0.033414
+Simulated Annealing,N1000E15000.graph,463,max_iterations=250000;cooling_rate=0.9995;initial_temp=10,8130.0,8130,0.043553
+Simulated Annealing,N1000E15000.graph,464,max_iterations=250000;cooling_rate=0.9995;initial_temp=25,7892.0,7892,0.050194
+Simulated Annealing,N1000E15000.graph,465,max_iterations=250000;cooling_rate=0.9995;initial_temp=50,7830.0,7830,0.052293
+Simulated Annealing,N1000E15000.graph,466,max_iterations=250000;cooling_rate=0.9995;initial_temp=100,7805.0,7805,0.053474
+Simulated Annealing,N1000E15000.graph,467,max_iterations=250000;cooling_rate=0.9995;initial_temp=250,7763.0,7763,0.054099
+Simulated Annealing,N1000E15000.graph,468,max_iterations=250000;cooling_rate=0.9995;initial_temp=500,7752.0,7752,0.054202
+Simulated Annealing,N1000E15000.graph,469,max_iterations=250000;cooling_rate=0.9995;initial_temp=1000,7766.0,7766,0.054426
+Simulated Annealing,N1000E15000.graph,470,max_iterations=250000;cooling_rate=0.9995;initial_temp=5000,7718.0,7718,0.054350
+Simulated Annealing,N1000E15000.graph,471,max_iterations=250000;cooling_rate=0.9999;initial_temp=1,9462.0,9462,0.007486
+Simulated Annealing,N1000E15000.graph,472,max_iterations=250000;cooling_rate=0.9999;initial_temp=5,8438.0,8438,0.034133
+Simulated Annealing,N1000E15000.graph,473,max_iterations=250000;cooling_rate=0.9999;initial_temp=10,8119.0,8119,0.044044
+Simulated Annealing,N1000E15000.graph,474,max_iterations=250000;cooling_rate=0.9999;initial_temp=25,7891.0,7891,0.050481
+Simulated Annealing,N1000E15000.graph,475,max_iterations=250000;cooling_rate=0.9999;initial_temp=50,7786.0,7786,0.052461
+Simulated Annealing,N1000E15000.graph,476,max_iterations=250000;cooling_rate=0.9999;initial_temp=100,7797.0,7797,0.053480
+Simulated Annealing,N1000E15000.graph,477,max_iterations=250000;cooling_rate=0.9999;initial_temp=250,7769.0,7769,0.054114
+Simulated Annealing,N1000E15000.graph,478,max_iterations=250000;cooling_rate=0.9999;initial_temp=500,7720.0,7720,0.054302
+Simulated Annealing,N1000E15000.graph,479,max_iterations=250000;cooling_rate=0.9999;initial_temp=1000,7722.0,7722,0.054362
+Simulated Annealing,N1000E15000.graph,480,max_iterations=250000;cooling_rate=0.9999;initial_temp=5000,7706.0,7706,0.054503
+Simulated Annealing,N1000E15000.graph,481,max_iterations=500000;cooling_rate=0.9;initial_temp=1,9358.0,9358,0.006790
+Simulated Annealing,N1000E15000.graph,482,max_iterations=500000;cooling_rate=0.9;initial_temp=5,9408.0,9408,0.008034
+Simulated Annealing,N1000E15000.graph,483,max_iterations=500000;cooling_rate=0.9;initial_temp=10,9390.0,9390,0.008921
+Simulated Annealing,N1000E15000.graph,484,max_iterations=500000;cooling_rate=0.9;initial_temp=25,9364.0,9364,0.010377
+Simulated Annealing,N1000E15000.graph,485,max_iterations=500000;cooling_rate=0.9;initial_temp=50,9429.0,9429,0.011845
+Simulated Annealing,N1000E15000.graph,486,max_iterations=500000;cooling_rate=0.9;initial_temp=100,9370.0,9370,0.012995
+Simulated Annealing,N1000E15000.graph,487,max_iterations=500000;cooling_rate=0.9;initial_temp=250,9412.0,9412,0.015023
+Simulated Annealing,N1000E15000.graph,488,max_iterations=500000;cooling_rate=0.9;initial_temp=500,9390.0,9390,0.016403
+Simulated Annealing,N1000E15000.graph,489,max_iterations=500000;cooling_rate=0.9;initial_temp=1000,9413.0,9413,0.017799
+Simulated Annealing,N1000E15000.graph,490,max_iterations=500000;cooling_rate=0.9;initial_temp=5000,9385.0,9385,0.020937
+Simulated Annealing,N1000E15000.graph,491,max_iterations=500000;cooling_rate=0.95;initial_temp=1,9420.0,9420,0.010880
+Simulated Annealing,N1000E15000.graph,492,max_iterations=500000;cooling_rate=0.95;initial_temp=5,9452.0,9452,0.012387
+Simulated Annealing,N1000E15000.graph,493,max_iterations=500000;cooling_rate=0.95;initial_temp=10,9440.0,9440,0.014312
+Simulated Annealing,N1000E15000.graph,494,max_iterations=500000;cooling_rate=0.95;initial_temp=25,9471.0,9471,0.017315
+Simulated Annealing,N1000E15000.graph,495,max_iterations=500000;cooling_rate=0.95;initial_temp=50,9436.0,9436,0.019603
+Simulated Annealing,N1000E15000.graph,496,max_iterations=500000;cooling_rate=0.95;initial_temp=100,9423.0,9423,0.022587
+Simulated Annealing,N1000E15000.graph,497,max_iterations=500000;cooling_rate=0.95;initial_temp=250,9400.0,9400,0.025651
+Simulated Annealing,N1000E15000.graph,498,max_iterations=500000;cooling_rate=0.95;initial_temp=500,9421.0,9421,0.028100
+Simulated Annealing,N1000E15000.graph,499,max_iterations=500000;cooling_rate=0.95;initial_temp=1000,9422.0,9422,0.030701
+Simulated Annealing,N1000E15000.graph,500,max_iterations=500000;cooling_rate=0.95;initial_temp=5000,9470.0,9470,0.036826
+Simulated Annealing,N1000E15000.graph,501,max_iterations=500000;cooling_rate=0.98;initial_temp=1,9439.0,9439,0.010702
+Simulated Annealing,N1000E15000.graph,502,max_iterations=500000;cooling_rate=0.98;initial_temp=5,9501.0,9501,0.014462
+Simulated Annealing,N1000E15000.graph,503,max_iterations=500000;cooling_rate=0.98;initial_temp=10,9478.0,9478,0.019160
+Simulated Annealing,N1000E15000.graph,504,max_iterations=500000;cooling_rate=0.98;initial_temp=25,9474.0,9474,0.026623
+Simulated Annealing,N1000E15000.graph,505,max_iterations=500000;cooling_rate=0.98;initial_temp=50,9482.0,9482,0.032804
+Simulated Annealing,N1000E15000.graph,506,max_iterations=500000;cooling_rate=0.98;initial_temp=100,9468.0,9468,0.039326
+Simulated Annealing,N1000E15000.graph,507,max_iterations=500000;cooling_rate=0.98;initial_temp=250,9471.0,9471,0.047551
+Simulated Annealing,N1000E15000.graph,508,max_iterations=500000;cooling_rate=0.98;initial_temp=500,9467.0,9467,0.053665
+Simulated Annealing,N1000E15000.graph,509,max_iterations=500000;cooling_rate=0.98;initial_temp=1000,9467.0,9467,0.060525
+Simulated Annealing,N1000E15000.graph,510,max_iterations=500000;cooling_rate=0.98;initial_temp=5000,9483.0,9483,0.076386
+Simulated Annealing,N1000E15000.graph,511,max_iterations=500000;cooling_rate=0.99;initial_temp=1,9468.0,9468,0.009783
+Simulated Annealing,N1000E15000.graph,512,max_iterations=500000;cooling_rate=0.99;initial_temp=5,9488.0,9488,0.017133
+Simulated Annealing,N1000E15000.graph,513,max_iterations=500000;cooling_rate=0.99;initial_temp=10,9501.0,9501,0.026803
+Simulated Annealing,N1000E15000.graph,514,max_iterations=500000;cooling_rate=0.99;initial_temp=25,9432.0,9432,0.042378
+Simulated Annealing,N1000E15000.graph,515,max_iterations=500000;cooling_rate=0.99;initial_temp=50,9492.0,9492,0.055395
+Simulated Annealing,N1000E15000.graph,516,max_iterations=500000;cooling_rate=0.99;initial_temp=100,9458.0,9458,0.068618
+Simulated Annealing,N1000E15000.graph,517,max_iterations=500000;cooling_rate=0.99;initial_temp=250,9270.0,9270,0.085091
+Simulated Annealing,N1000E15000.graph,518,max_iterations=500000;cooling_rate=0.99;initial_temp=500,8672.0,8672,0.094960
+Simulated Annealing,N1000E15000.graph,519,max_iterations=500000;cooling_rate=0.99;initial_temp=1000,8187.0,8187,0.100867
+Simulated Annealing,N1000E15000.graph,520,max_iterations=500000;cooling_rate=0.99;initial_temp=5000,7801.0,7801,0.105849
+Simulated Annealing,N1000E15000.graph,521,max_iterations=500000;cooling_rate=0.995;initial_temp=1,9456.0,9456,0.008438
+Simulated Annealing,N1000E15000.graph,522,max_iterations=500000;cooling_rate=0.995;initial_temp=5,9517.0,9517,0.025945
+Simulated Annealing,N1000E15000.graph,523,max_iterations=500000;cooling_rate=0.995;initial_temp=10,9446.0,9446,0.047418
+Simulated Annealing,N1000E15000.graph,524,max_iterations=500000;cooling_rate=0.995;initial_temp=25,9175.0,9175,0.073566
+Simulated Annealing,N1000E15000.graph,525,max_iterations=500000;cooling_rate=0.995;initial_temp=50,8501.0,8501,0.089646
+Simulated Annealing,N1000E15000.graph,526,max_iterations=500000;cooling_rate=0.995;initial_temp=100,8079.0,8079,0.098243
+Simulated Annealing,N1000E15000.graph,527,max_iterations=500000;cooling_rate=0.995;initial_temp=250,7848.0,7848,0.103819
+Simulated Annealing,N1000E15000.graph,528,max_iterations=500000;cooling_rate=0.995;initial_temp=500,7788.0,7788,0.105671
+Simulated Annealing,N1000E15000.graph,529,max_iterations=500000;cooling_rate=0.995;initial_temp=1000,7749.0,7749,0.106499
+Simulated Annealing,N1000E15000.graph,530,max_iterations=500000;cooling_rate=0.995;initial_temp=5000,7816.0,7816,0.107371
+Simulated Annealing,N1000E15000.graph,531,max_iterations=500000;cooling_rate=0.999;initial_temp=1,9473.0,9473,0.010647
+Simulated Annealing,N1000E15000.graph,532,max_iterations=500000;cooling_rate=0.999;initial_temp=5,8828.0,8828,0.056985
+Simulated Annealing,N1000E15000.graph,533,max_iterations=500000;cooling_rate=0.999;initial_temp=10,8341.0,8341,0.081138
+Simulated Annealing,N1000E15000.graph,534,max_iterations=500000;cooling_rate=0.999;initial_temp=25,7942.0,7942,0.097147
+Simulated Annealing,N1000E15000.graph,535,max_iterations=500000;cooling_rate=0.999;initial_temp=50,7828.0,7828,0.102641
+Simulated Annealing,N1000E15000.graph,536,max_iterations=500000;cooling_rate=0.999;initial_temp=100,7795.0,7795,0.104435
+Simulated Annealing,N1000E15000.graph,537,max_iterations=500000;cooling_rate=0.999;initial_temp=250,7764.0,7764,0.105880
+Simulated Annealing,N1000E15000.graph,538,max_iterations=500000;cooling_rate=0.999;initial_temp=500,7733.0,7733,0.106512
+Simulated Annealing,N1000E15000.graph,539,max_iterations=500000;cooling_rate=0.999;initial_temp=1000,7769.0,7769,0.106674
+Simulated Annealing,N1000E15000.graph,540,max_iterations=500000;cooling_rate=0.999;initial_temp=5000,7714.0,7714,0.106887
+Simulated Annealing,N1000E15000.graph,541,max_iterations=500000;cooling_rate=0.9995;initial_temp=1,9479.0,9479,0.011598
+Simulated Annealing,N1000E15000.graph,542,max_iterations=500000;cooling_rate=0.9995;initial_temp=5,8602.0,8602,0.062463
+Simulated Annealing,N1000E15000.graph,543,max_iterations=500000;cooling_rate=0.9995;initial_temp=10,8184.0,8184,0.083830
+Simulated Annealing,N1000E15000.graph,544,max_iterations=500000;cooling_rate=0.9995;initial_temp=25,7892.0,7892,0.097950
+Simulated Annealing,N1000E15000.graph,545,max_iterations=500000;cooling_rate=0.9995;initial_temp=50,7830.0,7830,0.102348
+Simulated Annealing,N1000E15000.graph,546,max_iterations=500000;cooling_rate=0.9995;initial_temp=100,7805.0,7805,0.105629
+Simulated Annealing,N1000E15000.graph,547,max_iterations=500000;cooling_rate=0.9995;initial_temp=250,7763.0,7763,0.110953
+Simulated Annealing,N1000E15000.graph,548,max_iterations=500000;cooling_rate=0.9995;initial_temp=500,7794.0,7794,0.106703
+Simulated Annealing,N1000E15000.graph,549,max_iterations=500000;cooling_rate=0.9995;initial_temp=1000,7766.0,7766,0.107409
+Simulated Annealing,N1000E15000.graph,550,max_iterations=500000;cooling_rate=0.9995;initial_temp=5000,7718.0,7718,0.108775
+Simulated Annealing,N1000E15000.graph,551,max_iterations=500000;cooling_rate=0.9999;initial_temp=1,9473.0,9473,0.012230
+Simulated Annealing,N1000E15000.graph,552,max_iterations=500000;cooling_rate=0.9999;initial_temp=5,8498.0,8498,0.065977
+Simulated Annealing,N1000E15000.graph,553,max_iterations=500000;cooling_rate=0.9999;initial_temp=10,8119.0,8119,0.086030
+Simulated Annealing,N1000E15000.graph,554,max_iterations=500000;cooling_rate=0.9999;initial_temp=25,7891.0,7891,0.101010
+Simulated Annealing,N1000E15000.graph,555,max_iterations=500000;cooling_rate=0.9999;initial_temp=50,7847.0,7847,0.102933
+Simulated Annealing,N1000E15000.graph,556,max_iterations=500000;cooling_rate=0.9999;initial_temp=100,7797.0,7797,0.104861
+Simulated Annealing,N1000E15000.graph,557,max_iterations=500000;cooling_rate=0.9999;initial_temp=250,7769.0,7769,0.106189
+Simulated Annealing,N1000E15000.graph,558,max_iterations=500000;cooling_rate=0.9999;initial_temp=500,7738.0,7738,0.106548
+Simulated Annealing,N1000E15000.graph,559,max_iterations=500000;cooling_rate=0.9999;initial_temp=1000,7758.0,7758,0.106763
+Simulated Annealing,N1000E15000.graph,560,max_iterations=500000;cooling_rate=0.9999;initial_temp=5000,7732.0,7732,0.106887
+Simulated Annealing,N1000E15000.graph,561,max_iterations=1000000;cooling_rate=0.9;initial_temp=1,9358.0,9358,0.006978
+Simulated Annealing,N1000E15000.graph,562,max_iterations=1000000;cooling_rate=0.9;initial_temp=5,9408.0,9408,0.007860
+Simulated Annealing,N1000E15000.graph,563,max_iterations=1000000;cooling_rate=0.9;initial_temp=10,9390.0,9390,0.008923
+Simulated Annealing,N1000E15000.graph,564,max_iterations=1000000;cooling_rate=0.9;initial_temp=25,9364.0,9364,0.010391
+Simulated Annealing,N1000E15000.graph,565,max_iterations=1000000;cooling_rate=0.9;initial_temp=50,9429.0,9429,0.011986
+Simulated Annealing,N1000E15000.graph,566,max_iterations=1000000;cooling_rate=0.9;initial_temp=100,9370.0,9370,0.013159
+Simulated Annealing,N1000E15000.graph,567,max_iterations=1000000;cooling_rate=0.9;initial_temp=250,9412.0,9412,0.015159
+Simulated Annealing,N1000E15000.graph,568,max_iterations=1000000;cooling_rate=0.9;initial_temp=500,9390.0,9390,0.016237
+Simulated Annealing,N1000E15000.graph,569,max_iterations=1000000;cooling_rate=0.9;initial_temp=1000,9413.0,9413,0.017612
+Simulated Annealing,N1000E15000.graph,570,max_iterations=1000000;cooling_rate=0.9;initial_temp=5000,9385.0,9385,0.021035
+Simulated Annealing,N1000E15000.graph,571,max_iterations=1000000;cooling_rate=0.95;initial_temp=1,9420.0,9420,0.011427
+Simulated Annealing,N1000E15000.graph,572,max_iterations=1000000;cooling_rate=0.95;initial_temp=5,9452.0,9452,0.013670
+Simulated Annealing,N1000E15000.graph,573,max_iterations=1000000;cooling_rate=0.95;initial_temp=10,9440.0,9440,0.015666
+Simulated Annealing,N1000E15000.graph,574,max_iterations=1000000;cooling_rate=0.95;initial_temp=25,9471.0,9471,0.018895
+Simulated Annealing,N1000E15000.graph,575,max_iterations=1000000;cooling_rate=0.95;initial_temp=50,9436.0,9436,0.021531
+Simulated Annealing,N1000E15000.graph,576,max_iterations=1000000;cooling_rate=0.95;initial_temp=100,9423.0,9423,0.024611
+Simulated Annealing,N1000E15000.graph,577,max_iterations=1000000;cooling_rate=0.95;initial_temp=250,9400.0,9400,0.028257
+Simulated Annealing,N1000E15000.graph,578,max_iterations=1000000;cooling_rate=0.95;initial_temp=500,9421.0,9421,0.030925
+Simulated Annealing,N1000E15000.graph,579,max_iterations=1000000;cooling_rate=0.95;initial_temp=1000,9422.0,9422,0.033817
+Simulated Annealing,N1000E15000.graph,580,max_iterations=1000000;cooling_rate=0.95;initial_temp=5000,9470.0,9470,0.040535
+Simulated Annealing,N1000E15000.graph,581,max_iterations=1000000;cooling_rate=0.98;initial_temp=1,9439.0,9439,0.019255
+Simulated Annealing,N1000E15000.graph,582,max_iterations=1000000;cooling_rate=0.98;initial_temp=5,9501.0,9501,0.023031
+Simulated Annealing,N1000E15000.graph,583,max_iterations=1000000;cooling_rate=0.98;initial_temp=10,9478.0,9478,0.027749
+Simulated Annealing,N1000E15000.graph,584,max_iterations=1000000;cooling_rate=0.98;initial_temp=25,9474.0,9474,0.035317
+Simulated Annealing,N1000E15000.graph,585,max_iterations=1000000;cooling_rate=0.98;initial_temp=50,9482.0,9482,0.041625
+Simulated Annealing,N1000E15000.graph,586,max_iterations=1000000;cooling_rate=0.98;initial_temp=100,9468.0,9468,0.048031
+Simulated Annealing,N1000E15000.graph,587,max_iterations=1000000;cooling_rate=0.98;initial_temp=250,9471.0,9471,0.057455
+Simulated Annealing,N1000E15000.graph,588,max_iterations=1000000;cooling_rate=0.98;initial_temp=500,9467.0,9467,0.064464
+Simulated Annealing,N1000E15000.graph,589,max_iterations=1000000;cooling_rate=0.98;initial_temp=1000,9467.0,9467,0.070088
+Simulated Annealing,N1000E15000.graph,590,max_iterations=1000000;cooling_rate=0.98;initial_temp=5000,9483.0,9483,0.086978
+Simulated Annealing,N1000E15000.graph,591,max_iterations=1000000;cooling_rate=0.99;initial_temp=1,9468.0,9468,0.019783
+Simulated Annealing,N1000E15000.graph,592,max_iterations=1000000;cooling_rate=0.99;initial_temp=5,9488.0,9488,0.026879
+Simulated Annealing,N1000E15000.graph,593,max_iterations=1000000;cooling_rate=0.99;initial_temp=10,9501.0,9501,0.035977
+Simulated Annealing,N1000E15000.graph,594,max_iterations=1000000;cooling_rate=0.99;initial_temp=25,9432.0,9432,0.051051
+Simulated Annealing,N1000E15000.graph,595,max_iterations=1000000;cooling_rate=0.99;initial_temp=50,9495.0,9495,0.064371
+Simulated Annealing,N1000E15000.graph,596,max_iterations=1000000;cooling_rate=0.99;initial_temp=100,9467.0,9467,0.077215
+Simulated Annealing,N1000E15000.graph,597,max_iterations=1000000;cooling_rate=0.99;initial_temp=250,9476.0,9476,0.094938
+Simulated Annealing,N1000E15000.graph,598,max_iterations=1000000;cooling_rate=0.99;initial_temp=500,9488.0,9488,0.110895
+Simulated Annealing,N1000E15000.graph,599,max_iterations=1000000;cooling_rate=0.99;initial_temp=1000,9479.0,9479,0.119711
+Simulated Annealing,N1000E15000.graph,600,max_iterations=1000000;cooling_rate=0.99;initial_temp=5000,9504.0,9504,0.153855
+Simulated Annealing,N1000E15000.graph,601,max_iterations=1000000;cooling_rate=0.995;initial_temp=1,9456.0,9456,0.020228
+Simulated Annealing,N1000E15000.graph,602,max_iterations=1000000;cooling_rate=0.995;initial_temp=5,9517.0,9517,0.035501
+Simulated Annealing,N1000E15000.graph,603,max_iterations=1000000;cooling_rate=0.995;initial_temp=10,9477.0,9477,0.057328
+Simulated Annealing,N1000E15000.graph,604,max_iterations=1000000;cooling_rate=0.995;initial_temp=25,9507.0,9507,0.086253
+Simulated Annealing,N1000E15000.graph,605,max_iterations=1000000;cooling_rate=0.995;initial_temp=50,9498.0,9498,0.112800
+Simulated Annealing,N1000E15000.graph,606,max_iterations=1000000;cooling_rate=0.995;initial_temp=100,9492.0,9492,0.140467
+Simulated Annealing,N1000E15000.graph,607,max_iterations=1000000;cooling_rate=0.995;initial_temp=250,9278.0,9278,0.178908
+Simulated Annealing,N1000E15000.graph,608,max_iterations=1000000;cooling_rate=0.995;initial_temp=500,8680.0,8680,0.195823
+Simulated Annealing,N1000E15000.graph,609,max_iterations=1000000;cooling_rate=0.995;initial_temp=1000,8207.0,8207,0.203906
+Simulated Annealing,N1000E15000.graph,610,max_iterations=1000000;cooling_rate=0.995;initial_temp=5000,7827.0,7827,0.213476
+Simulated Annealing,N1000E15000.graph,611,max_iterations=1000000;cooling_rate=0.999;initial_temp=1,9478.0,9478,0.017027
+Simulated Annealing,N1000E15000.graph,612,max_iterations=1000000;cooling_rate=0.999;initial_temp=5,9297.0,9297,0.093471
+Simulated Annealing,N1000E15000.graph,613,max_iterations=1000000;cooling_rate=0.999;initial_temp=10,8657.0,8657,0.147287
+Simulated Annealing,N1000E15000.graph,614,max_iterations=1000000;cooling_rate=0.999;initial_temp=25,8060.0,8060,0.187750
+Simulated Annealing,N1000E15000.graph,615,max_iterations=1000000;cooling_rate=0.999;initial_temp=50,7912.0,7912,0.198739
+Simulated Annealing,N1000E15000.graph,616,max_iterations=1000000;cooling_rate=0.999;initial_temp=100,7821.0,7821,0.205595
+Simulated Annealing,N1000E15000.graph,617,max_iterations=1000000;cooling_rate=0.999;initial_temp=250,7774.0,7774,0.209937
+Simulated Annealing,N1000E15000.graph,618,max_iterations=1000000;cooling_rate=0.999;initial_temp=500,7773.0,7773,0.211965
+Simulated Annealing,N1000E15000.graph,619,max_iterations=1000000;cooling_rate=0.999;initial_temp=1000,7769.0,7769,0.211687
+Simulated Annealing,N1000E15000.graph,620,max_iterations=1000000;cooling_rate=0.999;initial_temp=5000,7739.0,7739,0.211904
+Simulated Annealing,N1000E15000.graph,621,max_iterations=1000000;cooling_rate=0.9995;initial_temp=1,9493.0,9493,0.018689
+Simulated Annealing,N1000E15000.graph,622,max_iterations=1000000;cooling_rate=0.9995;initial_temp=5,8901.0,8901,0.112630
+Simulated Annealing,N1000E15000.graph,623,max_iterations=1000000;cooling_rate=0.9995;initial_temp=10,8277.0,8277,0.160386
+Simulated Annealing,N1000E15000.graph,624,max_iterations=1000000;cooling_rate=0.9995;initial_temp=25,7968.0,7968,0.191528
+Simulated Annealing,N1000E15000.graph,625,max_iterations=1000000;cooling_rate=0.9995;initial_temp=50,7830.0,7830,0.201648
+Simulated Annealing,N1000E15000.graph,626,max_iterations=1000000;cooling_rate=0.9995;initial_temp=100,7829.0,7829,0.208037
+Simulated Annealing,N1000E15000.graph,627,max_iterations=1000000;cooling_rate=0.9995;initial_temp=250,7768.0,7768,0.210146
+Simulated Annealing,N1000E15000.graph,628,max_iterations=1000000;cooling_rate=0.9995;initial_temp=500,7794.0,7794,0.211229
+Simulated Annealing,N1000E15000.graph,629,max_iterations=1000000;cooling_rate=0.9995;initial_temp=1000,7766.0,7766,0.213801
+Simulated Annealing,N1000E15000.graph,630,max_iterations=1000000;cooling_rate=0.9995;initial_temp=5000,7759.0,7759,0.211703
+Simulated Annealing,N1000E15000.graph,631,max_iterations=1000000;cooling_rate=0.9999;initial_temp=1,9489.0,9489,0.021764
+Simulated Annealing,N1000E15000.graph,632,max_iterations=1000000;cooling_rate=0.9999;initial_temp=5,8505.0,8505,0.128053
+Simulated Annealing,N1000E15000.graph,633,max_iterations=1000000;cooling_rate=0.9999;initial_temp=10,8154.0,8154,0.168969
+Simulated Annealing,N1000E15000.graph,634,max_iterations=1000000;cooling_rate=0.9999;initial_temp=25,7916.0,7916,0.195145
+Simulated Annealing,N1000E15000.graph,635,max_iterations=1000000;cooling_rate=0.9999;initial_temp=50,7847.0,7847,0.203836
+Simulated Annealing,N1000E15000.graph,636,max_iterations=1000000;cooling_rate=0.9999;initial_temp=100,7815.0,7815,0.207619
+Simulated Annealing,N1000E15000.graph,637,max_iterations=1000000;cooling_rate=0.9999;initial_temp=250,7769.0,7769,0.210246
+Simulated Annealing,N1000E15000.graph,638,max_iterations=1000000;cooling_rate=0.9999;initial_temp=500,7757.0,7757,0.211041
+Simulated Annealing,N1000E15000.graph,639,max_iterations=1000000;cooling_rate=0.9999;initial_temp=1000,7758.0,7758,0.211825
+Simulated Annealing,N1000E15000.graph,640,max_iterations=1000000;cooling_rate=0.9999;initial_temp=5000,7733.0,7733,0.213433

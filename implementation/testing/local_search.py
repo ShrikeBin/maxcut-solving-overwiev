@@ -1,7 +1,6 @@
 import sys
 import glob
 import os
-import subprocess
 from itertools import product
 
 from implementation.util.python.Graph import Graph
@@ -9,7 +8,7 @@ from implementation.util.python.Parameters import Parameters
 import implementation.methodologies.heuristics_memetics.python.cpplib_heuristics_memetics as cpplibhm
 
 # ===================================================================================================
-LS_K_VALUES = [2, 3, 4, 5]
+LS_K_VALUES = [2, 3] # [2, 3, 4, 5] # a bit too optimistic
 # (k only applies to K_FLIP)
 
 TOP_AMOUNT = 10
